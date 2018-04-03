@@ -7,7 +7,10 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_player</sprite>
-    <sprite>sprites\spr_tile</sprite>
+    <sprite>sprites\spr_solid</sprite>
+    <sprite>sprites\spr_slope</sprite>
+    <sprite>sprites\sprite3</sprite>
+    <sprite>sprites\sprite4</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -16,6 +19,9 @@
   <objects name="objects">
     <object>objects\obj_player</object>
     <object>objects\obj_solid</object>
+    <object>objects\obj_slope</object>
+    <object>objects\obj_slope_end</object>
+    <object>objects\obj_slope_1x1</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

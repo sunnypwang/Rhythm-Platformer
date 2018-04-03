@@ -77,7 +77,8 @@ hsp = move*MOVE_SPD;
 vsp = min(vsp+grav,VSP_MAX);
 
 //Jump Control
-if (place_meeting(x,y+1,obj_solid))
+jumping = 0;
+if (place_meeting(x,y+1,obj_solid) or position_meeting(x,y+30+1,obj_slope))
 {
     if(key_jump) {
         vsp = -JUMP_SPD;
@@ -241,8 +242,55 @@ if(hsp!=0 and vsp!=0 and place_meeting(x+hsp, y+vsp, obj_solid)){
 }
 
 
-x += hsp;
-y += vsp;
+
+//going up slope check
+if(vsp!= 0 and position_meeting(x,y+30+vsp,obj_slope)){  
+     while(!position_meeting(x,y+30+sign(vsp),obj_slope)){
+         y += sign(vsp);
+     }
+     vsp = 0;
+}
+slope_up_inst = instance_position(floor(x+hsp),y+30,obj_slope);
+if (slope_up_inst != noone){
+    
+    if(slope_up_inst.SLOPE_RATIO == 0){
+        rel_x = 32;
+    } else {
+        rel_x = floor(x+hsp) - slope_up_inst.x;
+        if(slope_up_inst.SLOPE_RATIO &lt; 0){
+            rel_x = min(0,31-rel_x);
+        }
+    }
+    
+    show_debug_message(string(slope_up_inst)+" "+string(rel_x));
+    
+
+    newy = slope_up_inst.y - rel_x;
+    
+    y = floor(newy);
+    vsp = 0;
+} else {
+    standing_slope = instance_position(x,y+30+1,obj_slope);
+    if(standing_slope != noone){
+        slope_down_inst = instance_position(floor(x+hsp),floor(y+30+abs(hsp)+1),obj_slope);
+        if(slope_down_inst != noone and slope_down_inst.SLOPE_RATIO != 0){ 
+            rel_x = floor(x+hsp) - slope_down_inst.x;
+            if(slope_down_inst.SLOPE_RATIO &lt; 0){
+                rel_x = min(0,31-rel_x);
+            }
+            show_debug_message(string(slope_down_inst)+" "+string(rel_x));
+            
+            newy = slope_down_inst.y - rel_x;
+            y = floor(newy);
+            vsp = 0; 
+        }
+    }
+    
+}
+
+x = floor(x+hsp);
+y = floor(y+vsp);
+
 
 /*
 //Horizontal collision
