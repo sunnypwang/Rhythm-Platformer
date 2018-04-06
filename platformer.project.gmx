@@ -4,27 +4,53 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\bgm_training</sound>
+    <sound>sound\snd_metronome</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_player</sprite>
     <sprite>sprites\spr_solid</sprite>
+    <sprite>sprites\spr_testplt</sprite>
     <sprite>sprites\spr_slope_end</sprite>
     <sprite>sprites\spr_slope</sprite>
     <sprite>sprites\spr_slope_r</sprite>
     <sprite>sprites\sprite3</sprite>
     <sprite>sprites\sprite4</sprite>
+    <sprite>sprites\spr_circle</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
-    <object>objects\obj_player</object>
-    <object>objects\obj_solid</object>
-    <object>objects\obj_slope</object>
-    <object>objects\obj_slope_end</object>
-    <object>objects\obj_slope_1x1</object>
-    <object>objects\obj_slope_1x1_r</object>
+    <objects name="Player">
+      <object>objects\obj_player</object>
+    </objects>
+    <objects name="Collision">
+      <objects name="Solid">
+        <object>objects\obj_solid</object>
+      </objects>
+      <objects name="Slope">
+        <object>objects\obj_slope_1x1</object>
+        <object>objects\obj_slope_1x1_r</object>
+        <object>objects\obj_slope_end</object>
+        <object>objects\obj_slope</object>
+      </objects>
+    </objects>
+    <objects name="Rhythm">
+      <objects name="Controller (DO NOT USE)">
+        <object>objects\obj_controller</object>
+        <object>objects\obj_rhythmicparent</object>
+      </objects>
+      <objects name="Test">
+        <object>objects\obj_testmove</object>
+        <object>objects\obj_testplaymove</object>
+        <object>objects\obj_testtoggle</object>
+        <object>objects\obj_testcoll</object>
+        <object>objects\obj_testparent</object>
+      </objects>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
