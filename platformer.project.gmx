@@ -85,6 +85,17 @@
       <sprite>sprites\spr_player_walk</sprite>
       <sprite>sprites\spr_player_jump</sprite>
     </sprites>
+    <sprites name="System">
+      <sprites name="HUD">
+        <sprite>sprites\spr_hud_lives</sprite>
+        <sprite>sprites\spr_hud_coin</sprite>
+        <sprite>sprites\spr_hud_time</sprite>
+        <sprite>sprites\spr_hud_key</sprite>
+        <sprite>sprites\spr_hud_collectible</sprite>
+        <sprite>sprites\spr_hud_number</sprite>
+        <sprite>sprites\spr_hud_hp</sprite>
+      </sprites>
+    </sprites>
     <sprite>sprites\spr_player</sprite>
     <sprite>sprites\spr_solid</sprite>
     <sprite>sprites\spr_testplt</sprite>
@@ -301,6 +312,7 @@
         <object>objects\obj_persistent_musicplayer</object>
         <object>objects\obj_gameintro</object>
         <object>objects\obj_persistent</object>
+        <object>objects\obj_camera</object>
       </objects>
     </objects>
   </objects>
