@@ -34,12 +34,17 @@ VSP_MAX = 8;       //maximum falling speed
 JUMP_SPD = 8;      //initial jumping vsp
 JUMP_DECEL = 1;     //deceleration after jumping
 FEET_OFFSET = bbox_bottom - bbox_top;   //feet offset from center (should be 30)         
+
+//State constants
+STANDING=0;
+WALKING=1;
+JUMPING=2;
+FALLING=3;
+
 //variable
 hsp = 0;
 vsp = 0;
-jumping=0;  
-standing=1;
-state = 0; //0=Standing, 1=Walking, 2 = Jumping, 3=Falling
+state = STANDING;
 </string>
           </argument>
         </arguments>
@@ -64,8 +69,9 @@ state = 0; //0=Standing, 1=Walking, 2 = Jumping, 3=Falling
             <kind>1</kind>
             <string>///Sprite control
 
-if(state&gt;=2){
+if(state &gt;= 2){
     sprite_index = spr_player_jump;
+    if(hsp!=0) image_xscale = sign(hsp);
 }else{
     if(hsp==0){
         sprite_index = spr_player_stand;
@@ -105,104 +111,14 @@ if(state&gt;=2){
 //      INPUT CONTROL
 //------------------------------
 
-//Dash control
-
 //Get the player's input
-
 key_right = keyboard_check(vk_right);   //1 if pressing right, 0 otherwise
 key_left = -keyboard_check(vk_left);    //-1 if pressing left, 0 otherwise
 key_jump = keyboard_check_pressed(vk_space);
-//key_float = keyboard_check(vk_space);
+
 //key_left=-1;
 //Horizontal movement control
 move = key_left+key_right;  //if pressing both right and left, movement cancels out
-
-
-
-
-/*
-if(move == 1) {                 //pressing RIGHT
-    
-    if(hsp &lt; 0){                //if heading opposite, skid
-        hsp += SKID_DECEL;      
-        skidding = 1;
-        if(hsp &gt; 0) hsp = 0;
-    } else {                    //else, either walk or dash
-        if (place_meeting(x,y+1,obj_solid))     //if on the ground, check if player is triggering dash
-        {
-            if(alarm[1]&gt;0 and alarm[1] &lt; DASH_TIMER){
-                if(keyboard_check_pressed(vk_right)) 
-                    dashing=1
-                    
-            }
-        }
-        
-        if (dashing) hsp = DASH_SPD;
-        else hsp = WALK_SPD;
-    }
-    alarm[1] = DASH_TIMER;      //set dash alarm
-} else if (move == -1){         //pressing LEFT
-   
-    if(hsp &gt; 0){                //if heading opposite, skid
-        hsp -= SKID_DECEL;
-        skidding = 1;
-        if(hsp &lt; 0) hsp = 0;    
-    } else {                    //else, walk or dash
-        if (place_meeting(x,y+1,obj_solid))     //if on the ground, check if player is triggering dash
-        {
-            if(alarm[1]&gt;0 and alarm[1] &lt; DASH_TIMER){
-                if(keyboard_check_pressed(vk_left)) 
-                    dashing=1
-            }
-        }
-        if (dashing) hsp = -DASH_SPD;
-        else hsp = -WALK_SPD;
-        
-    }
-    alarm[1] = DASH_TIMER;
-} else {                        //not pressing anything
-    if(hsp &gt; 0) {               //decelerate Kirby         
-        hsp -= DECEL;
-        if(hsp &lt; 0) hsp = 0;
-    } else if (hsp &lt; 0) {
-        hsp += DECEL;
-        if(hsp &gt; 0) hsp = 0;
-    }
-       
-}
-
-//Vertical gravity
-if (!place_meeting(x,y+1,obj_solid))
-{
-    if(floating){
-        if(vsp &lt; VSPEEDMAX_FLOAT) vsp += float_grav;
-    } else if (vsp &lt; VSPEEDMAX) vsp += grav;
-}
-//Float Control
-if(((jumping or falling) and key_jump) or (floating and key_float)){
-    jumping = 0;
-    floating = 1;
-    vsp = -FLOAT_SPD;
-    dashing = 0;
-}
-
-
-//Jump Control
-if (place_meeting(x,y+1,obj_solid))
-{
-    if(!floating and key_jump) {
-        vsp = -JUMP_SPD;
-        jumping = 1;   
-    } else {
-        jumping = 0;
-        floating = 0;
-    }
-}
-if(vsp &lt; 0 and not keyboard_check(vk_space)){
-    vsp *= JUMP_DECEL;
-}
-*/
-
 </string>
           </argument>
         </arguments>
@@ -223,45 +139,36 @@ if(vsp &lt; 0 and not keyboard_check(vk_space)){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Movement, gravity, jump control
+            <string>///Movement, gravity, jump, state control
 
 //Horizontal movement control
 hsp = move*MOVE_SPD;
 
 //Gravity control
 vsp = min(vsp+grav,VSP_MAX);
-if (place_meeting(x,y+1,obj_solid) or position_meeting(x,y+FEET_OFFSET+1,obj_slope)) //if standing on ground
-{
-    state = 0;
-    vsp = 0;         
-}
 
-//Jump Control
-if (place_meeting(x,y+1,obj_solid) or position_meeting(x,y+FEET_OFFSET+1,obj_slope)) //if standing on ground
+
+//Standing &amp; Jump Control
+if (collision_rectangle(bbox_left, bbox_bottom, bbox_right, bbox_bottom+1, obj_solid, false, true) or position_meeting(x,y+FEET_OFFSET+1,obj_slope)) //if standing on ground
 {
+    state = STANDING;
+    vsp = 0;
+    
     if(key_jump) {
-        state = 2;
+        state = JUMPING;
         vsp = -JUMP_SPD;
-        jumping = 1;   
-    } else {
-        jumping = 0;
     }
 }
-if(jumping and vsp &lt; 0 and not keyboard_check(vk_space)){
+if(state==JUMPING and vsp &lt; 0 and not keyboard_check(vk_space)){
     vsp = round(vsp/JUMP_DECEL);
 }
 
 //Player State Control
-if(hsp!=0&amp;&amp;state==0){
-state = 1;
+if(hsp!=0 &amp;&amp; state==STANDING){
+    state = WALKING;
 }
-
-//if(vsp&lt;0){
-//state = 2;
-//}
-
 if(vsp&gt;0){
-state = 3;
+    state = FALLING;
 }
 </string>
           </argument>
@@ -288,14 +195,15 @@ state = 3;
 //horizontal collision
 if(hsp != 0 and place_meeting(x+hsp,y,obj_solid)){      //if moving and colliding with solid in direction moving
         while(!place_meeting(x+sign(hsp),y,obj_solid)){ //move in 1 pixel until contact
-            if(vsp==0){
-            }
+            
             x += sign(hsp);
         }
+        if(sign(image_xscale) != sign(hsp)) x -= sign(hsp);
         hsp = 0;
     
     
 }
+
 
 //vertical collision
 if(vsp != 0 and place_meeting(x,y+vsp,obj_solid)){      //if moving and colliding with solid in direction moving
@@ -396,83 +304,6 @@ if (slope_up_inst != noone){    //if yes it will be that slope object id
 //update player to his next position
 x = floor(x+hsp);
 y = floor(y+vsp);
-
-
-
-//UNUSED
-/*
-//Horizontal collision
-if (hsp!=0){
-    if (place_meeting(x+hsp,y,obj_solid)){      //if slope
-        y_offset = 0;
-        while(y_offset &lt;= abs(hsp) and place_meeting(x+hsp,y-y_offset,obj_solid)){
-            y_offset++;
-        }
-        if(place_meeting(x+hsp,y-y_offset,obj_solid)){
-            while(!place_meeting(x+sign(hsp),y,obj_solid)){
-                x += sign(hsp);
-            } 
-            image_xscale = sign(hsp); //special case, kirby is in a 1x1 hole
-            hsp = 0;
-            dashing = 0;
-            
-        } else {
-            y -= y_offset;
-        }   
-    }
-    else {      //normal floor
-        y_offset = 0;
-        while(!place_meeting(x+hsp,y+1+y_offset,obj_solid) and y_offset &lt;= abs(hsp)){
-            y_offset++;
-        }
-        if(!place_meeting(x+hsp,y+y_offset,obj_solid)){
-            y += y_offset;
-        }  
-    }
-}
-
-//Vertical collision
-if (vsp!=0 and place_meeting(x,y+vsp,obj_solid))        //if moving 
-{
-    if(vsp &lt; 0 and !place_meeting(x+2,y+vsp,obj_solid)){        //snap to wall when falling/rising very near to vertical walls
-        x += 2;
-    } else if(vsp &lt; 0 and !place_meeting(x-2,y+vsp,obj_solid)){
-        x -= 2;
-    } else {        //falling/rising normally
-        while(!place_meeting(x,y+sign(vsp),obj_solid))
-        {
-        y += sign(vsp);
-        }
-        vsp = 0;
-    } 
-    
-}
-*/
-//diagonal collision
-/*
-if(hsp != 0 and vsp != 0 and place_meeting(x+hsp, y+vsp, obj_solid))
-{
-    while(!place_meeting(x+sign(hsp), y + sign(vsp), obj_solid))        //if not hitting a wall
-    {
-        x+= sign(hsp);
-        y+= sign(vsp);
-    }
-    while(place_meeting(x, y + sign(vsp), obj_solid))       //snap to wall when moving diagonally when falling/rising very near to vertical walls
-    {
-        x -= sign(hsp);
-    }
-    hsp = 0;
-}
-*/
-
-//slope horizontal collision
-/*slope = instance_place(x,y+1,obj_slope);
-if(hsp != 0 and slope != noone)
-{
-    //Slope collision handler
-    y -= (hsp/slope.ratio);
-}
-*/
 </string>
           </argument>
         </arguments>

@@ -112,7 +112,6 @@
     <sprite>sprites\spr_slope_end</sprite>
     <sprite>sprites\spr_slope</sprite>
     <sprite>sprites\spr_slope_r</sprite>
-    <sprite>sprites\sprite3</sprite>
     <sprite>sprites\sprite4</sprite>
     <sprite>sprites\spr_circle</sprite>
   </sprites>
