@@ -65,7 +65,7 @@ state = 0; //0=Standing, 1=Walking, 2 = Jumping, 3=Falling
             <kind>1</kind>
             <string>///Sprite control
 
-if(vsp!=0){
+if(state&gt;=2){
     sprite_index = spr_player_jump;
 }else{
     if(hsp==0){
@@ -236,6 +236,7 @@ hsp = move*MOVE_SPD;
 vsp = min(vsp+grav,VSP_MAX);
 if (place_meeting(x,y+1,obj_solid) or position_meeting(x,y+SPR_H+1,obj_slope)) //if standing on ground
 {
+    state = 0;
     vsp = 0;         
 }
 
@@ -243,6 +244,7 @@ if (place_meeting(x,y+1,obj_solid) or position_meeting(x,y+SPR_H+1,obj_slope)) /
 if (place_meeting(x,y+1,obj_solid) or position_meeting(x,y+SPR_H+1,obj_slope)) //if standing on ground
 {
     if(key_jump) {
+        state = 2;
         vsp = -JUMP_SPD;
         jumping = 1;   
     } else {
@@ -251,6 +253,19 @@ if (place_meeting(x,y+1,obj_solid) or position_meeting(x,y+SPR_H+1,obj_slope)) /
 }
 if(jumping and vsp &lt; 0 and not keyboard_check(vk_space)){
     vsp = round(vsp/JUMP_DECEL);
+}
+
+//Player State Control
+if(hsp!=0&amp;&amp;state==0){
+state = 1;
+}
+
+if(vsp&lt;&lt;0){
+state = 2;
+}
+
+if(vsp&gt;0){
+state = 3;
 }
 </string>
           </argument>
@@ -276,8 +291,9 @@ if(jumping and vsp &lt; 0 and not keyboard_check(vk_space)){
 
 //horizontal collision
 if(hsp != 0 and place_meeting(x+hsp,y,obj_solid)){      //if moving and colliding with solid in direction moving
-        
         while(!place_meeting(x+sign(hsp),y,obj_solid)){ //move in 1 pixel until contact
+            if(vsp==0){
+            }
             x += sign(hsp);
         }
         hsp = 0;

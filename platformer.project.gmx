@@ -85,10 +85,20 @@
       <sprite>sprites\spr_player_walk</sprite>
       <sprite>sprites\spr_player_jump</sprite>
     </sprites>
+    <sprites name="Item">
+      <sprites name="Collectible">
+        <sprite>sprites\spr_note</sprite>
+      </sprites>
+      <sprites name="Puzzle">
+        <sprite>sprites\spr_key</sprite>
+      </sprites>
+      <sprite>sprites\spr_chest</sprite>
+      <sprite>sprites\spr_chestarrow</sprite>
+    </sprites>
     <sprites name="System">
       <sprites name="HUD">
         <sprite>sprites\spr_hud_lives</sprite>
-        <sprite>sprites\spr_hud_coin</sprite>
+        <sprite>sprites\spr_hud_note</sprite>
         <sprite>sprites\spr_hud_time</sprite>
         <sprite>sprites\spr_hud_key</sprite>
         <sprite>sprites\spr_hud_collectible</sprite>
@@ -315,10 +325,17 @@
         <object>objects\obj_camera</object>
       </objects>
     </objects>
+    <objects name="Item">
+      <objects name="Collectible">
+        <object>objects\obj_note</object>
+      </objects>
+      <object>objects\obj_chest</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\room1</room>
     <room>rooms\rm_tutorial</room>
+    <room>rooms\rm_test</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
