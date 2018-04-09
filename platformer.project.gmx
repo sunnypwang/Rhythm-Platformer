@@ -101,6 +101,9 @@
       <sprite>sprites\spr_chest</sprite>
       <sprite>sprites\spr_chestarrow</sprite>
     </sprites>
+	<sprites name="Enemy">
+      <sprite>sprites\spr_blob</sprite>
+    </sprites>
     <sprites name="System">
       <sprites name="HUD">
         <sprite>sprites\spr_hud_lives</sprite>
