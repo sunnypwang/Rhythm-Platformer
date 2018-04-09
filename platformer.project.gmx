@@ -340,7 +340,9 @@
   <rooms name="rooms">
     <room>rooms\room1</room>
     <room>rooms\rm_tutorial</room>
+    <room>rooms\rm_test_moving</room>
     <room>rooms\rm_test</room>
+    <room>rooms\TEMPLATE_ROOM</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
