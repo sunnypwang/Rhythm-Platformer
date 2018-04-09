@@ -67,10 +67,8 @@ draw_sprite_ext(spr_hud_collectible,0,x+12+i*18,y+48,1,1,0,c_white,1)
 }
 
 //Key
-for(i=0;i&lt;global.key;i++){
-draw_sprite_ext(spr_hud_key,0,x+12+16*i,y+64,1,1,0,c_white,1)
-}
-
+//draw_sprite_tiled_ext(spr_hud_key,0,x+12,y+64,1,16,c_white,1);
+draw_sprite_ext(spr_hud_key,0,x+12,y+64,1,1,0,c_white,1)
 
 //Life
 draw_sprite_ext(spr_hud_lives,0,x+12,y+200,1,1,0,c_white,1)

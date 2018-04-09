@@ -101,9 +101,6 @@
       <sprite>sprites\spr_chest</sprite>
       <sprite>sprites\spr_chestarrow</sprite>
     </sprites>
-    <sprites name="Enemy">
-      <sprite>sprites\spr_blob</sprite>
-    </sprites>
     <sprites name="System">
       <sprites name="HUD">
         <sprite>sprites\spr_hud_lives</sprite>
@@ -360,8 +357,10 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\room1</room>
-    <room>rooms\rm_test</room>
     <room>rooms\rm_tutorial</room>
+    <room>rooms\rm_test_moving</room>
+    <room>rooms\rm_test</room>
+    <room>rooms\TEMPLATE_ROOM</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

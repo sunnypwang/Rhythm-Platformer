@@ -31,7 +31,7 @@
 grav = 1;
 MOVE_SPD = 2;       //walking speed
 VSP_MAX = 8;       //maximum falling speed
-JUMP_SPD = 8;      //initial jumping vsp
+JUMP_SPD = 10;      //initial jumping vsp
 JUMP_DECEL = 1;     //deceleration after jumping
 FEET_OFFSET = bbox_bottom - bbox_top;   //feet offset from center (should be 30) 
 dir = 1;        
