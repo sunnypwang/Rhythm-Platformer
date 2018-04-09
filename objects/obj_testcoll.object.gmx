@@ -124,9 +124,16 @@ mysolid = instance_create(x,y,obj_solid);
 mysolid.image_xscale = 2;
 mysolid.image_yscale = 2;
 if(place_meeting(x,y,obj_player)){
+    /*
+    if(obj_player.x - x &lt; 16){
+        obj_player.x = x - obj_player.sprite_width + obj_player.sprite_xoffset;
+    } else {
+        obj_player.x = x + 32 + obj_player.sprite_xoffset;
+    }*/
+    
     if(!place_meeting(x,y+32,obj_solid)){
     obj_player.y=y+32;
-    }else if(!place_meeting(x,y+32,obj_solid)){
+    }else if(!place_meeting(x-32,y,obj_solid)){
     obj_player.x=x-32;
     }else{
     obj_player.x=x+32;

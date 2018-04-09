@@ -45,6 +45,8 @@ FALLING=3;
 hsp = 0;
 vsp = 0;
 state = STANDING;
+
+show_debug_message(string(sprite_xoffset));
 </string>
           </argument>
         </arguments>
