@@ -86,6 +86,9 @@
       <sprite>sprites\spr_player_jump</sprite>
       <sprite>sprites\spr_player_hurt</sprite>
       <sprite>sprites\spr_player_attack</sprite>
+      <sprites name="spr_meleeatk">
+        <sprite>sprites\spr_meleeatk</sprite>
+      </sprites>
     </sprites>
     <sprites name="Item">
       <sprites name="Collectible">
@@ -298,6 +301,9 @@
   <objects name="objects">
     <objects name="Player">
       <object>objects\obj_player</object>
+      <objects name="DO NOT USE">
+        <object>objects\obj_pl_meleeatk</object>
+      </objects>
     </objects>
     <objects name="Collision">
       <objects name="Solid">
@@ -340,6 +346,16 @@
         <object>objects\obj_lockdoor</object>
       </objects>
       <object>objects\obj_chest</object>
+    </objects>
+    <objects name="Enemy">
+      <objects name="DO NOT USE">
+        <objects name="Parent">
+          <object>objects\obj_enemyparent</object>
+        </objects>
+      </objects>
+      <objects name="Common">
+        <object>objects\obj_blob</object>
+      </objects>
     </objects>
   </objects>
   <rooms name="rooms">

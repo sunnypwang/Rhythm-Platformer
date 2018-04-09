@@ -33,7 +33,8 @@ MOVE_SPD = 2;       //walking speed
 VSP_MAX = 8;       //maximum falling speed
 JUMP_SPD = 8;      //initial jumping vsp
 JUMP_DECEL = 1;     //deceleration after jumping
-FEET_OFFSET = bbox_bottom - bbox_top;   //feet offset from center (should be 30)         
+FEET_OFFSET = bbox_bottom - bbox_top;   //feet offset from center (should be 30) 
+dir = 1;        
 
 //State constants
 STANDING=0;
@@ -45,6 +46,7 @@ FALLING=3;
 hsp = 0;
 vsp = 0;
 state = STANDING;
+isattack = false;
 
 show_debug_message(string(sprite_xoffset));
 </string>
@@ -71,9 +73,18 @@ show_debug_message(string(sprite_xoffset));
             <kind>1</kind>
             <string>///Sprite control
 
+if(hsp!=0){
+dir = sign(hsp);
+}
+
+if(isattack){
+sprite_index = spr_player_attack;
+image_speed = 0.5;
+}else{
+
 if(state &gt;= 2){
     sprite_index = spr_player_jump;
-    if(hsp!=0) image_xscale = sign(hsp);
+    image_xscale = dir;
 }else{
     if(hsp==0){
         sprite_index = spr_player_stand;
@@ -82,8 +93,10 @@ if(state &gt;= 2){
     }else{
         sprite_index = spr_player_walk;
         image_speed = 0.25;
-        image_xscale = sign(hsp);
+        image_xscale = dir;
     }
+}
+
 }
 </string>
           </argument>
@@ -120,7 +133,9 @@ key_jump = keyboard_check_pressed(vk_space);
 
 //key_left=-1;
 //Horizontal movement control
+if(!isattack){
 move = key_left+key_right;  //if pressing both right and left, movement cancels out
+}
 </string>
           </argument>
         </arguments>
@@ -144,7 +159,9 @@ move = key_left+key_right;  //if pressing both right and left, movement cancels 
             <string>///Movement, gravity, jump, state control
 
 //Horizontal movement control
+if(!isattack){
 hsp = move*MOVE_SPD;
+}
 
 //Gravity control
 vsp = min(vsp+grav,VSP_MAX);
@@ -156,7 +173,7 @@ if (collision_rectangle(bbox_left, bbox_bottom, bbox_right, bbox_bottom+1, obj_s
     state = STANDING;
     vsp = 0;
     
-    if(key_jump) {
+    if(key_jump&amp;&amp;!isattack) {
         state = JUMPING;
         vsp = -JUMP_SPD;
     }
@@ -311,6 +328,32 @@ y = floor(y+vsp);
         </arguments>
       </action>
     </event>
+    <event eventtype="7" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(sprite_index=spr_player_attack){
+sprite_index=spr_player_stand;
+isattack=false;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="7" enumb="4">
       <action>
         <libid>1</libid>
@@ -330,6 +373,34 @@ y = floor(y+vsp);
             <kind>1</kind>
             <string>if(!instance_exists(obj_camera)){
 instance_create(0,0,obj_camera)
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="88">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(!isattack){
+instance_create(x-sprite_width*(dir-1)/2,y+8,obj_pl_meleeatk);
+isattack=true;
+image_index=  0;
+hsp=0;
 }
 </string>
           </argument>
