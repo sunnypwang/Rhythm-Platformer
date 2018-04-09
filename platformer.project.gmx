@@ -91,6 +91,7 @@
       </sprites>
       <sprites name="Puzzle">
         <sprite>sprites\spr_key</sprite>
+        <sprite>sprites\spr_lockdoor</sprite>
       </sprites>
       <sprite>sprites\spr_chest</sprite>
       <sprite>sprites\spr_chestarrow</sprite>
@@ -328,6 +329,10 @@
     <objects name="Item">
       <objects name="Collectible">
         <object>objects\obj_note</object>
+      </objects>
+      <objects name="Puzzle">
+        <object>objects\obj_key</object>
+        <object>objects\obj_lockdoor</object>
       </objects>
       <object>objects\obj_chest</object>
     </objects>
