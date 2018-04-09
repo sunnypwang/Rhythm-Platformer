@@ -84,6 +84,8 @@
       <sprite>sprites\spr_player_stand</sprite>
       <sprite>sprites\spr_player_walk</sprite>
       <sprite>sprites\spr_player_jump</sprite>
+      <sprite>sprites\spr_player_hurt</sprite>
+      <sprite>sprites\spr_player_attack</sprite>
     </sprites>
     <sprites name="Item">
       <sprites name="Collectible">
@@ -95,6 +97,9 @@
       </sprites>
       <sprite>sprites\spr_chest</sprite>
       <sprite>sprites\spr_chestarrow</sprite>
+    </sprites>
+    <sprites name="Enemy">
+      <sprite>sprites\spr_blob</sprite>
     </sprites>
     <sprites name="System">
       <sprites name="HUD">
@@ -339,8 +344,8 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\room1</room>
-    <room>rooms\rm_tutorial</room>
     <room>rooms\rm_test</room>
+    <room>rooms\rm_tutorial</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
