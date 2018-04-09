@@ -114,6 +114,7 @@
     <sprite>sprites\spr_slope_r</sprite>
     <sprite>sprites\sprite4</sprite>
     <sprite>sprites\spr_circle</sprite>
+    <sprite>sprites\sprite22</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
