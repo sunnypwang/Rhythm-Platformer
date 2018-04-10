@@ -77,7 +77,13 @@ dir=-1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(vspeed=0){
+            <string>//Wall Collision
+scr_turnwall();
+
+//Enemy Collision
+scr_turnenemy();
+
+if(vspeed=0){
 hspeed = 0;
 }
 </string>
@@ -102,7 +108,7 @@ hspeed = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>dir=-dir;
+            <string>//dir=-dir;
 </string>
           </argument>
         </arguments>

@@ -299,7 +299,12 @@
     </scripts>
     <script>scripts\init_globals_music.gml</script>
     <script>scripts\init_globals.gml</script>
+    <scripts name="Enemy Behavior">
+      <script>scripts\scr_turnwall.gml</script>
+      <script>scripts\scr_turnenemy.gml</script>
+    </scripts>
   </scripts>
+  <shaders name="shaders"/>
   <objects name="objects">
     <objects name="Player">
       <object>objects\obj_player</object>

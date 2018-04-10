@@ -48,8 +48,61 @@ vsp = 0;
 state = STANDING;
 isattack = false;
 ishurt = false;
+invincible = false;
+
+//drawing variables
+color = c_white
+alpha = 1;
 
 show_debug_message(string(sprite_xoffset));
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Restore to Normal State (from Hurt state)
+ishurt = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="9">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Stop Invisibility
+invincible = false;
 </string>
           </argument>
         </arguments>
@@ -102,6 +155,12 @@ if(state &gt;= 2){
 
 if(ishurt){
      sprite_index = spr_player_hurt;
+}
+
+if(invincible){
+alpha = 0.5;
+}else{
+alpha = 1;
 }
 </string>
           </argument>
@@ -239,9 +298,6 @@ if(vsp != 0 and place_meeting(x,y+vsp,obj_solid)){      //if moving and collidin
         while(!place_meeting(x,y+sign(vsp),obj_solid)){ //move in 1 pixel until contact
             y += sign(vsp);
         }
-        if(ishurt){
-        ishurt = false;
-        }
         vsp = 0;
     }
           
@@ -353,12 +409,17 @@ y = floor(y+vsp);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(!ishurt){
+            <string>//Called only when hurted by something
+
+if(!ishurt&amp;&amp;!invincible){
 global.playerHp-=1;
-ishurt = 1;
+invincible=true;
+ishurt = true;
 hsp = -3*dir;
-vsp = -3;
+vsp = -5;
 y=y-3;
+alarm[9]=15; //remove invincibility
+alarm[10]=10;//return to normal state
 }
 </string>
           </argument>
@@ -411,6 +472,29 @@ isattack=false;
             <string>if(!instance_exists(obj_camera)){
 instance_create(0,0,obj_camera)
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, 1, 0, color, alpha );
 </string>
           </argument>
         </arguments>
