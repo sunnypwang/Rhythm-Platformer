@@ -93,6 +93,7 @@
     <sprites name="Item">
       <sprites name="Collectible">
         <sprite>sprites\spr_note</sprite>
+        <sprite>sprites\spr_heart</sprite>
       </sprites>
       <sprites name="Puzzle">
         <sprite>sprites\spr_key</sprite>
@@ -101,8 +102,9 @@
       <sprite>sprites\spr_chest</sprite>
       <sprite>sprites\spr_chestarrow</sprite>
     </sprites>
-	<sprites name="Enemy">
+    <sprites name="Enemy">
       <sprite>sprites\spr_blob</sprite>
+      <sprite>sprites\spr_blub</sprite>
     </sprites>
     <sprites name="System">
       <sprites name="HUD">
@@ -340,6 +342,7 @@
     <objects name="Item">
       <objects name="Collectible">
         <object>objects\obj_note</object>
+        <object>objects\obj_heart</object>
       </objects>
       <objects name="Puzzle">
         <object>objects\obj_key</object>
@@ -355,14 +358,15 @@
       </objects>
       <objects name="Common">
         <object>objects\obj_blob</object>
+        <object>objects\obj_blub</object>
       </objects>
     </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\room1</room>
+    <room>rooms\rm_test</room>
     <room>rooms\rm_tutorial</room>
     <room>rooms\rm_test_moving</room>
-    <room>rooms\rm_test</room>
     <room>rooms\TEMPLATE_ROOM</room>
   </rooms>
   <help>

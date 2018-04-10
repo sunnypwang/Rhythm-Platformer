@@ -47,6 +47,7 @@ hsp = 0;
 vsp = 0;
 state = STANDING;
 isattack = false;
+ishurt = false;
 
 show_debug_message(string(sprite_xoffset));
 </string>
@@ -80,7 +81,7 @@ dir = sign(hsp);
 if(isattack){
 sprite_index = spr_player_attack;
 image_speed = 0.5;
-}else{
+}else if(!ishurt){
 
 if(state &gt;= 2){
     sprite_index = spr_player_jump;
@@ -97,6 +98,10 @@ if(state &gt;= 2){
     }
 }
 
+}
+
+if(ishurt){
+     sprite_index = spr_player_hurt;
 }
 </string>
           </argument>
@@ -159,7 +164,7 @@ move = key_left+key_right;  //if pressing both right and left, movement cancels 
             <string>///Movement, gravity, jump, state control
 
 //Horizontal movement control
-if(!isattack){
+if(!isattack&amp;&amp;!ishurt){
 hsp = move*MOVE_SPD;
 }
 
@@ -173,7 +178,7 @@ if (collision_rectangle(bbox_left, bbox_bottom, bbox_right, bbox_bottom+1, obj_s
     state = STANDING;
     vsp = 0;
     
-    if(key_jump&amp;&amp;!isattack) {
+    if(key_jump&amp;&amp;!isattack&amp;&amp;!ishurt) {
         state = JUMPING;
         vsp = -JUMP_SPD;
     }
@@ -233,6 +238,9 @@ if(vsp != 0 and place_meeting(x,y+vsp,obj_solid)){      //if moving and collidin
     } else {
         while(!place_meeting(x,y+sign(vsp),obj_solid)){ //move in 1 pixel until contact
             y += sign(vsp);
+        }
+        if(ishurt){
+        ishurt = false;
         }
         vsp = 0;
     }
@@ -323,6 +331,35 @@ if (slope_up_inst != noone){    //if yes it will be that slope object id
 //update player to his next position
 x = floor(x+hsp);
 y = floor(y+vsp);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="25">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(!ishurt){
+global.playerHp-=1;
+ishurt = 1;
+hsp = -3*dir;
+vsp = -3;
+y=y-3;
+}
 </string>
           </argument>
         </arguments>
