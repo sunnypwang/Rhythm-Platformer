@@ -103,6 +103,9 @@
       <sprite>sprites\spr_chestarrow</sprite>
     </sprites>
     <sprites name="Enemy">
+      <sprites name="Mask">
+        <sprite>sprites\spr_enemymask</sprite>
+      </sprites>
       <sprite>sprites\spr_blob</sprite>
       <sprite>sprites\spr_blub</sprite>
     </sprites>
@@ -304,6 +307,7 @@
       <script>scripts\scr_turnenemy.gml</script>
       <script>scripts\scr_gravity.gml</script>
     </scripts>
+    <script>scripts\scr_cameramanage.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="Player">
