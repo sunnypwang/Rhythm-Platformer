@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_rhythmicparent</parentName>
+  <parentName>obj_deactenemyparent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>event_inherited()
 hp = 6;
+dir=1;
 color = c_white
 invincible = false;
 </string>
@@ -75,17 +76,7 @@ invincible=false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(place_meeting(x,y+vspeed,obj_solid)){
-while(!place_meeting(x,y+sign(vspeed),obj_solid)){ //move in 1 pixel until contact
-            y += sign(vspeed);
-}
-vspeed = 0;
-gravity=0;
-}else{
-gravity = 0.5;
-}
-
-vspeed = min(vspeed,3);
+            <string>scr_gravity(); //Manage everything that affact by gravity
 </string>
           </argument>
         </arguments>
@@ -193,7 +184,7 @@ with other event_user(15);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index, image_index, x, y, 1, 1, 0, color, 1 );
+            <string>draw_sprite_ext(sprite_index, image_index, x, y, dir, 1, 0, color, 1 );
 draw_text(x,y-16,hp);
 </string>
           </argument>

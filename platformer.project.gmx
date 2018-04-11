@@ -302,9 +302,9 @@
     <scripts name="Enemy Behavior">
       <script>scripts\scr_turnwall.gml</script>
       <script>scripts\scr_turnenemy.gml</script>
+      <script>scripts\scr_gravity.gml</script>
     </scripts>
   </scripts>
-  <shaders name="shaders"/>
   <objects name="objects">
     <objects name="Player">
       <object>objects\obj_player</object>
@@ -359,6 +359,7 @@
       <objects name="DO NOT USE">
         <objects name="Parent">
           <object>objects\obj_enemyparent</object>
+          <object>objects\obj_deactenemyparent</object>
         </objects>
       </objects>
       <objects name="Common">

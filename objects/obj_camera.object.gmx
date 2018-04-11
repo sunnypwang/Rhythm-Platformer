@@ -8,7 +8,7 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="3" enumb="0">
+    <event eventtype="3" enumb="2">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,8 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = view_xview[0]
-y = view_yview[0]
+            <string>x = view_xview[0]+obj_player;
+y = view_yview[0]+obj_player;
+
+//Deactivate instances outside the view
+instance_deactivate_object(obj_deactenemyparent);
+//instance_deactivate_object(obj_deactivateparent);
+
+//Activate deactivated instances inside the view
+instance_activate_region(view_xview[0]-32,view_yview[0]-32,view_wview[0]+64,view_hview[0]+64,true);
 </string>
           </argument>
         </arguments>
