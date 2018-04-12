@@ -71,24 +71,23 @@
     <instance objName="obj_chest" x="288" y="160" name="inst_F5A3656A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_chest" x="368" y="160" name="inst_5E9D253F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_chest" x="432" y="160" name="inst_50779890" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_chest" x="496" y="160" name="inst_C9188530" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_chest" x="560" y="160" name="inst_2BE5CAA9" locked="0" code="myitem = obj_key;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_lockdoor" x="656" y="144" name="inst_97383401" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_lockdoor" x="608" y="144" name="inst_CAF9E2AF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="608" y="96" name="inst_449140BF" locked="0" code="" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="608" y="128" name="inst_B03A6C10" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="624" y="96" name="inst_710DE412" locked="0" code="" scaleX="4.26666688919067" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_key" x="480" y="176" name="inst_342C2E0B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_blob" x="208" y="176" name="inst_8722FF5E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_heart" x="496" y="96" name="inst_15D9FD3A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_heart" x="400" y="96" name="inst_15D9FD3A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_heart" x="336" y="176" name="inst_E9533790" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_blob" x="128" y="112" name="inst_0B989873" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_blub" x="544" y="128" name="inst_C106855C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_blub" x="576" y="128" name="inst_C106855C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_blub" x="416" y="176" name="inst_E8215BAF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_switch_ff" x="272" y="176" name="inst_417A7606" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_switch_ff" x="464" y="176" name="inst_F5ED7A1C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_switch_s" x="592" y="176" name="inst_7B777F05" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_switch_s" x="352" y="176" name="inst_B9F90AB2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_goal" x="496" y="176" name="inst_60130CE3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="background1" x="0" y="0" w="16" h="16" xo="0" yo="0" id="10000203" name="inst_C317A8E1" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

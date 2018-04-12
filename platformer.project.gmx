@@ -117,6 +117,9 @@
       <sprite>sprites\spr_blob</sprite>
       <sprite>sprites\spr_blub</sprite>
     </sprites>
+    <sprites name="Level Progress">
+      <sprite>sprites\spr_goal</sprite>
+    </sprites>
     <sprites name="System">
       <sprites name="HUD">
         <sprite>sprites\spr_hud_lives</sprite>
@@ -327,6 +330,7 @@
         <object>objects\obj_pl_meleeatk</object>
       </objects>
       <object>objects\obj_deadplayer</object>
+      <object>objects\obj_goalplayer</object>
     </objects>
     <objects name="Collision">
       <objects name="Solid">
@@ -361,6 +365,7 @@
         <object>objects\obj_gameintro</object>
         <object>objects\obj_camera</object>
         <object>objects\obj_levelintro</object>
+        <object>objects\obj_levelresult</object>
       </objects>
     </objects>
     <objects name="Item">
@@ -392,6 +397,12 @@
         <object>objects\obj_blub</object>
       </objects>
     </objects>
+    <objects name="Level Progress">
+      <objects name="DO NOT USE">
+        <object>objects\obj_goal_statue</object>
+      </objects>
+      <object>objects\obj_goal</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\room1</room>
@@ -399,6 +410,7 @@
     <room>rooms\rm_test</room>
     <room>rooms\rm_tutorial</room>
     <room>rooms\rm_test_moving</room>
+    <room>rooms\rm_result</room>
     <room>rooms\TEMPLATE_ROOM</room>
   </rooms>
   <help>
