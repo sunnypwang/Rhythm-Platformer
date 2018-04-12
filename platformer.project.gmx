@@ -121,6 +121,8 @@
       <sprite>sprites\spr_goal</sprite>
       <sprite>sprites\spr_checkpoint_nonactive</sprite>
       <sprite>sprites\spr_checkpoint</sprite>
+      <sprite>sprites\spr_signpost</sprite>
+      <sprite>sprites\spr_dialog</sprite>
     </sprites>
     <sprites name="System">
       <sprites name="HUD">
@@ -404,9 +406,13 @@
     <objects name="Level Progress">
       <objects name="DO NOT USE">
         <object>objects\obj_goal_statue</object>
+        <object>objects\obj_message</object>
       </objects>
       <object>objects\obj_checkpoint</object>
       <object>objects\obj_goal</object>
+      <objects name="Event">
+        <object>objects\obj_signpost</object>
+      </objects>
     </objects>
   </objects>
   <rooms name="rooms">
