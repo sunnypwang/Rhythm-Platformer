@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[0]=60;
+            <string>global.beat=0;
+obj_persistent_rhythm.counting=false;
+alarm[0]=60;
 </string>
           </argument>
         </arguments>

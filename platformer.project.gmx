@@ -309,6 +309,7 @@
       <script>scripts\scr_gravity.gml</script>
     </scripts>
     <script>scripts\scr_cameramanage.gml</script>
+    <script>scripts\scr_setbpm.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="Player">
@@ -331,7 +332,7 @@
     </objects>
     <objects name="Rhythm">
       <objects name="Controller (DO NOT USE)">
-        <object>objects\obj_controller</object>
+        <object>objects\obj_levelcontrol</object>
         <object>objects\obj_rhythmicparent</object>
         <object>objects\obj_deactivateparent</object>
       </objects>
@@ -345,9 +346,10 @@
     </objects>
     <objects name="Control">
       <objects name="System">
-        <object>objects\obj_persistent_musicplayer</object>
-        <object>objects\obj_gameintro</object>
         <object>objects\obj_persistent</object>
+        <object>objects\obj_persistent_musicplayer</object>
+        <object>objects\obj_persistent_rhythm</object>
+        <object>objects\obj_gameintro</object>
         <object>objects\obj_camera</object>
         <object>objects\obj_levelintro</object>
       </objects>
