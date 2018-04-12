@@ -413,6 +413,13 @@ y = floor(y+vsp);
 
 if(!ishurt&amp;&amp;!invincible){
 global.playerHp-=1;
+if(global.playerHp&lt;=0){ //If dead
+
+instance_create(x,y,obj_deadplayer);
+instance_destroy()
+
+}else{
+
 invincible=true;
 ishurt = true;
 hsp = -3*dir;
@@ -420,6 +427,8 @@ vsp = -5;
 y=y-3;
 alarm[9]=15; //remove invincibility
 alarm[10]=10;//return to normal state
+
+}
 }
 </string>
           </argument>

@@ -3,7 +3,7 @@
   <spriteName>spr_chest</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>9</depth>
   <persistent>0</persistent>
   <parentName>obj_rhythmicparent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -77,7 +77,7 @@ myitem = noone;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(obj_player.x&gt;x-20&amp;&amp;obj_player.x&lt;x+20&amp;&amp;!opened){
+            <string>if(instance_exists(obj_player)&amp;&amp;obj_player.x&gt;x-20&amp;&amp;obj_player.x&lt;x+20&amp;&amp;!opened){
 openable = true;
 }else{
 openable = false;

@@ -3,6 +3,7 @@
 global.levelmusic = noone 
 
 global.hudnum = font_add_sprite(spr_hud_number, ord("0"), true, -1);
+global.font = font_add_sprite(spr_hud_font, ord("!"), true, 0);
 
 global.note = 0;
 global.key = 0;
