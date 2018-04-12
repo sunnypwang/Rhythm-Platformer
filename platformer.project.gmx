@@ -96,8 +96,16 @@
         <sprite>sprites\spr_heart</sprite>
       </sprites>
       <sprites name="Puzzle">
-        <sprite>sprites\spr_key</sprite>
-        <sprite>sprites\spr_lockdoor</sprite>
+        <sprites name="Locked Door">
+          <sprite>sprites\spr_key</sprite>
+          <sprite>sprites\spr_lockdoor</sprite>
+        </sprites>
+        <sprites name="Tempo Switches">
+          <sprite>sprites\spr_switch_ff</sprite>
+          <sprite>sprites\spr_switch_ff_pressed</sprite>
+          <sprite>sprites\spr_switch_s</sprite>
+          <sprite>sprites\spr_switch_s_pressed</sprite>
+        </sprites>
       </sprites>
       <sprite>sprites\spr_chest</sprite>
       <sprite>sprites\spr_chestarrow</sprite>
@@ -311,6 +319,7 @@
     <script>scripts\scr_cameramanage.gml</script>
     <script>scripts\scr_setbpm.gml</script>
   </scripts>
+  <shaders name="shaders"/>
   <objects name="objects">
     <objects name="Player">
       <object>objects\obj_player</object>
@@ -360,8 +369,14 @@
         <object>objects\obj_heart</object>
       </objects>
       <objects name="Puzzle">
-        <object>objects\obj_key</object>
-        <object>objects\obj_lockdoor</object>
+        <objects name="Locked Door">
+          <object>objects\obj_key</object>
+          <object>objects\obj_lockdoor</object>
+        </objects>
+        <objects name="Tempo Switches">
+          <object>objects\obj_switch_ff</object>
+          <object>objects\obj_switch_s</object>
+        </objects>
       </objects>
       <object>objects\obj_chest</object>
     </objects>
