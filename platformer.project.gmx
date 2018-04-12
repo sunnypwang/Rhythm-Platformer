@@ -119,6 +119,7 @@
     </sprites>
     <sprites name="Level Progress">
       <sprite>sprites\spr_goal</sprite>
+      <sprite>sprites\spr_goal_statue</sprite>
       <sprite>sprites\spr_checkpoint_nonactive</sprite>
       <sprite>sprites\spr_checkpoint</sprite>
       <sprite>sprites\spr_signpost</sprite>
@@ -350,6 +351,7 @@
       </objects>
     </objects>
     <objects name="Rhythm">
+      <object>objects\obj_RHYTHM_EXAMPLE</object>
       <objects name="Controller (DO NOT USE)">
         <object>objects\obj_levelcontrol</object>
         <object>objects\obj_rhythmicparent</object>
@@ -357,9 +359,7 @@
       </objects>
       <objects name="Test">
         <object>objects\obj_testmove</object>
-        <object>objects\obj_testplaymove</object>
         <object>objects\obj_testtoggle</object>
-        <object>objects\obj_testcoll</object>
         <object>objects\obj_testparent</object>
       </objects>
     </objects>
@@ -408,18 +408,24 @@
         <object>objects\obj_goal_statue</object>
         <object>objects\obj_message</object>
       </objects>
-      <object>objects\obj_checkpoint</object>
-      <object>objects\obj_goal</object>
       <objects name="Event">
         <object>objects\obj_signpost</object>
+      </objects>
+      <object>objects\obj_checkpoint</object>
+      <object>objects\obj_goal</object>
+    </objects>
+    <objects name="Level Elements">
+      <objects name="Generals">
+        <object>objects\obj_testcoll</object>
+        <object>objects\obj_testplaymove</object>
       </objects>
     </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\room1</room>
     <room>rooms\rm_lvintro</room>
-    <room>rooms\rm_test</room>
     <room>rooms\rm_tutorial</room>
+    <room>rooms\rm_test</room>
     <room>rooms\rm_test_moving</room>
     <room>rooms\rm_result</room>
     <room>rooms\TEMPLATE_ROOM</room>

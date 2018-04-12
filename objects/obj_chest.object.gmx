@@ -77,7 +77,7 @@ myitem = noone;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(instance_exists(obj_player)&amp;&amp;obj_player.x&gt;x-20&amp;&amp;obj_player.x&lt;x+20&amp;&amp;!opened){
+            <string>if(instance_exists(obj_player)&amp;&amp;obj_player.x&gt;x-20&amp;&amp;obj_player.x&lt;x+20&amp;&amp;obj_player.y&gt;y-20&amp;&amp;obj_player.y&lt;y+20&amp;&amp;!opened){
 openable = true;
 }else{
 openable = false;
