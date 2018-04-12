@@ -55,6 +55,8 @@ color = c_white
 alpha = 1;
 
 show_debug_message(string(sprite_xoffset));
+
+scr_setstartposition();
 </string>
           </argument>
         </arguments>

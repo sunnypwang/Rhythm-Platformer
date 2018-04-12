@@ -119,6 +119,8 @@
     </sprites>
     <sprites name="Level Progress">
       <sprite>sprites\spr_goal</sprite>
+      <sprite>sprites\spr_checkpoint_nonactive</sprite>
+      <sprite>sprites\spr_checkpoint</sprite>
     </sprites>
     <sprites name="System">
       <sprites name="HUD">
@@ -321,6 +323,7 @@
     </scripts>
     <script>scripts\scr_cameramanage.gml</script>
     <script>scripts\scr_setbpm.gml</script>
+    <script>scripts\scr_setstartposition.gml</script>
   </scripts>
   <shaders name="shaders"/>
   <objects name="objects">
@@ -331,6 +334,7 @@
       </objects>
       <object>objects\obj_deadplayer</object>
       <object>objects\obj_goalplayer</object>
+      <object>objects\obj_playercheckpoint</object>
     </objects>
     <objects name="Collision">
       <objects name="Solid">
@@ -401,6 +405,7 @@
       <objects name="DO NOT USE">
         <object>objects\obj_goal_statue</object>
       </objects>
+      <object>objects\obj_checkpoint</object>
       <object>objects\obj_goal</object>
     </objects>
   </objects>
