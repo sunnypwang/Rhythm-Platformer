@@ -17,3 +17,24 @@ global.key = 0;
 
 global.life = 1;
 global.playerHp = 8;
+
+//Total Level Count
+global.levelmax = 6;
+
+//Current Playing Level
+global.level = 0;
+
+//Initialize moon system
+//0: Not collected
+//1: Collected, not saved
+//2: Collected, saved with checkpoint
+//3: Collected, saved with level completion. (Adds to global.moon_count)
+for (var i = 0; i < 3; i++) {
+
+    global.moon[i] = ds_map_create();
+    for (var j = 0; j < global.levelmax; j++)
+        ds_map_add(global.moon[i],j,0);
+}
+
+//Counts number of moons collected in the entire game
+global.mooncount = 0;

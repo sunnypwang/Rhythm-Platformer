@@ -89,11 +89,14 @@
       <sprites name="spr_meleeatk">
         <sprite>sprites\spr_meleeatk</sprite>
       </sprites>
+      <sprite>sprites\spr_player_mask</sprite>
     </sprites>
     <sprites name="Item">
       <sprites name="Collectible">
         <sprite>sprites\spr_note</sprite>
         <sprite>sprites\spr_heart</sprite>
+        <sprite>sprites\spr_moon</sprite>
+        <sprite>sprites\spr_moon_collected</sprite>
       </sprites>
       <sprites name="Puzzle">
         <sprites name="Locked Door">
@@ -137,19 +140,27 @@
         <sprite>sprites\spr_hud_font</sprite>
       </sprites>
     </sprites>
+    <sprites name="Collision">
+      <sprite>sprites\spr_solid</sprite>
+      <sprite>sprites\spr_hurt</sprite>
+      <sprite>sprites\spr_instakill</sprite>
+      <sprite>sprites\spr_slope_end</sprite>
+      <sprite>sprites\spr_slope</sprite>
+      <sprite>sprites\spr_slope_r</sprite>
+    </sprites>
     <sprite>sprites\spr_player</sprite>
-    <sprite>sprites\spr_solid</sprite>
     <sprite>sprites\spr_testplt</sprite>
-    <sprite>sprites\spr_slope_end</sprite>
-    <sprite>sprites\spr_slope</sprite>
-    <sprite>sprites\spr_slope_r</sprite>
-    <sprite>sprites\sprite4</sprite>
     <sprite>sprites\spr_circle</sprite>
     <sprite>sprites\sprite22</sprite>
+    <sprite>sprites\sprite4</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
     <background>background\background1</background>
+    <backgrounds name="Background">
+      <background>background\bgr_cloudfg</background>
+      <background>background\bgr_clouds</background>
+    </backgrounds>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -328,7 +339,6 @@
     <script>scripts\scr_setbpm.gml</script>
     <script>scripts\scr_setstartposition.gml</script>
   </scripts>
-  <shaders name="shaders"/>
   <objects name="objects">
     <objects name="Player">
       <object>objects\obj_player</object>
@@ -348,6 +358,10 @@
         <object>objects\obj_slope_1x1_r</object>
         <object>objects\obj_slope_end</object>
         <object>objects\obj_slope</object>
+      </objects>
+      <objects name="Hurt">
+        <object>objects\obj_hurt</object>
+        <object>objects\obj_instakill</object>
       </objects>
     </objects>
     <objects name="Rhythm">
@@ -372,12 +386,14 @@
         <object>objects\obj_camera</object>
         <object>objects\obj_levelintro</object>
         <object>objects\obj_levelresult</object>
+        <object>objects\obj_parallax</object>
       </objects>
     </objects>
     <objects name="Item">
       <objects name="Collectible">
         <object>objects\obj_note</object>
         <object>objects\obj_heart</object>
+        <object>objects\obj_moon</object>
       </objects>
       <objects name="Puzzle">
         <objects name="Locked Door">
