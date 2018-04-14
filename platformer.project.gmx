@@ -94,6 +94,8 @@
       <sprites name="Collectible">
         <sprite>sprites\spr_note</sprite>
         <sprite>sprites\spr_heart</sprite>
+        <sprite>sprites\spr_moon</sprite>
+        <sprite>sprites\spr_moon_collected</sprite>
       </sprites>
       <sprites name="Puzzle">
         <sprites name="Locked Door">
@@ -137,15 +139,19 @@
         <sprite>sprites\spr_hud_font</sprite>
       </sprites>
     </sprites>
+    <sprites name="Collision">
+      <sprite>sprites\spr_solid</sprite>
+      <sprite>sprites\spr_hurt</sprite>
+      <sprite>sprites\spr_instakill</sprite>
+      <sprite>sprites\spr_slope_end</sprite>
+      <sprite>sprites\spr_slope</sprite>
+      <sprite>sprites\spr_slope_r</sprite>
+    </sprites>
     <sprite>sprites\spr_player</sprite>
-    <sprite>sprites\spr_solid</sprite>
     <sprite>sprites\spr_testplt</sprite>
-    <sprite>sprites\spr_slope_end</sprite>
-    <sprite>sprites\spr_slope</sprite>
-    <sprite>sprites\spr_slope_r</sprite>
-    <sprite>sprites\sprite4</sprite>
     <sprite>sprites\spr_circle</sprite>
     <sprite>sprites\sprite22</sprite>
+    <sprite>sprites\sprite4</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -349,6 +355,10 @@
         <object>objects\obj_slope_end</object>
         <object>objects\obj_slope</object>
       </objects>
+      <objects name="Hurt">
+        <object>objects\obj_hurt</object>
+        <object>objects\obj_instakill</object>
+      </objects>
     </objects>
     <objects name="Rhythm">
       <object>objects\obj_RHYTHM_EXAMPLE</object>
@@ -378,6 +388,7 @@
       <objects name="Collectible">
         <object>objects\obj_note</object>
         <object>objects\obj_heart</object>
+        <object>objects\obj_moon</object>
       </objects>
       <objects name="Puzzle">
         <objects name="Locked Door">
