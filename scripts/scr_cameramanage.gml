@@ -7,7 +7,5 @@ desty = max(0,min(obj_player.y-120,room_height-240));
 
 }
 
-//if(obj_player.x>destx
-
 view_xview[0] = destx;
 view_yview[0] = desty;

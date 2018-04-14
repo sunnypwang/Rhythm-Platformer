@@ -89,6 +89,7 @@
       <sprites name="spr_meleeatk">
         <sprite>sprites\spr_meleeatk</sprite>
       </sprites>
+      <sprite>sprites\spr_player_mask</sprite>
     </sprites>
     <sprites name="Item">
       <sprites name="Collectible">
@@ -156,6 +157,10 @@
   <backgrounds name="background">
     <background>background\background0</background>
     <background>background\background1</background>
+    <backgrounds name="Background">
+      <background>background\bgr_cloudfg</background>
+      <background>background\bgr_clouds</background>
+    </backgrounds>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -334,7 +339,6 @@
     <script>scripts\scr_setbpm.gml</script>
     <script>scripts\scr_setstartposition.gml</script>
   </scripts>
-  <shaders name="shaders"/>
   <objects name="objects">
     <objects name="Player">
       <object>objects\obj_player</object>
@@ -382,6 +386,7 @@
         <object>objects\obj_camera</object>
         <object>objects\obj_levelintro</object>
         <object>objects\obj_levelresult</object>
+        <object>objects\obj_parallax</object>
       </objects>
     </objects>
     <objects name="Item">
