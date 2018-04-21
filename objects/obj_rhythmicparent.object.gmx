@@ -52,21 +52,21 @@ elapsebeat = 0;
             <kind>1</kind>
             <string>if(global.beat&gt;=1){
 if(ready){
-elapsebeat+=1;
+//elapsebeat+=1;
+
+if(global.beatelapse%beatperstep==0&amp;&amp;global.beatelapse&gt;0){
+event_user(1);
+//image_index=1;
+//elapsebeat = 0;
+}
+
 ready=0;
 }
 }else{
 ready = 1;
 }
 
-if(elapsebeat&gt;=beatperstep){
-event_user(1);
-//image_index=1;
-elapsebeat = 0;
-}else{
-event_user(0);
-//image_index=0;
-}
+
 </string>
           </argument>
         </arguments>
