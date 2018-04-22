@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-10</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,57 +25,35 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Initialize Menu
+            <string>//Pause Music
+FMODInstanceSetPaused(global._stream,true); 
 
+//Create Background
 
-//Initiate Variables
-key_up = 0;
-key_down =0;
-key_confirm =0;
-key_cancel =0;
+back = background_create_from_surface(application_surface,0,0,848,480,0,0)
+
+//Initialize Variables
+
+font = global.font;
 
 selectIndex = 0;
+menuMax = 4;
 
-menuMax=6;
+key_up = 0;
+key_down = 0;
+key_confirm = 0;
+key_cancel = 0;
 
-levelname="";
-levelauthor="";
-levelsong="";
-levelbpm="";
-levelsongartist="";
+menuText[0] = "Return to Game"
+menuText[1] = "Restart Level"
+menuText[2] = "Toggle Metronome"
+menuText[3] = "Return to Menu"
 
-instance_create(39,45,obj_menu_arrow_up);
-instance_create(39,225,obj_menu_arrow_down);
-lvcursor = instance_create(23,54,obj_lvcursor);
+event_user(2);
 
-//Play Music
-obj_persistent_rhythm.counting = true;
-scr_setbpm(160);
-global._stream = FMODSoundLoop(global._theme_menu, 0);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>FMODInstanceStop(global._stream);
-room_goto(rm_lvintro)
+instance_deactivate_all(1);
+instance_activate_object(obj_persistent);
+//instance_activate_object(obj_persistent_rhythm);
 </string>
           </argument>
         </arguments>
@@ -149,57 +127,17 @@ event_user(0);
 }
 
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Setting Display Information
-
-switch (selectIndex)
-{
-case 0:
-levelname="Tutorial";
-levelauthor="Kirbio";
-levelsong="Rhythmortis";
-levelbpm="130";
-levelsongartist="Danny Baranowsky";
-break;
-case 1:
-levelname="FrostFire Peak";
-levelauthor="Kirbio";
-levelsong="Neon Paradise (ATS Version)";
-levelbpm="109";
-levelsongartist="Falk, DJ Max-E";
-break;
-default:
-levelname="NOT_SET_YET";
-levelauthor="-";
-levelsong="None";
-levelbpm="-";
-levelsongartist="-";
-;
+//Cancel
+if(key_cancel){
+instance_activate_all();
+instance_destroy()
 }
-
 </string>
           </argument>
         </arguments>
       </action>
+    </event>
+    <event eventtype="7" enumb="12">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -216,8 +154,12 @@ levelsongartist="-";
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Set Cursor Position
-lvcursor.y = 54+27*selectIndex;
+            <string>/// Set Metronome Choice Text
+if(global.metronome){
+menuText[2] = "Metronome On"
+}else{
+menuText[2] = "Metronome Off"
+}
 </string>
           </argument>
         </arguments>
@@ -240,9 +182,35 @@ lvcursor.y = 54+27*selectIndex;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Confirmed Choice and setting appropiate variable
+            <string>///Confirming Choice
 
-alarm[0]=1;
+switch(selectIndex){
+case 0:
+FMODInstanceSetPaused(global._stream,false); 
+instance_activate_all();
+instance_destroy()
+break;
+case 1:
+instance_activate_all();
+FMODInstanceStop(global._stream);
+room_goto(rm_lvintro)
+instance_destroy()
+break;
+case 2:
+global.metronome = !global.metronome;
+event_user(2);
+break;
+case 3:
+instance_activate_all();
+FMODInstanceStop(global._stream);
+room_goto(rm_menu)
+instance_destroy()
+break;
+default:
+show_debug_message("error");
+break;
+}
+
 </string>
           </argument>
         </arguments>
@@ -266,30 +234,34 @@ alarm[0]=1;
           <argument>
             <kind>1</kind>
             <string>draw_set_font(global.font);
+draw_set_halign(fa_center);
 
-//Draw "Stage Select"
-draw_sprite(spr_stageselecttext,0,13,8);
+//Draw the screenshot if it exists
+if (background_exists(back)) {
 
-//Draw Stage Icons
-for(i=0;i&lt;6;i+=1){
-draw_sprite(spr_lvicon,0,23,54+27*i);
+    //Disable alpha blending
+    draw_enable_alphablend(0);
+    
+    //Draw screenshot
+    draw_background_ext(back,view_xview[0],view_yview[0],0.5,0.5,0,c_white,1);
+    
+    //Enable alpha blending
+    draw_enable_alphablend(1);
 }
 
+//Draw the message box
+draw_sprite_ext(spr_pause,0,view_xview[0]+114,view_yview[0]+66,1,1,0,c_white,0.9);
 
-//Draw Stage Info Panel
-draw_sprite(spr_menuback,0,72,35);
-
-draw_sprite(spr_lvpreview,0,98,56);
-
-draw_text(206,57,levelname);
-draw_text(206,80,"Author: "+levelauthor);
-draw_text(206,103,"Difficulty: 5");
-
-draw_text(98,128,"Music: "+levelsong);
-draw_text(98,150,"BPM: "+levelbpm);
-draw_text(98,173,"Composer: "+levelsongartist);
-
-draw_text(347,80,"Rank");
+for(i=0;i&lt;4;i+=1){
+if(selectIndex==i){
+draw_set_alpha(1);
+}else{
+draw_set_alpha(0.5);
+}
+draw_text(view_xview[0]+(view_wview[0]/2),view_yview[0]+86+19*i,menuText[i]);
+}
+draw_set_alpha(1);
+draw_set_halign(fa_left);
 </string>
           </argument>
         </arguments>

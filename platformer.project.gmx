@@ -194,6 +194,9 @@
           <sprite>sprites\spr_switch_s</sprite>
           <sprite>sprites\spr_switch_s_pressed</sprite>
         </sprites>
+        <sprites name="Rhythm">
+          <sprite>sprites\spr_rhythmarrow</sprite>
+        </sprites>
       </sprites>
       <sprite>sprites\spr_chest</sprite>
       <sprite>sprites\spr_chestarrow</sprite>
@@ -223,6 +226,7 @@
         <sprite>sprites\spr_hud_number</sprite>
         <sprite>sprites\spr_hud_hp</sprite>
         <sprite>sprites\spr_hud_font</sprite>
+        <sprite>sprites\spr_pause</sprite>
       </sprites>
     </sprites>
     <sprites name="Collision">
@@ -233,6 +237,14 @@
       <sprite>sprites\spr_slope</sprite>
       <sprite>sprites\spr_slope_r</sprite>
     </sprites>
+    <sprites name="Menu">
+      <sprite>sprites\spr_lvicon</sprite>
+      <sprite>sprites\spr_menuarrow</sprite>
+      <sprite>sprites\spr_lvpreview</sprite>
+      <sprite>sprites\spr_stageselecttext</sprite>
+      <sprite>sprites\spr_lvcursor</sprite>
+      <sprite>sprites\spr_menuback</sprite>
+    </sprites>
     <sprite>sprites\spr_player</sprite>
     <sprite>sprites\spr_testplt</sprite>
     <sprite>sprites\spr_circle</sprite>
@@ -242,6 +254,9 @@
   <backgrounds name="background">
     <background>background\background0</background>
     <background>background\background1</background>
+    <backgrounds name="Menu">
+      <background>background\bg_menu</background>
+    </backgrounds>
     <backgrounds name="Background">
       <background>background\bgr_cloudfg</background>
       <background>background\bgr_clouds</background>
@@ -469,6 +484,11 @@
           <object>objects\obj_levelintro</object>
           <object>objects\obj_levelresult</object>
           <object>objects\obj_menu</object>
+          <objects name="Menu Assets">
+            <object>objects\obj_menu_arrow_up</object>
+            <object>objects\obj_menu_arrow_down</object>
+            <object>objects\obj_lvcursor</object>
+          </objects>
         </objects>
         <objects name="Levels">
           <object>objects\obj_camera</object>
@@ -497,6 +517,9 @@
           <object>objects\obj_switch_s</object>
         </objects>
       </objects>
+      <objects name="Rhythm">
+        <object>objects\obj_rhythmarrow</object>
+      </objects>
       <object>objects\obj_chest</object>
     </objects>
     <objects name="Enemy">
@@ -515,6 +538,7 @@
       <objects name="DO NOT USE">
         <object>objects\obj_goal_statue</object>
         <object>objects\obj_message</object>
+        <object>objects\obj_pause</object>
       </objects>
       <objects name="Event">
         <object>objects\obj_signpost</object>
@@ -531,9 +555,9 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\room1</room>
+    <room>rooms\rm_menu</room>
     <room>rooms\rm_lvintro</room>
     <room>rooms\rm_tutorial</room>
-    <room>rooms\rm_menu</room>
     <room>rooms\rm_test</room>
     <room>rooms\rm_test_moving</room>
     <room>rooms\rm_result</room>

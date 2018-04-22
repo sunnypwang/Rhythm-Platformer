@@ -52,7 +52,7 @@
   </views>
   <instances>
     <instance objName="obj_solid" x="0" y="0" name="inst_213E38C1" locked="0" code="" scaleX="1" scaleY="-0.0322580635547638" colour="4294967295" rotation="0"/>
-    <instance objName="obj_levelcontrol" x="0" y="0" name="inst_25C8553A" locked="0" code="levelmusic = global._theme_tutorial;&#xA;scr_setbpm(130);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_levelcontrol" x="0" y="0" name="inst_25C8553A" locked="0" code="levelmusic = global._theme_tutorial;&#xA;scr_setbpm(130);" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player" x="48" y="160" name="inst_5EB0D996" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="16" y="32" name="inst_31A13E55" locked="0" code="" scaleX="1" scaleY="10" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="32" y="16" name="inst_A4F01BFE" locked="0" code="" scaleX="44" scaleY="1" colour="4294967295" rotation="0"/>
@@ -117,6 +117,7 @@
     <instance objName="obj_hurt" x="288" y="192" name="inst_26CD34F8" locked="0" code="" scaleX="2" scaleY="-1" colour="4294967295" rotation="0"/>
     <instance objName="obj_instakill" x="864" y="176" name="inst_1E4F3A1E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_parallax" x="16" y="0" name="inst_D0141F89" locked="0" code="parallax[0]=0.3;&#xA;parallax[1]=0.5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_rhythmarrow" x="96" y="96" name="inst_6C2FE279" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="background1" x="0" y="0" w="16" h="16" xo="0" yo="0" id="10000203" name="inst_C317A8E1" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

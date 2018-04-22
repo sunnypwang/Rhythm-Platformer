@@ -6,6 +6,8 @@ global.bpm = 120;
 global.mspb = 0;
 global.beat = 0;
 
+global.metronome = false;
+
 global.switcheffect = false;
 global.checkpoint = false;
 
