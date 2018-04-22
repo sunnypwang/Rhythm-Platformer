@@ -250,6 +250,11 @@
       <background>background\bgr_cloudfg</background>
       <background>background\bgr_clouds</background>
     </backgrounds>
+    <background>background\background5</background>
+    <background>background\background6</background>
+    <background>background\background7</background>
+    <background>background\background8</background>
+    <background>background\background9</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
