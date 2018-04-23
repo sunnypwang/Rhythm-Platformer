@@ -51,7 +51,6 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="obj_controller" x="0" y="0" name="inst_A14F0B35" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="0" y="16" name="inst_1B37EAAE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="0" y="32" name="inst_8F04BD09" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="0" y="48" name="inst_6178CB99" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -320,13 +319,6 @@
     <instance objName="obj_solid" x="1120" y="112" name="inst_054EF6E6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="1120" y="128" name="inst_C456213B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="1136" y="112" name="inst_2EE57241" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_note_HIdden" x="944" y="160" name="inst_3A41F2C4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_note_HIdden" x="976" y="160" name="inst_C931D3C4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_note_HIdden" x="1008" y="160" name="inst_8FF78578" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_note_HIdden" x="1296" y="96" name="inst_0355B9AC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_note_HIdden" x="1312" y="80" name="inst_A2595D8B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_note_HIdden" x="1328" y="96" name="inst_80F46B36" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_note_HIdden" x="1312" y="112" name="inst_16603E21" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="1280" y="80" name="inst_3F4A6A93" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="1280" y="112" name="inst_18BB26B2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="1280" y="96" name="inst_026D694E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -496,6 +488,7 @@
     <instance objName="obj_note" x="2288" y="96" name="inst_23A05797" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_note" x="2288" y="128" name="inst_543E99E1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player" x="48" y="144" name="inst_4CA05BA4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_levelcontrol" x="0" y="0" name="inst_C587CCC0" locked="0" code="levelmusic = global._theme_tutorial;&#xA;scr_setbpm(130);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="background1" x="0" y="32" w="16" h="16" xo="0" yo="0" id="10000765" name="inst_BD9B0D24" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

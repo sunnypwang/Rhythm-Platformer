@@ -429,6 +429,7 @@
     <room>rooms\rm_test_moving</room>
     <room>rooms\rm_test</room>
     <room>rooms\TEMPLATE_ROOM</room>
+	 <room>rooms\room_night</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

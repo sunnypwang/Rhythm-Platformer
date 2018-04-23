@@ -207,6 +207,11 @@
       </sprites>
       <sprite>sprites\spr_blob</sprite>
       <sprite>sprites\spr_blub</sprite>
+      <sprites name="Night stage ">
+        <sprite>sprites\sprite41_spr_blob_Inv_0</sprite>
+        <sprite>sprites\sprite42_spr_blob_Tel_0</sprite>
+        <sprite>sprites\sprite43_spr_blob_Inv2_0</sprite>
+      </sprites>
     </sprites>
     <sprites name="Level Progress">
       <sprite>sprites\spr_goal</sprite>
@@ -258,6 +263,17 @@
     <sprite>sprites\spr_circle</sprite>
     <sprite>sprites\sprite22</sprite>
     <sprite>sprites\sprite4</sprite>
+    <sprite>sprites\sprite31_Foreground1</sprite>
+    <sprites name="NIght stage">
+      <sprite>sprites\sprite33_spr_testplt_Night</sprite>
+      <sprite>sprites\sprite39_Disapper2</sprite>
+      <sprite>sprites\sprite34_spr_testplt_Ver</sprite>
+      <sprite>sprites\sprite35_Disapper</sprite>
+      <sprite>sprites\sprite36_Foreground1</sprite>
+      <sprite>sprites\sprite37_spr_testplt_Hor</sprite>
+      <sprite>sprites\sprite32_Disapper</sprite>
+      <sprite>sprites\sprite40_Disapper2</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -562,12 +578,45 @@
         <object>objects\obj_testplaymove</object>
       </objects>
     </objects>
+    <objects name="room_night_unique">
+      <object>objects\object_Extend_Hor</object>
+      <object>objects\object_blind</object>
+      <object>objects\object_Still</object>
+      <object>objects\object_move_hor1</object>
+      <object>objects\object_move_squareUL1</object>
+      <object>objects\object_move_squareUR1</object>
+      <object>objects\object_move_squareDR1</object>
+      <object>objects\object_move_squareDL1</object>
+      <object>objects\object_move_hor2</object>
+      <object>objects\object_move_hor2_V_R</object>
+      <object>objects\object_move_hor3</object>
+      <object>objects\object_move_hor3_R</object>
+      <object>objects\object_move_Ver1</object>
+      <object>objects\object_move_Ver2</object>
+      <object>objects\object_move_Ver2_H</object>
+      <object>objects\object_move_Ver2_H_R</object>
+      <object>objects\object_move_Hor2_H_R</object>
+      <object>objects\object_move_Ver3</object>
+    </objects>
+    <objects name="Night Stage">
+      <object>objects\obj_parent_night</object>
+      <object>objects\obj_Inv</object>
+      <object>objects\object_Tel_parent</object>
+      <object>objects\obj_Tel_R_3</object>
+      <object>objects\obj_Tel_R_4_Slow</object>
+      <object>objects\obj_Tel_R_4_Slow_R</object>
+      <object>objects\obj_Tel_V_3</object>
+    </objects>
+    <objects name="ForeGround">
+      <object>objects\Fore_Ground</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\room1</room>
     <room>rooms\rm_menu</room>
     <room>rooms\rm_lvintro</room>
     <room>rooms\rm_tutorial</room>
+    <room>rooms\room_night</room>
     <room>rooms\rm_tutorial_actual</room>
     <room>rooms\rm_test</room>
     <room>rooms\rm_test_moving</room>
