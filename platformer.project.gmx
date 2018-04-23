@@ -216,6 +216,14 @@
       <sprite>sprites\spr_signpost</sprite>
       <sprite>sprites\spr_dialog</sprite>
     </sprites>
+    <sprites name="Level Elements">
+      <sprites name="General">
+        <sprite>sprites\spr_toggleb_r_empty</sprite>
+        <sprite>sprites\spr_toggleb_r</sprite>
+        <sprite>sprites\spr_toggleb_b_empty</sprite>
+        <sprite>sprites\spr_toggleb_b</sprite>
+      </sprites>
+    </sprites>
     <sprites name="System">
       <sprites name="HUD">
         <sprite>sprites\spr_hud_lives</sprite>
@@ -245,8 +253,8 @@
       <sprite>sprites\spr_lvcursor</sprite>
       <sprite>sprites\spr_menuback</sprite>
     </sprites>
-    <sprite>sprites\spr_player</sprite>
     <sprite>sprites\spr_testplt</sprite>
+    <sprite>sprites\spr_player</sprite>
     <sprite>sprites\spr_circle</sprite>
     <sprite>sprites\sprite22</sprite>
     <sprite>sprites\sprite4</sprite>
@@ -548,6 +556,8 @@
     </objects>
     <objects name="Level Elements">
       <objects name="Generals">
+        <object>objects\obj_toggleb_r</object>
+        <object>objects\obj_toggleb_b</object>
         <object>objects\obj_testcoll</object>
         <object>objects\obj_testplaymove</object>
       </objects>
@@ -558,6 +568,7 @@
     <room>rooms\rm_menu</room>
     <room>rooms\rm_lvintro</room>
     <room>rooms\rm_tutorial</room>
+    <room>rooms\rm_tutorial_actual</room>
     <room>rooms\rm_test</room>
     <room>rooms\rm_test_moving</room>
     <room>rooms\rm_result</room>
