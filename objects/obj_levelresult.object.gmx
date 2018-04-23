@@ -60,7 +60,7 @@ alarm[0]=60;
           <argument>
             <kind>1</kind>
             <string>/// Sent from Into to Appropiate Room
-room_goto(rm_lvintro)
+room_goto(rm_menu)
 </string>
           </argument>
         </arguments>
@@ -88,9 +88,9 @@ draw_set_font(global.font);
 draw_set_halign(fa_center);
 
 draw_text(212,80,"Result");
-draw_text(212,120,"F");
-draw_text(212,150,"You suck");
-draw_text(212,180,"(It's a place holder anyways, real Result comes later)");
+draw_text(212,120,"N/A");
+draw_text(212,150,"-Insert Text Here-");
+draw_text(212,180,"(WIP)");
 
 draw_set_halign(fa_left);
 </string>

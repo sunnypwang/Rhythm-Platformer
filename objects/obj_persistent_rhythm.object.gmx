@@ -29,6 +29,7 @@
 global.beat = 0;
 global.bpm = 130;
 global.mspb = (60/global.bpm)*1000000;
+global.beatelapse = 0;
 fmsb = -1;
 
 counting = false
@@ -60,6 +61,11 @@ time+=delta_time;
 global.beat = time/global.mspb;
 if(time&gt;=global.mspb){
 time-=global.mspb;
+global.beatelapse+=1;
+if(global.metronome){
+audio_play_sound(snd_metronome, 11, false);
+}
+//show_debug_message(global.beatelapse);
 //beat=1;
 }
 }
