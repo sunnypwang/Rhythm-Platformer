@@ -3,8 +3,25 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="6" name="datafiles">
-    <datafiles number="6" name="music">
+  <datafiles number="11" name="datafiles">
+    <datafiles number="11" name="music">
+      <datafile>
+        <name>bgm_menu.ogg</name>
+        <exists>-1</exists>
+        <size>2069450</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>bgm_menu.ogg</filename>
+      </datafile>
       <datafile>
         <name>bgm_tutorial.ogg</name>
         <exists>-1</exists>
@@ -21,6 +38,74 @@
           </Config>
         </ConfigOptions>
         <filename>bgm_tutorial.ogg</filename>
+      </datafile>
+      <datafile>
+        <name>bgm_icemnt.ogg</name>
+        <exists>-1</exists>
+        <size>10531197</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>bgm_icemnt.ogg</filename>
+      </datafile>
+      <datafile>
+        <name>bgm_lab.ogg</name>
+        <exists>-1</exists>
+        <size>3105484</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>bgm_lab.ogg</filename>
+      </datafile>
+      <datafile>
+        <name>bgm_skyblock.ogg</name>
+        <exists>-1</exists>
+        <size>3565911</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>bgm_skyblock.ogg</filename>
+      </datafile>
+      <datafile>
+        <name>bgm_village.ogg</name>
+        <exists>-1</exists>
+        <size>8499376</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>bgm_village.ogg</filename>
       </datafile>
     </datafiles>
     <datafile>
@@ -89,15 +174,29 @@
       <sprites name="spr_meleeatk">
         <sprite>sprites\spr_meleeatk</sprite>
       </sprites>
+      <sprite>sprites\spr_player_mask</sprite>
     </sprites>
     <sprites name="Item">
       <sprites name="Collectible">
         <sprite>sprites\spr_note</sprite>
         <sprite>sprites\spr_heart</sprite>
+        <sprite>sprites\spr_moon</sprite>
+        <sprite>sprites\spr_moon_collected</sprite>
       </sprites>
       <sprites name="Puzzle">
-        <sprite>sprites\spr_key</sprite>
-        <sprite>sprites\spr_lockdoor</sprite>
+        <sprites name="Locked Door">
+          <sprite>sprites\spr_key</sprite>
+          <sprite>sprites\spr_lockdoor</sprite>
+        </sprites>
+        <sprites name="Tempo Switches">
+          <sprite>sprites\spr_switch_ff</sprite>
+          <sprite>sprites\spr_switch_ff_pressed</sprite>
+          <sprite>sprites\spr_switch_s</sprite>
+          <sprite>sprites\spr_switch_s_pressed</sprite>
+        </sprites>
+        <sprites name="Rhythm">
+          <sprite>sprites\spr_rhythmarrow</sprite>
+        </sprites>
       </sprites>
       <sprite>sprites\spr_chest</sprite>
       <sprite>sprites\spr_chestarrow</sprite>
@@ -108,10 +207,21 @@
       </sprites>
       <sprite>sprites\spr_blob</sprite>
       <sprite>sprites\spr_blub</sprite>
-      <sprites name="Night stage ">
-        <sprite>sprites\sprite41_spr_blob_Inv_0</sprite>
-        <sprite>sprites\sprite42_spr_blob_Tel_0</sprite>
-        <sprite>sprites\sprite43_spr_blob_Inv2_0</sprite>
+    </sprites>
+    <sprites name="Level Progress">
+      <sprite>sprites\spr_goal</sprite>
+      <sprite>sprites\spr_goal_statue</sprite>
+      <sprite>sprites\spr_checkpoint_nonactive</sprite>
+      <sprite>sprites\spr_checkpoint</sprite>
+      <sprite>sprites\spr_signpost</sprite>
+      <sprite>sprites\spr_dialog</sprite>
+    </sprites>
+    <sprites name="Level Elements">
+      <sprites name="General">
+        <sprite>sprites\spr_toggleb_r_empty</sprite>
+        <sprite>sprites\spr_toggleb_r</sprite>
+        <sprite>sprites\spr_toggleb_b_empty</sprite>
+        <sprite>sprites\spr_toggleb_b</sprite>
       </sprites>
     </sprites>
     <sprites name="System">
@@ -123,33 +233,42 @@
         <sprite>sprites\spr_hud_collectible</sprite>
         <sprite>sprites\spr_hud_number</sprite>
         <sprite>sprites\spr_hud_hp</sprite>
+        <sprite>sprites\spr_hud_font</sprite>
+        <sprite>sprites\spr_pause</sprite>
       </sprites>
     </sprites>
-    <sprite>sprites\spr_player</sprite>
-    <sprite>sprites\spr_solid</sprite>
+    <sprites name="Collision">
+      <sprite>sprites\spr_solid</sprite>
+      <sprite>sprites\spr_hurt</sprite>
+      <sprite>sprites\spr_instakill</sprite>
+      <sprite>sprites\spr_slope_end</sprite>
+      <sprite>sprites\spr_slope</sprite>
+      <sprite>sprites\spr_slope_r</sprite>
+    </sprites>
+    <sprites name="Menu">
+      <sprite>sprites\spr_lvicon</sprite>
+      <sprite>sprites\spr_menuarrow</sprite>
+      <sprite>sprites\spr_lvpreview</sprite>
+      <sprite>sprites\spr_stageselecttext</sprite>
+      <sprite>sprites\spr_lvcursor</sprite>
+      <sprite>sprites\spr_menuback</sprite>
+    </sprites>
     <sprite>sprites\spr_testplt</sprite>
-    <sprite>sprites\spr_slope_end</sprite>
-    <sprite>sprites\spr_slope</sprite>
-    <sprite>sprites\spr_slope_r</sprite>
-    <sprite>sprites\sprite32_Disapper</sprite>
-    <sprite>sprites\sprite40_Disapper2</sprite>
-    <sprite>sprites\sprite4</sprite>
+    <sprite>sprites\spr_player</sprite>
     <sprite>sprites\spr_circle</sprite>
     <sprite>sprites\sprite22</sprite>
-    <sprite>sprites\sprite31_Foreground1</sprite>
-    <sprites name="NIght stage">
-      <sprite>sprites\sprite33_spr_testplt_Night</sprite>
-      <sprite>sprites\sprite39_Disapper2</sprite>
-      <sprite>sprites\sprite34_spr_testplt_Ver</sprite>
-      <sprite>sprites\sprite35_Disapper</sprite>
-      <sprite>sprites\sprite36_Foreground1</sprite>
-      <sprite>sprites\sprite37_spr_testplt_Hor</sprite>
-    </sprites>
-    <sprite>sprites\sprite38</sprite>
+    <sprite>sprites\sprite4</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
     <background>background\background1</background>
+    <backgrounds name="Menu">
+      <background>background\bg_menu</background>
+    </backgrounds>
+    <backgrounds name="Background">
+      <background>background\bgr_cloudfg</background>
+      <background>background\bgr_clouds</background>
+    </backgrounds>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -325,6 +444,8 @@
       <script>scripts\scr_gravity.gml</script>
     </scripts>
     <script>scripts\scr_cameramanage.gml</script>
+    <script>scripts\scr_setbpm.gml</script>
+    <script>scripts\scr_setstartposition.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="Player">
@@ -332,6 +453,9 @@
       <objects name="DO NOT USE">
         <object>objects\obj_pl_meleeatk</object>
       </objects>
+      <object>objects\obj_deadplayer</object>
+      <object>objects\obj_goalplayer</object>
+      <object>objects\obj_playercheckpoint</object>
     </objects>
     <objects name="Collision">
       <objects name="Solid">
@@ -343,57 +467,66 @@
         <object>objects\obj_slope_end</object>
         <object>objects\obj_slope</object>
       </objects>
+      <objects name="Hurt">
+        <object>objects\obj_hurt</object>
+        <object>objects\obj_instakill</object>
+      </objects>
     </objects>
     <objects name="Rhythm">
+      <object>objects\obj_RHYTHM_EXAMPLE</object>
       <objects name="Controller (DO NOT USE)">
-        <object>objects\obj_controller</object>
+        <object>objects\obj_levelcontrol</object>
         <object>objects\obj_rhythmicparent</object>
+        <object>objects\obj_deactivateparent</object>
       </objects>
       <objects name="Test">
         <object>objects\obj_testmove</object>
-        <object>objects\obj_testplaymove</object>
         <object>objects\obj_testtoggle</object>
-        <object>objects\obj_testcoll</object>
         <object>objects\obj_testparent</object>
-      </objects>
-      <objects name="room_night_unique">
-        <object>objects\object_Extend_Hor</object>
-        <object>objects\object_blind</object>
-        <object>objects\object_Still</object>
-        <object>objects\object_move_hor1</object>
-        <object>objects\object_move_squareUL1</object>
-        <object>objects\object_move_squareUR1</object>
-        <object>objects\object_move_squareDR1</object>
-        <object>objects\object_move_squareDL1</object>
-        <object>objects\object_move_hor2</object>
-        <object>objects\object_move_hor2_V_R</object>
-        <object>objects\object_move_hor3</object>
-        <object>objects\object_move_hor3_R</object>
-        <object>objects\object_move_Ver1</object>
-        <object>objects\object_move_Ver2</object>
-        <object>objects\object_move_Ver2_H</object>
-        <object>objects\object_move_Ver2_H_R</object>
-        <object>objects\object_move_Hor2_H_R</object>
-        <object>objects\object_move_Ver3</object>
       </objects>
     </objects>
     <objects name="Control">
       <objects name="System">
-        <object>objects\obj_persistent_musicplayer</object>
-        <object>objects\obj_gameintro</object>
-        <object>objects\obj_persistent</object>
-        <object>objects\obj_camera</object>
+        <objects name="Game Screens">
+          <object>objects\obj_gameintro</object>
+          <object>objects\obj_levelintro</object>
+          <object>objects\obj_levelresult</object>
+          <object>objects\obj_menu</object>
+          <objects name="Menu Assets">
+            <object>objects\obj_menu_arrow_up</object>
+            <object>objects\obj_menu_arrow_down</object>
+            <object>objects\obj_lvcursor</object>
+          </objects>
+        </objects>
+        <objects name="Levels">
+          <object>objects\obj_camera</object>
+          <object>objects\obj_parallax</object>
+        </objects>
+        <objects name="Persistent Objects">
+          <object>objects\obj_persistent</object>
+          <object>objects\obj_persistent_musicplayer</object>
+          <object>objects\obj_persistent_rhythm</object>
+        </objects>
       </objects>
     </objects>
     <objects name="Item">
       <objects name="Collectible">
         <object>objects\obj_note</object>
-        <object>objects\obj_note_HIdden</object>
         <object>objects\obj_heart</object>
+        <object>objects\obj_moon</object>
       </objects>
       <objects name="Puzzle">
-        <object>objects\obj_key</object>
-        <object>objects\obj_lockdoor</object>
+        <objects name="Locked Door">
+          <object>objects\obj_key</object>
+          <object>objects\obj_lockdoor</object>
+        </objects>
+        <objects name="Tempo Switches">
+          <object>objects\obj_switch_ff</object>
+          <object>objects\obj_switch_s</object>
+        </objects>
+      </objects>
+      <objects name="Rhythm">
+        <object>objects\obj_rhythmarrow</object>
       </objects>
       <object>objects\obj_chest</object>
     </objects>
@@ -408,26 +541,37 @@
         <object>objects\obj_blob</object>
         <object>objects\obj_blub</object>
       </objects>
-      <objects name="Night Stage">
-        <object>objects\obj_parent_night</object>
-        <object>objects\obj_Inv</object>
-        <object>objects\object_Tel_parent</object>
-        <object>objects\obj_Tel_R_3</object>
-        <object>objects\obj_Tel_R_4_Slow</object>
-        <object>objects\obj_Tel_R_4_Slow_R</object>
-        <object>objects\obj_Tel_V_3</object>
-      </objects>
     </objects>
-    <objects name="ForeGround">
-      <object>objects\Fore_Ground</object>
+    <objects name="Level Progress">
+      <objects name="DO NOT USE">
+        <object>objects\obj_goal_statue</object>
+        <object>objects\obj_message</object>
+        <object>objects\obj_pause</object>
+      </objects>
+      <objects name="Event">
+        <object>objects\obj_signpost</object>
+      </objects>
+      <object>objects\obj_checkpoint</object>
+      <object>objects\obj_goal</object>
+    </objects>
+    <objects name="Level Elements">
+      <objects name="Generals">
+        <object>objects\obj_toggleb_r</object>
+        <object>objects\obj_toggleb_b</object>
+        <object>objects\obj_testcoll</object>
+        <object>objects\obj_testplaymove</object>
+      </objects>
     </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\room1</room>
-    <room>rooms\room_night</room>
+    <room>rooms\rm_menu</room>
+    <room>rooms\rm_lvintro</room>
     <room>rooms\rm_tutorial</room>
-    <room>rooms\rm_test_moving</room>
+    <room>rooms\rm_tutorial_actual</room>
     <room>rooms\rm_test</room>
+    <room>rooms\rm_test_moving</room>
+    <room>rooms\rm_result</room>
     <room>rooms\TEMPLATE_ROOM</room>
   </rooms>
   <help>

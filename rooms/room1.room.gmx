@@ -54,6 +54,7 @@
     <instance objName="obj_persistent_musicplayer" x="32" y="0" name="inst_CF990E11" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_gameintro" x="0" y="0" name="inst_21342FBC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_persistent" x="16" y="0" name="inst_7155593A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_persistent_rhythm" x="48" y="0" name="inst_80E85C89" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

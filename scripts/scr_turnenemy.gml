@@ -17,12 +17,12 @@ if (overlap!=noone)
         hspeed = -abs(hspeed);*/
         hspeed = -hspeed;
         dir=-dir;
-        /*if(hspeed<0){
-        x=other.bbox_left-sprite_xoffset;
+        if(hspeed<0){
+        x=overlap.bbox_left-sprite_xoffset;
         }else{
-        x=other.bbox_right+(sprite_width-sprite_xoffset);
-        }*/
-        x+=hspeed;
+        x=overlap.bbox_right+(sprite_width-sprite_xoffset);
+        }
+        //x+=hspeed;
         if(overlap.hspeed!=0){
         overlap.hspeed = -overlap.hspeed
         overlap.dir=-overlap.dir
