@@ -52,7 +52,7 @@
   </views>
   <instances>
     <instance objName="obj_solid" x="0" y="0" name="inst_213E38C1" locked="0" code="" scaleX="1" scaleY="-0.0322580635547638" colour="4294967295" rotation="0"/>
-    <instance objName="obj_controller" x="0" y="0" name="inst_25C8553A" locked="0" code="levelmusic = global._theme_tutorial;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_levelcontrol" x="0" y="0" name="inst_25C8553A" locked="0" code="levelmusic = global._theme_tutorial;&#xA;scr_setbpm(130);" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player" x="48" y="160" name="inst_5EB0D996" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="16" y="32" name="inst_31A13E55" locked="0" code="" scaleX="1" scaleY="10" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="32" y="16" name="inst_A4F01BFE" locked="0" code="" scaleX="41" scaleY="1" colour="4294967295" rotation="0"/>
@@ -68,23 +68,29 @@
     <instance objName="obj_note" x="256" y="128" name="inst_99091AEC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_note" x="272" y="128" name="inst_EC9FCEF7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_note" x="576" y="48" name="inst_F845A158" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_chest" x="288" y="160" name="inst_F5A3656A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_chest" x="368" y="160" name="inst_5E9D253F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_chest" x="432" y="160" name="inst_50779890" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_chest" x="496" y="160" name="inst_C9188530" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_chest" x="560" y="160" name="inst_2BE5CAA9" locked="0" code="myitem = obj_key;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_lockdoor" x="656" y="144" name="inst_97383401" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_lockdoor" x="608" y="144" name="inst_CAF9E2AF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="608" y="96" name="inst_449140BF" locked="0" code="" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="608" y="128" name="inst_B03A6C10" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="624" y="96" name="inst_710DE412" locked="0" code="" scaleX="4.26666688919067" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_key" x="480" y="176" name="inst_342C2E0B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_blob" x="208" y="176" name="inst_8722FF5E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_heart" x="496" y="96" name="inst_15D9FD3A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_heart" x="400" y="96" name="inst_15D9FD3A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_heart" x="336" y="176" name="inst_E9533790" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_blob" x="128" y="112" name="inst_0B989873" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_blub" x="544" y="128" name="inst_C106855C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_blub" x="576" y="128" name="inst_C106855C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_blub" x="416" y="176" name="inst_E8215BAF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_switch_ff" x="272" y="176" name="inst_417A7606" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_switch_ff" x="464" y="176" name="inst_F5ED7A1C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_switch_s" x="592" y="176" name="inst_7B777F05" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_switch_s" x="352" y="176" name="inst_B9F90AB2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_goal" x="496" y="176" name="inst_60130CE3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_checkpoint" x="224" y="144" name="inst_C12567C6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_playercheckpoint" x="656" y="64" name="inst_B8CC9FD3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_signpost" x="160" y="160" name="inst_5663EB06" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_signpost" x="320" y="160" name="inst_FE59B73F" locked="0" code="msg = &quot;Hello World.&#xA;This is the second line.&#xA;12345&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="background1" x="0" y="0" w="16" h="16" xo="0" yo="0" id="10000203" name="inst_C317A8E1" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

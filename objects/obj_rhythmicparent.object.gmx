@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_deactivateparent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -50,23 +50,23 @@ elapsebeat = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(obj_controller.beat&gt;=1){
+            <string>if(global.beat&gt;=1){
 if(ready){
-elapsebeat+=1;
+//elapsebeat+=1;
+
+if(global.beatelapse%beatperstep==0&amp;&amp;global.beatelapse&gt;0){
+event_user(1);
+//image_index=1;
+//elapsebeat = 0;
+}
+
 ready=0;
 }
 }else{
 ready = 1;
 }
 
-if(elapsebeat&gt;=beatperstep){
-event_user(1);
-//image_index=1;
-elapsebeat = 0;
-}else{
-event_user(0);
-//image_index=0;
-}
+
 </string>
           </argument>
         </arguments>
