@@ -26,7 +26,12 @@
           <argument>
             <kind>1</kind>
             <string>global.note +=1
+if(global.note == 100 or global.note == 1 or global.note == 200){
+    show_debug_message("NOTE : "+string(global.note)+" BEAT ELAPSED : "+string(global.beatelapse));
+}
+//audio_play_sound(snd_metronome, 11, false);
 instance_destroy(other)
+
 </string>
           </argument>
         </arguments>

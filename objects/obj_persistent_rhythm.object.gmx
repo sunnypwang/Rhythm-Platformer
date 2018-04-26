@@ -78,6 +78,14 @@ audio_play_sound(snd_metronome, 11, false);
 
 //time+=current_time-dt;
 //show_debug_message(global.beatelapse);
+if(instance_exists(obj_player_autorun)){
+show_debug_message(string(global.beatelapse)+" "+string(obj_player_autorun.x));
+
+}
+
+if(global.beatelapse == 100 or global.beatelapse == 1 or global.note == 200){
+    show_debug_message("NOTE : "+string(global.note)+" BEAT ELAPSED : "+string(global.beatelapse));
+}
 //beat=1;
 }
 time+=1;

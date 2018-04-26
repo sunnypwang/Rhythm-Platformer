@@ -287,6 +287,9 @@
       <background>background\bgr_cloudfg</background>
       <background>background\bgr_clouds</background>
     </backgrounds>
+    <backgrounds name="FOR LEVEL EDITING">
+      <background>background\bgr_beat_align</background>
+    </backgrounds>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -469,6 +472,7 @@
   <objects name="objects">
     <objects name="Player">
       <object>objects\obj_player</object>
+      <object>objects\obj_player_autorun</object>
       <objects name="DO NOT USE">
         <object>objects\obj_pl_meleeatk</object>
       </objects>
@@ -625,6 +629,9 @@
     <room>rooms\room1</room>
     <room>rooms\rm_menu</room>
     <room>rooms\rm_lvintro</room>
+    <room>rooms\rm_sunny2</room>
+    <room>rooms\room11</room>
+    <room>rooms\rm_sunny</room>
     <room>rooms\rm_tutorial</room>
     <room>rooms\room_night</room>
     <room>rooms\rm_tutorial_actual</room>
