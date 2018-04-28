@@ -26,10 +26,19 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();
+
+mystate = global.togglebstate;
+
+if(!instance_exists(obj_toggleb_controller)){
+instance_create(x,y,obj_toggleb_controller);
+}
+
 beatperstep = 1;
 d = 0;
 image_speed = 0;
 mysolid = noone;
+
+
 </string>
           </argument>
         </arguments>
@@ -89,32 +98,16 @@ audio_play_sound(snd_metronome, 11, false);
         obj_player.y = bbox_top - (obj_player.bbox_bottom - obj_player.bbox_top);
     } 
 }
+
+if(mystate!=global.togglebstate){
+event_user(2);
+}
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="7" enumb="25">
-      <action>
-        <libid>1</libid>
-        <id>605</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>General Variable Setting</string>
-          </argument>
-        </arguments>
-      </action>
+    <event eventtype="7" enumb="12">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -131,9 +124,42 @@ audio_play_sound(snd_metronome, 11, false);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//beatperstep = 4;
-d = 0;
-image_speed = 0;
+            <string>/// Updating State
+mystate = global.togglebstate;
+if(global.togglebstate=1){
+    sprite_index = spr_toggleb_r
+    mysolid = instance_create(x,y,obj_solid);
+    mysolid.image_xscale = 2;
+    mysolid.image_yscale = 2;
+     
+    
+    /*if(obj_player.x - x &lt; 16){
+        obj_player.x = x - obj_player.sprite_width + obj_player.sprite_xoffset;
+    } else {
+        obj_player.x = x + 32 + obj_player.sprite_xoffset;
+    }
+    
+    
+    if(obj_player.x - x &lt; 16){
+        obj_player.x = x - obj_player.sprite_width + obj_player.sprite_xoffset;
+    } else {
+        obj_player.x = x + 32 + obj_player.sprite_xoffset;
+    }
+    
+    if(!place_meeting(x,y+32,obj_solid)){
+    obj_player.y=y+32;
+    }else if(!place_meeting(x-32,y,obj_solid)){
+    obj_player.x=x-32;
+    }else{
+    obj_player.x=x+32;
+    }*/
+
+//obj_player.vsp = 0;
+
+}else{
+sprite_index = spr_toggleb_r_empty
+instance_destroy(mysolid);
+}
 </string>
           </argument>
         </arguments>
@@ -176,48 +202,15 @@ image_speed = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>d+=1;
-if(d&gt;=8){
-d=0;
+            <string>//d+=1;
+if(global.beatstep=0){
+//d=0;
 //image_index = 1;
-if(sprite_index = spr_toggleb_r_empty){
-    sprite_index = spr_toggleb_r
-    mysolid = instance_create(x,y,obj_solid);
-    mysolid.image_xscale = 2;
-    mysolid.image_yscale = 2;
-     
-    
-    /*if(obj_player.x - x &lt; 16){
-        obj_player.x = x - obj_player.sprite_width + obj_player.sprite_xoffset;
-    } else {
-        obj_player.x = x + 32 + obj_player.sprite_xoffset;
-    }
-    
-    
-    if(obj_player.x - x &lt; 16){
-        obj_player.x = x - obj_player.sprite_width + obj_player.sprite_xoffset;
-    } else {
-        obj_player.x = x + 32 + obj_player.sprite_xoffset;
-    }
-    
-    if(!place_meeting(x,y+32,obj_solid)){
-    obj_player.y=y+32;
-    }else if(!place_meeting(x-32,y,obj_solid)){
-    obj_player.x=x-32;
-    }else{
-    obj_player.x=x+32;
-    }*/
-
-//obj_player.vsp = 0;
-
-}else{
-sprite_index = spr_toggleb_r_empty
-instance_destroy(mysolid);
-}
+event_user(2);
 
 }
 
-if(d&gt;=5){
+if(global.beatstep&gt;=5){
 alarm[0]=1;
 }
 
@@ -243,7 +236,9 @@ alarm[0]=1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(sprite_index = spr_toggleb_r){
+            <string>/// Finishing Blinking Animation
+
+if(sprite_index = spr_toggleb_r){
 image_index = 0;
 image_speed = 0;
 }

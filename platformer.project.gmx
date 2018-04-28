@@ -227,6 +227,8 @@
         <sprite>sprites\spr_toggleb_r</sprite>
         <sprite>sprites\spr_toggleb_b_empty</sprite>
         <sprite>sprites\spr_toggleb_b</sprite>
+        <sprite>sprites\spr_movingb</sprite>
+        <sprite>sprites\spr_movingb_arrow</sprite>
       </sprites>
     </sprites>
     <sprites name="System">
@@ -463,6 +465,7 @@
     </scripts>
     <script>scripts\init_globals_music.gml</script>
     <script>scripts\init_globals.gml</script>
+    <script>scripts\init_rhythmhandler.gml</script>
     <scripts name="Enemy Behavior">
       <script>scripts\scr_turnwall.gml</script>
       <script>scripts\scr_turnenemy.gml</script>
@@ -503,6 +506,7 @@
         <object>objects\obj_levelcontrol</object>
         <object>objects\obj_rhythmicparent</object>
         <object>objects\obj_deactivateparent</object>
+        <object>objects\obj_rhythmcontrollerparent</object>
       </objects>
       <objects name="Test">
         <object>objects\obj_testmove</object>
@@ -580,11 +584,17 @@
       <object>objects\obj_goal</object>
     </objects>
     <objects name="Level Elements">
+      <objects name="DO NOT USE">
+        <object>objects\obj_toggleb_controller</object>
+      </objects>
       <objects name="Generals">
-        <object>objects\obj_toggleb_r</object>
-        <object>objects\obj_toggleb_b</object>
         <object>objects\obj_testcoll</object>
         <object>objects\obj_testplaymove</object>
+        <object>objects\obj_toggleb_r</object>
+        <object>objects\obj_toggleb_b</object>
+        <object>objects\obj_toggleb_r_fast</object>
+        <object>objects\obj_toggleb_b_fast</object>
+        <object>objects\obj_movingb</object>
       </objects>
     </objects>
     <objects name="room_night_unique">
