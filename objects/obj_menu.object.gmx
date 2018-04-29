@@ -28,7 +28,6 @@
             <string>///Initialize Menu
 
 
-
 //Initiate Variables
 key_up = 0;
 key_down =0;
@@ -45,6 +44,9 @@ levelsong="";
 levelbpm="";
 levelsongartist="";
 
+instance_create(39,45,obj_menu_arrow_up);
+instance_create(39,225,obj_menu_arrow_down);
+lvcursor = instance_create(23,54,obj_lvcursor);
 
 //Play Music
 obj_persistent_rhythm.counting = true;
@@ -198,6 +200,28 @@ levelsongartist="-";
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Set Cursor Position
+lvcursor.y = 54+27*selectIndex;
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="7" enumb="10">
       <action>
@@ -242,11 +266,30 @@ alarm[0]=1;
           <argument>
             <kind>1</kind>
             <string>draw_set_font(global.font);
-draw_text(32,60,levelname);
-draw_text(32,90,"Author: "+levelauthor);
-draw_text(32,150,"Music: "+levelsong);
-draw_text(32,180,"BPM: "+levelbpm);
-draw_text(32,210,"Composer: "+levelsongartist);
+
+//Draw "Stage Select"
+draw_sprite(spr_stageselecttext,0,13,8);
+
+//Draw Stage Icons
+for(i=0;i&lt;6;i+=1){
+draw_sprite(spr_lvicon,0,23,54+27*i);
+}
+
+
+//Draw Stage Info Panel
+draw_sprite(spr_menuback,0,72,35);
+
+draw_sprite(spr_lvpreview,0,98,56);
+
+draw_text(206,57,levelname);
+draw_text(206,80,"Author: "+levelauthor);
+draw_text(206,103,"Difficulty: 5");
+
+draw_text(98,128,"Music: "+levelsong);
+draw_text(98,150,"BPM: "+levelbpm);
+draw_text(98,173,"Composer: "+levelsongartist);
+
+draw_text(347,80,"Rank");
 </string>
           </argument>
         </arguments>

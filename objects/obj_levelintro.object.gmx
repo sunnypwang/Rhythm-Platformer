@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>global.beat=0;
 global.beatelapse=0;
+global.beatstep=0;
 obj_persistent_rhythm.counting=false;
 obj_persistent_rhythm.time=0;
 FMODGroupSetPitch(2,1);

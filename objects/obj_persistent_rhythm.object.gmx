@@ -32,6 +32,8 @@ global.mspb = (60/global.bpm)*1000000;
 global.beatelapse = 0;
 fmsb = -1;
 
+dt = current_time;
+
 counting = false
 
 </string>
@@ -57,14 +59,31 @@ counting = false
           <argument>
             <kind>1</kind>
             <string>if(counting){
+//show_debug_message(dt);
 time+=delta_time;
 global.beat = time/global.mspb;
-if(time&gt;=global.mspb){
+if(time&gt;global.mspb){
 time-=global.mspb;
 global.beatelapse+=1;
-show_debug_message(global.beatelapse);
+
+//show_debug_message(global.beatstep);
+global.beatstep+=1;
+if(global.beatstep&gt;=8){
+global.beatstep=0;
+}
+
+if(global.metronome){
+audio_play_sound(snd_metronome, 11, false);
+}
+
+//time+=current_time-dt;
+//show_debug_message(global.beatelapse);
 //beat=1;
 }
+time+=1;
+//show_debug_message(delta_time-(current_time-dt)*1000);
+//dt = current_time;
+//time+=delta_time-dt;
 }
 </string>
           </argument>
