@@ -36,6 +36,10 @@ for (var i = 0; i &lt; 3; i++) {
         ds_map_replace(global.moon[i],global.level,3);
 }
 
+//Reset Color Switches
+global.midwaysw = 0;
+global.lastsw = 0;
+
 alarm[0]=60;
 </string>
           </argument>

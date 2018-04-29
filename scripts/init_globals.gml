@@ -41,3 +41,9 @@ for (var i = 0; i < 3; i++) {
 
 //Counts number of moons collected in the entire game
 global.mooncount = 0;
+
+//global variables for color switch puzzle
+global.swcorrect=0;
+global.swopen = false;
+global.lastsw = 0;
+global.midwaysw = 0;

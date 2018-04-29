@@ -20,9 +20,9 @@ music_setup(global._theme_menu, "Menu", 1);
 global._theme_tutorial = music_add("Tutorial");
 music_setup(global._theme_tutorial, "Tutorial", 2);
 
-//Ice Mountain
-global._theme_icemnt = music_add("Ice Mountain");
-music_setup(global._theme_icemnt, "Ice Mountain", 2);
+//Jungle Facility
+global._theme_junglefac = music_add("Jungle Facility");
+music_setup(global._theme_junglefac, "Jungle Facility", 2);
 
 //Sky Block
 global._theme_skyblock= music_add("Sky Block");
