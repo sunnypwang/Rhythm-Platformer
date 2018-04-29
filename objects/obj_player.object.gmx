@@ -236,13 +236,14 @@ vsp = min(vsp+grav,VSP_MAX);
 //Standing &amp; Jump Control
 if (collision_rectangle(bbox_left, bbox_bottom, bbox_right, bbox_bottom+1, obj_solid, false, true) or position_meeting(x,y+FEET_OFFSET+1,obj_slope)) //if standing on ground
 {
+if(state != JUMPING){
     state = STANDING;
     vsp = 0;
     
     if(key_jump&amp;&amp;!isattack&amp;&amp;!ishurt) {
         state = JUMPING;
         vsp = -JUMP_SPD;
-    }
+    }}
 }
 if(state==JUMPING and vsp &lt; 0 and not keyboard_check(vk_space)){
     vsp = round(vsp/JUMP_DECEL);

@@ -276,6 +276,11 @@
       <sprite>sprites\sprite32_Disapper</sprite>
       <sprite>sprites\sprite40_Disapper2</sprite>
     </sprites>
+    <sprites name="Village stage">
+      <sprite>sprites\spr_spring</sprite>
+      <sprite>sprites\spr_giantblob</sprite>
+      <sprite>sprites\spr_springToogle</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -287,6 +292,11 @@
       <background>background\bgr_cloudfg</background>
       <background>background\bgr_clouds</background>
     </backgrounds>
+    <background>background\background5</background>
+    <background>background\background6</background>
+    <background>background\background7</background>
+    <background>background\background8</background>
+    <background>background\background9</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -620,12 +630,19 @@
     <objects name="ForeGround">
       <object>objects\Fore_Ground</object>
     </objects>
+    <objects name="village stage">
+      <object>objects\obj_springToogle</object>
+      <object>objects\obj_hurtToogle</object>
+      <object>objects\obj_giantBlub</object>
+      <object>objects\obj_spring</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\room1</room>
+    <room>rooms\rm_yong</room>
+    <room>rooms\rm_tutorial</room>
     <room>rooms\rm_menu</room>
     <room>rooms\rm_lvintro</room>
-    <room>rooms\rm_tutorial</room>
     <room>rooms\room_night</room>
     <room>rooms\rm_tutorial_actual</room>
     <room>rooms\rm_test</room>
