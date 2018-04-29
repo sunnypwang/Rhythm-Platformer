@@ -285,6 +285,16 @@
       <sprite>sprites\spr_giantblob</sprite>
       <sprite>sprites\spr_springToogle</sprite>
     </sprites>
+    <sprites name="room_lab">
+      <sprite>sprites\laser_red</sprite>
+      <sprite>sprites\laser_red_blank</sprite>
+      <sprite>sprites\laser_blue</sprite>
+      <sprite>sprites\laser_blue_blank</sprite>
+      <sprite>sprites\laser_green</sprite>
+      <sprite>sprites\laser_green_blank</sprite>
+      <sprite>sprites\laser_yellow</sprite>
+      <sprite>sprites\laser_yellow_blank</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\tile_night</background>
@@ -299,6 +309,7 @@
       <background>background\bgr_cloudfg</background>
       <background>background\bgr_clouds</background>
       <background>background\Synthwave_Neon_80s_Background_Marmoset</background>
+      <background>background\background5</background>
     </backgrounds>
     <background>background\Synthwave</background>
     <background>background\background_dirt</background>
@@ -485,8 +496,6 @@
     <script>scripts\scr_setbpm.gml</script>
     <script>scripts\scr_setstartposition.gml</script>
   </scripts>
-  <shaders name="shaders"/>
-  <fonts name="fonts"/>
   <objects name="objects">
     <objects name="Player">
       <object>objects\obj_player</object>
@@ -609,6 +618,16 @@
         <object>objects\obj_movingb</object>
       </objects>
     </objects>
+    <objects name="room_lab">
+      <object>objects\obj_toggleb_r_s</object>
+      <object>objects\obj_toggleb_b_s</object>
+      <object>objects\obj_laser_r</object>
+      <object>objects\obj_laser_b</object>
+      <object>objects\obj_laser_slow_g</object>
+      <object>objects\obj_laser_slow_y</object>
+      <object>objects\obj_toggleb_r_fast_s</object>
+      <object>objects\obj_toggleb_b_fast_s</object>
+    </objects>
     <objects name="room_night_unique">
       <object>objects\object_Extend_Hor</object>
       <object>objects\object_move</object>
@@ -658,6 +677,7 @@
     <room>rooms\room1</room>
     <room>rooms\rm_menu</room>
     <room>rooms\rm_lvintro</room>
+    <room>rooms\rm_lab</room>
     <room>rooms\rm_yong</room>
     <room>rooms\room_night</room>
     <room>rooms\rm_tutorial</room>
