@@ -28,7 +28,7 @@
             <string>event_inherited();
 
 mystate = 0;
-
+spring_power = 50;
 beatperstep = 1;
 d = 0;
 image_speed = 0;
@@ -83,7 +83,18 @@ audio_play_sound(snd_metronome, 11, false);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(sprite_index == spr_toggleb_r){
+            <string>t = bbox_top;
+b = bbox_bottom;
+l = bbox_left;
+r = bbox_right;
+if(sprite_index == spr_toggleb_r){
+    if(instance_exists(obj_player)){
+        if(collision_rectangle(l,t-1,r,t,obj_player,false,true)){
+            obj_player.JUMP_SPD=spring_power;
+        }
+        else obj_player.JUMP_SPD=10;
+    }
+    show_debug_message(obj_player.JUMP_SPD);
     if(collision_rectangle(bbox_left,bbox_top+sprite_height/4,bbox_left+sprite_width/4,bbox_bottom,obj_player,false,true)){
         obj_player.x = bbox_left - (obj_player.bbox_right - obj_player.x) - 2;
     } else if (collision_rectangle(bbox_right-sprite_width/4,bbox_top+sprite_height/4,bbox_right,bbox_bottom,obj_player,false,true)) {

@@ -276,6 +276,16 @@
       <sprite>sprites\sprite32_Disapper</sprite>
       <sprite>sprites\sprite40_Disapper2</sprite>
     </sprites>
+    <sprites name="room_lab">
+      <sprite>sprites\laser_red</sprite>
+      <sprite>sprites\laser_red_blank</sprite>
+      <sprite>sprites\laser_blue</sprite>
+      <sprite>sprites\laser_blue_blank</sprite>
+      <sprite>sprites\laser_green</sprite>
+      <sprite>sprites\laser_green_blank</sprite>
+      <sprite>sprites\laser_yellow</sprite>
+      <sprite>sprites\laser_yellow_blank</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -588,6 +598,16 @@
         <object>objects\obj_movingb</object>
       </objects>
     </objects>
+    <objects name="room_lab">
+      <object>objects\obj_toggleb_r_s</object>
+      <object>objects\obj_toggleb_b_s</object>
+      <object>objects\obj_laser_r</object>
+      <object>objects\obj_laser_b</object>
+      <object>objects\obj_laser_slow_g</object>
+      <object>objects\obj_laser_slow_y</object>
+      <object>objects\obj_toggleb_r_fast_s</object>
+      <object>objects\obj_toggleb_b_fast_s</object>
+    </objects>
     <objects name="room_night_unique">
       <object>objects\object_Extend_Hor</object>
       <object>objects\object_blind</object>
@@ -625,6 +645,7 @@
     <room>rooms\room1</room>
     <room>rooms\rm_menu</room>
     <room>rooms\rm_lvintro</room>
+    <room>rooms\rm_lab</room>
     <room>rooms\rm_tutorial</room>
     <room>rooms\room_night</room>
     <room>rooms\rm_tutorial_actual</room>
