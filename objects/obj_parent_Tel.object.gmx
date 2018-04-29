@@ -119,7 +119,9 @@ Inv_Count += 1;
 if(INV &amp;&amp; Inv_Count == 50){
     INV = false;
     invincible=false;
-
+    show_debug_message(Inv_Count);
+    show_debug_message(" ");
+    show_debug_message(INV);
     Inv_Count = 0;
     sprite_index = sprite41_spr_blob_Inv_0;
     
@@ -131,7 +133,9 @@ else if(!INV &amp;&amp; Inv_Count == 50){
     
     sprite_index = sprite43_spr_blob_Inv2_0;
 }
-
+show_debug_message(Inv_Count);
+show_debug_message(" ");
+    show_debug_message(INV);
 </string>
           </argument>
         </arguments>

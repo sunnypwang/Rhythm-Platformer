@@ -599,6 +599,7 @@
     </objects>
     <objects name="room_night_unique">
       <object>objects\object_Extend_Hor</object>
+      <object>objects\object_move</object>
       <object>objects\object_blind</object>
       <object>objects\object_Still</object>
       <object>objects\object_move_hor1</object>
@@ -620,6 +621,7 @@
     </objects>
     <objects name="Night Stage">
       <object>objects\obj_parent_night</object>
+      <object>objects\obj_parent_Tel</object>
       <object>objects\obj_Inv</object>
       <object>objects\obj_Inv_Still</object>
       <object>objects\object_Tel_parent</object>
