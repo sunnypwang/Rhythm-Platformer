@@ -181,11 +181,39 @@ levelbpm="130";
 levelsongartist="Danny Baranowsky";
 break;
 case 1:
+levelname="Village";
+levelauthor="yong133";
+levelsong="Finale";
+levelbpm="95";
+levelsongartist="Toby Fox";
+break;
+case 2:
+levelname="Night Begins to Shine";
+levelauthor="Xblade Protector";
+levelsong="Night Begins to Shine";
+levelbpm="???";
+levelsongartist="???";
+break;
+case 3:
+levelname="Music Land";
+levelauthor="Sunny";
+levelsong="Gourmet Race";
+levelbpm="184";
+levelsongartist="Jun Ishikawa, Hirokazu Ando";
+break;
+case 4:
 levelname="Jungle Facility";
 levelauthor="Kirbio";
 levelsong="Ascent to Madness";
 levelbpm="155";
 levelsongartist="Aundy Tunstall";
+break;
+case 5:
+levelname="P2 Lab";
+levelauthor="boomngong";
+levelsong="The PWT";
+levelbpm="146";
+levelsongartist="Go Ichinose";
 break;
 default:
 levelname="NOT_SET_YET";
@@ -241,6 +269,37 @@ lvcursor.y = 54+27*selectIndex;
           <argument>
             <kind>1</kind>
             <string>///Confirmed Choice and setting appropiate variable
+switch (selectIndex)
+{
+case 0:
+global.displevelname="Tutorial";
+global.destlevel = rm_tutorial_actual;
+break;
+case 1:
+global.displevelname="Village";
+global.destlevel = rm_yong;
+break;
+case 2:
+global.displevelname="Night Begins to Shine";
+global.destlevel = room_night;
+break;
+case 3:
+global.displevelname="Music Land";
+global.destlevel = rm_sunny;
+break;
+case 4:
+global.displevelname="Jungle Facility";
+global.destlevel = rm_junglefac;
+break;
+case 5:
+global.displevelname="P2 Lab";
+global.destlevel = rm_lab;
+break;
+default:
+global.displevelname="NOT_SET_YET";
+global.destlevel = rm_menu;
+}
+
 
 alarm[0]=1;
 </string>

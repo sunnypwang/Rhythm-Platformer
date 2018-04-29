@@ -68,7 +68,7 @@ alarm[0]=60;
           <argument>
             <kind>1</kind>
             <string>/// Sent from Into to Appropiate Room
-room_goto_next()
+room_goto(global.destlevel);
 </string>
           </argument>
         </arguments>
@@ -95,7 +95,7 @@ room_goto_next()
 draw_set_font(global.font);
 draw_set_halign(fa_center);
 
-draw_text(212,80,"Tutorial Room");
+draw_text(212,80,global.displevelname);
 draw_text(212,120,"READY!!");
 
 draw_set_halign(fa_left);

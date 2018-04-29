@@ -47,3 +47,7 @@ global.swcorrect=0;
 global.swopen = false;
 global.lastsw = 0;
 global.midwaysw = 0;
+
+//global variables for menus
+global.destlevel = 0;
+global.displevelname = "NOT SET YET"

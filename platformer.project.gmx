@@ -557,8 +557,6 @@
     <script>scripts\scr_setstartposition.gml</script>
     <script>scripts\scr_setpattern.gml</script>
   </scripts>
-  <shaders name="shaders"/>
-  <fonts name="fonts"/>
   <objects name="objects">
     <objects name="Player">
       <object>objects\obj_player</object>
@@ -682,107 +680,108 @@
         <object>objects\obj_toggleb_b_fast</object>
         <object>objects\obj_movingb</object>
       </objects>
-    </objects>
-    <objects name="room_lab">
-      <object>objects\obj_toggleb_r_s</object>
-      <object>objects\obj_toggleb_b_s</object>
-      <object>objects\obj_laser_r</object>
-      <object>objects\obj_laser_b</object>
-      <object>objects\obj_laser_slow_g</object>
-      <object>objects\obj_laser_slow_y</object>
-      <object>objects\obj_toggleb_r_fast_s</object>
-      <object>objects\obj_toggleb_b_fast_s</object>
-    </objects>
-    <objects name="room_night_unique">
-      <object>objects\object_Extend_Hor</object>
-      <object>objects\object_move</object>
-      <object>objects\object_blind</object>
-      <object>objects\object_Still</object>
-      <object>objects\object_move_hor1</object>
-      <object>objects\object_move_squareUL1</object>
-      <object>objects\object_move_squareUR1</object>
-      <object>objects\object_move_squareDR1</object>
-      <object>objects\object_move_squareDL1</object>
-      <object>objects\object_move_hor2</object>
-      <object>objects\object_move_hor2_V_R</object>
-      <object>objects\object_move_hor2_V</object>
-      <object>objects\object_move_hor3</object>
-      <object>objects\object_move_hor3_R</object>
-      <object>objects\object_move_Ver1</object>
-      <object>objects\object_move_Ver2</object>
-      <object>objects\object_move_Ver2_H</object>
-      <object>objects\object_move_Ver2_H_R</object>
-      <object>objects\object_move_Hor2_H_R</object>
-      <object>objects\object_move_Ver3</object>
-    </objects>
-    <objects name="Night Stage">
-      <object>objects\obj_parent_night</object>
-      <object>objects\obj_parent_Tel</object>
-      <object>objects\obj_Inv</object>
-      <object>objects\obj_Inv_Still</object>
-      <object>objects\object_Tel_parent</object>
-      <object>objects\obj_Tel_R_3</object>
-      <object>objects\obj_Tel_R_4</object>
-      <object>objects\obj_Tel_S</object>
-      <object>objects\obj_Tel_R_4_Slow</object>
-      <object>objects\obj_Tel_R_4_Slow_R</object>
-      <object>objects\obj_Tel_V_3</object>
-    </objects>
-    <objects name="ForeGround">
-      <object>objects\Fore_Ground</object>
-    </objects>
-    <objects name="Jungle Facility">
-      <objects name="Enemy">
-        <objects name="DO NOT USE">
-          <object>objects\obj_inkblob_puddle</object>
-          <object>objects\obj_electric</object>
+      <objects name="room_lab">
+        <object>objects\obj_toggleb_r_s</object>
+        <object>objects\obj_toggleb_b_s</object>
+        <object>objects\obj_laser_r</object>
+        <object>objects\obj_laser_b</object>
+        <object>objects\obj_laser_slow_g</object>
+        <object>objects\obj_laser_slow_y</object>
+        <object>objects\obj_toggleb_r_fast_s</object>
+        <object>objects\obj_toggleb_b_fast_s</object>
+      </objects>
+      <objects name="room_night_unique">
+        <object>objects\object_Extend_Hor</object>
+        <object>objects\object_move</object>
+        <object>objects\object_blind</object>
+        <object>objects\object_Still</object>
+        <object>objects\object_move_hor1</object>
+        <object>objects\object_move_squareUL1</object>
+        <object>objects\object_move_squareUR1</object>
+        <object>objects\object_move_squareDR1</object>
+        <object>objects\object_move_squareDL1</object>
+        <object>objects\object_move_hor2</object>
+        <object>objects\object_move_hor2_V_R</object>
+        <object>objects\object_move_hor2_V</object>
+        <object>objects\object_move_hor3</object>
+        <object>objects\object_move_hor3_R</object>
+        <object>objects\object_move_Ver1</object>
+        <object>objects\object_move_Ver2</object>
+        <object>objects\object_move_Ver2_H</object>
+        <object>objects\object_move_Ver2_H_R</object>
+        <object>objects\object_move_Hor2_H_R</object>
+        <object>objects\object_move_Ver3</object>
+      </objects>
+      <objects name="Night Stage">
+        <object>objects\obj_parent_night</object>
+        <object>objects\obj_parent_Tel</object>
+        <object>objects\obj_Inv</object>
+        <object>objects\obj_Inv_Still</object>
+        <object>objects\object_Tel_parent</object>
+        <object>objects\obj_Tel_R_3</object>
+        <object>objects\obj_Tel_R_4</object>
+        <object>objects\obj_Tel_S</object>
+        <object>objects\obj_Tel_R_4_Slow</object>
+        <object>objects\obj_Tel_R_4_Slow_R</object>
+        <object>objects\obj_Tel_V_3</object>
+      </objects>
+      <objects name="ForeGround">
+        <object>objects\Fore_Ground</object>
+      </objects>
+      <objects name="Jungle Facility">
+        <objects name="Enemy">
+          <objects name="DO NOT USE">
+            <object>objects\obj_inkblob_puddle</object>
+            <object>objects\obj_electric</object>
+          </objects>
+          <object>objects\ob_inkblob</object>
+          <object>objects\obj_ampball</object>
+          <object>objects\obj_bombcopter</object>
+          <object>objects\obj_vinehead</object>
+          <object>objects\obj_electricprobe</object>
         </objects>
-        <object>objects\ob_inkblob</object>
-        <object>objects\obj_ampball</object>
-        <object>objects\obj_bombcopter</object>
-        <object>objects\obj_vinehead</object>
-        <object>objects\obj_electricprobe</object>
+        <objects name="Element">
+          <object>objects\obj_letterb</object>
+          <object>objects\obj_statueswitch</object>
+          <object>objects\obj_shutterdoor</object>
+          <object>objects\obj_crusher</object>
+        </objects>
       </objects>
-      <objects name="Element">
-        <object>objects\obj_letterb</object>
-        <object>objects\obj_statueswitch</object>
-        <object>objects\obj_shutterdoor</object>
-        <object>objects\obj_crusher</object>
+      <objects name="village stage">
+        <object>objects\obj_springToogle</object>
+        <object>objects\obj_hurtToogle</object>
+        <object>objects\obj_giantBlub</object>
+        <object>objects\obj_spring</object>
       </objects>
-    <objects name="village stage">
-      <object>objects\obj_springToogle</object>
-      <object>objects\obj_hurtToogle</object>
-      <object>objects\obj_giantBlub</object>
-      <object>objects\obj_spring</object>
-    </objects>
-    <objects name="MusicLand">
-      <object>objects\obj_player_autorun</object>
-      <object>objects\obj_arrow_d</object>
-      <object>objects\obj_arrow_u</object>
-      <object>objects\obj_cross</object>
-      <object>objects\obj_drum</object>
-      <object>objects\obj_pattern</object>
-      <object>objects\obj_pattern_end</object>
-      <object>objects\obj_interactparent</object>
-      <object>objects\obj_shoe</object>
-      <object>objects\obj_warp</object>
+      <objects name="MusicLand">
+        <object>objects\obj_player_autorun</object>
+        <object>objects\obj_arrow_d</object>
+        <object>objects\obj_arrow_u</object>
+        <object>objects\obj_cross</object>
+        <object>objects\obj_drum</object>
+        <object>objects\obj_pattern</object>
+        <object>objects\obj_pattern_end</object>
+        <object>objects\obj_interactparent</object>
+        <object>objects\obj_shoe</object>
+        <object>objects\obj_warp</object>
+      </objects>
     </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\room1</room>
     <room>rooms\rm_menu</room>
     <room>rooms\rm_lvintro</room>
+    <room>rooms\rm_yong</room>
+    <rooms name="Sunny">
+      <room>rooms\rm_sunny</room>
+      <room>rooms\rm_sunny2</room>
+    </rooms>
     <room>rooms\rm_junglefac</room>
     <room>rooms\rm_tutorial_actual</room>
     <room>rooms\rm_jungleobjtest</room>
     <room>rooms\rm_tutorial</room>
     <room>rooms\room_night</room>
-    <room>rooms\rm_yong</room>
     <room>rooms\rm_lab</room>
-    <rooms name="Sunny">
-      <room>rooms\rm_sunny</room>
-      <room>rooms\rm_sunny2</room>
-    </rooms>
     <room>rooms\rm_test</room>
     <room>rooms\rm_test_moving</room>
     <room>rooms\rm_result</room>
