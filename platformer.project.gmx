@@ -280,6 +280,11 @@
       <sprite>sprites\sprite73_Plat_1</sprite>
     </sprites>
     <sprite>sprites\sprite74_tile_invi</sprite>
+    <sprites name="Village stage">
+      <sprite>sprites\spr_spring</sprite>
+      <sprite>sprites\spr_giantblob</sprite>
+      <sprite>sprites\spr_springToogle</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\tile_night</background>
@@ -296,6 +301,11 @@
       <background>background\Synthwave_Neon_80s_Background_Marmoset</background>
     </backgrounds>
     <background>background\Synthwave</background>
+    <background>background\background_dirt</background>
+    <background>background\background6</background>
+    <background>background\background7</background>
+    <background>background\background8</background>
+    <background>background\background9</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -475,6 +485,8 @@
     <script>scripts\scr_setbpm.gml</script>
     <script>scripts\scr_setstartposition.gml</script>
   </scripts>
+  <shaders name="shaders"/>
+  <fonts name="fonts"/>
   <objects name="objects">
     <objects name="Player">
       <object>objects\obj_player</object>
@@ -635,12 +647,19 @@
     <objects name="ForeGround">
       <object>objects\Fore_Ground</object>
     </objects>
+    <objects name="village stage">
+      <object>objects\obj_springToogle</object>
+      <object>objects\obj_hurtToogle</object>
+      <object>objects\obj_giantBlub</object>
+      <object>objects\obj_spring</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\room1</room>
-    <room>rooms\room_night</room>
     <room>rooms\rm_menu</room>
     <room>rooms\rm_lvintro</room>
+    <room>rooms\rm_yong</room>
+    <room>rooms\room_night</room>
     <room>rooms\rm_tutorial</room>
     <room>rooms\rm_tutorial_actual</room>
     <room>rooms\rm_test</room>
