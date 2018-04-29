@@ -163,6 +163,10 @@
   <NewExtensions/>
   <sounds name="sound">
     <sound>sound\snd_metronome</sound>
+    <sound>sound\snd_autorun_fanfare</sound>
+    <sound>sound\snd_check</sound>
+    <sound>sound\snd_cross</sound>
+    <sound>sound\snd_drum</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="Player">
@@ -252,6 +256,7 @@
       <sprite>sprites\spr_slope_end</sprite>
       <sprite>sprites\spr_slope</sprite>
       <sprite>sprites\spr_slope_r</sprite>
+      <sprite>sprites\spr_solid_top</sprite>
     </sprites>
     <sprites name="Menu">
       <sprite>sprites\spr_lvicon</sprite>
@@ -267,6 +272,7 @@
     <sprite>sprites\sprite22</sprite>
     <sprite>sprites\sprite4</sprite>
     <sprite>sprites\sprite31_Foreground1</sprite>
+    <sprite>sprites\sprite74_Plat_1_H</sprite>
     <sprites name="NIght stage">
       <sprite>sprites\sprite33_spr_testplt_Night</sprite>
       <sprite>sprites\sprite39_Disapper2</sprite>
@@ -276,6 +282,34 @@
       <sprite>sprites\sprite37_spr_testplt_Hor</sprite>
       <sprite>sprites\sprite32_Disapper</sprite>
       <sprite>sprites\sprite40_Disapper2</sprite>
+      <sprite>sprites\sprite72_Plat_1_V</sprite>
+      <sprite>sprites\sprite73_Plat_1</sprite>
+    </sprites>
+    <sprite>sprites\sprite74_tile_invi</sprite>
+    <sprites name="Village stage">
+      <sprite>sprites\spr_spring</sprite>
+      <sprite>sprites\spr_giantblob</sprite>
+      <sprite>sprites\spr_springToogle</sprite>
+    </sprites>
+    <sprites name="room_lab">
+      <sprite>sprites\laser_red</sprite>
+      <sprite>sprites\laser_red_blank</sprite>
+      <sprite>sprites\laser_blue</sprite>
+      <sprite>sprites\laser_blue_blank</sprite>
+      <sprite>sprites\laser_green</sprite>
+      <sprite>sprites\laser_green_blank</sprite>
+      <sprite>sprites\laser_yellow</sprite>
+      <sprite>sprites\laser_yellow_blank</sprite>
+    </sprites>
+    <sprites name="MusicLand">
+      <sprite>sprites\spr_arrow_d</sprite>
+      <sprite>sprites\spr_arrow_mask</sprite>
+      <sprite>sprites\spr_arrow_u</sprite>
+      <sprite>sprites\spr_check</sprite>
+      <sprite>sprites\spr_cross</sprite>
+      <sprite>sprites\spr_drum</sprite>
+      <sprite>sprites\spr_shoe</sprite>
+      <sprite>sprites\spr_warp</sprite>
     </sprites>
     <sprites name="Jungle Facility">
       <sprites name="Enemy">
@@ -305,7 +339,10 @@
     </sprites>
   </sprites>
   <backgrounds name="background">
+    <background>background\tile_night</background>
+    <background>background\tile_might</background>
     <background>background\background0</background>
+    <background>background\tileNight</background>
     <background>background\background1</background>
     <backgrounds name="Menu">
       <background>background\bg_menu</background>
@@ -313,6 +350,19 @@
     <backgrounds name="Background">
       <background>background\bgr_cloudfg</background>
       <background>background\bgr_clouds</background>
+      <background>background\Synthwave_Neon_80s_Background_Marmoset</background>
+      <background>background\background5</background>
+    </backgrounds>
+    <background>background\Synthwave</background>
+    <background>background\background_dirt</background>
+    <background>background\background6</background>
+    <background>background\background7</background>
+    <background>background\background8</background>
+    <background>background\background9</background>
+    <backgrounds name="MusicLand">
+      <background>background\bg_musical</background>
+      <background>background\bg_musical2</background>
+      <background>background\bgr_beat_align</background>
     </backgrounds>
     <backgrounds name="Jungle Facility">
       <backgrounds name="Background">
@@ -523,6 +573,7 @@
       <objects name="Solid">
         <object>objects\obj_solidtop</object>
         <object>objects\obj_solid</object>
+        <object>objects\obj_solid_top</object>
       </objects>
       <objects name="Slope">
         <object>objects\obj_slope_1x1</object>
@@ -632,8 +683,19 @@
         <object>objects\obj_movingb</object>
       </objects>
     </objects>
+    <objects name="room_lab">
+      <object>objects\obj_toggleb_r_s</object>
+      <object>objects\obj_toggleb_b_s</object>
+      <object>objects\obj_laser_r</object>
+      <object>objects\obj_laser_b</object>
+      <object>objects\obj_laser_slow_g</object>
+      <object>objects\obj_laser_slow_y</object>
+      <object>objects\obj_toggleb_r_fast_s</object>
+      <object>objects\obj_toggleb_b_fast_s</object>
+    </objects>
     <objects name="room_night_unique">
       <object>objects\object_Extend_Hor</object>
+      <object>objects\object_move</object>
       <object>objects\object_blind</object>
       <object>objects\object_Still</object>
       <object>objects\object_move_hor1</object>
@@ -643,6 +705,7 @@
       <object>objects\object_move_squareDL1</object>
       <object>objects\object_move_hor2</object>
       <object>objects\object_move_hor2_V_R</object>
+      <object>objects\object_move_hor2_V</object>
       <object>objects\object_move_hor3</object>
       <object>objects\object_move_hor3_R</object>
       <object>objects\object_move_Ver1</object>
@@ -654,9 +717,13 @@
     </objects>
     <objects name="Night Stage">
       <object>objects\obj_parent_night</object>
+      <object>objects\obj_parent_Tel</object>
       <object>objects\obj_Inv</object>
+      <object>objects\obj_Inv_Still</object>
       <object>objects\object_Tel_parent</object>
       <object>objects\obj_Tel_R_3</object>
+      <object>objects\obj_Tel_R_4</object>
+      <object>objects\obj_Tel_S</object>
       <object>objects\obj_Tel_R_4_Slow</object>
       <object>objects\obj_Tel_R_4_Slow_R</object>
       <object>objects\obj_Tel_V_3</object>
@@ -682,6 +749,23 @@
         <object>objects\obj_shutterdoor</object>
         <object>objects\obj_crusher</object>
       </objects>
+    <objects name="village stage">
+      <object>objects\obj_springToogle</object>
+      <object>objects\obj_hurtToogle</object>
+      <object>objects\obj_giantBlub</object>
+      <object>objects\obj_spring</object>
+    </objects>
+    <objects name="MusicLand">
+      <object>objects\obj_player_autorun</object>
+      <object>objects\obj_arrow_d</object>
+      <object>objects\obj_arrow_u</object>
+      <object>objects\obj_cross</object>
+      <object>objects\obj_drum</object>
+      <object>objects\obj_pattern</object>
+      <object>objects\obj_pattern_end</object>
+      <object>objects\obj_interactparent</object>
+      <object>objects\obj_shoe</object>
+      <object>objects\obj_warp</object>
     </objects>
   </objects>
   <rooms name="rooms">
@@ -693,6 +777,12 @@
     <room>rooms\rm_jungleobjtest</room>
     <room>rooms\rm_tutorial</room>
     <room>rooms\room_night</room>
+    <room>rooms\rm_yong</room>
+    <room>rooms\rm_lab</room>
+    <rooms name="Sunny">
+      <room>rooms\rm_sunny</room>
+      <room>rooms\rm_sunny2</room>
+    </rooms>
     <room>rooms\rm_test</room>
     <room>rooms\rm_test_moving</room>
     <room>rooms\rm_result</room>

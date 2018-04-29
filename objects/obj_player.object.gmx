@@ -241,13 +241,14 @@ if (solidtop or position_meeting(x,y+FEET_OFFSET+1,obj_slope)) //if standing on 
     if(solidtop){
     y = solidtop.y-31;
     }
+if(state != JUMPING){
     state = STANDING;
     vsp = 0;
     
     if(key_jump&amp;&amp;!isattack&amp;&amp;!ishurt) {
         state = JUMPING;
         vsp = -JUMP_SPD;
-    }
+    }}
 }
 }
 

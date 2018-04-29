@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>event_inherited();
 
-mystate = global.togglebstate;
+mystate = -1;//global.togglebstate;
 
 if(!instance_exists(obj_toggleb_controller)){
 instance_create(x,y,obj_toggleb_controller);
@@ -102,6 +102,7 @@ audio_play_sound(snd_metronome, 11, false);
 if(mystate!=global.togglebstate){
 event_user(2);
 }
+
 </string>
           </argument>
         </arguments>
