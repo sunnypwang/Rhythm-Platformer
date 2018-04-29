@@ -2,8 +2,8 @@
 <object>
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
-  <visible>0</visible>
-  <depth>0</depth>
+  <visible>-1</visible>
+  <depth>-1000</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,17 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>time = 0;
-global.beat = 0;
-global.bpm = 130;
-global.mspb = (60/global.bpm)*1000000;
-global.beatelapse = 0;
-fmsb = -1;
-
-dt = current_time;
-
-counting = false
-
+            <string>alpha = 0;
+fade = 1;   //1 = fade out, -1 = fade in
+dest_room = 0;
 </string>
           </argument>
         </arguments>
@@ -58,33 +50,21 @@ counting = false
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(counting){
-//show_debug_message(dt);
-time+=delta_time;
-global.beat = time/global.mspb;
-if(time&gt;global.mspb){
-time-=global.mspb;
-global.beatelapse+=1;
+            <string>alpha = clamp(alpha + fade*0.05,0,1);
 
-//show_debug_message(global.beatstep);
-global.beatstep+=1;
-if(global.beatstep&gt;=8){
-global.beatstep=0;
-}
-show_debug_message(string(global.beatstep)+" "+string(global.togglebstate));
-if(global.metronome){
-audio_play_sound(snd_metronome, 11, false);
+if (alpha == 1){
+    room_goto(dest_room);
+    fade = -1;
 }
 
-//time+=current_time-dt;
+if(alpha == 0 &amp;&amp; fade == -1){
+    instance_destroy();
+}
 
-//beat=1;
-}
-time+=1;
-//show_debug_message(delta_time-(current_time-dt)*1000);
-//dt = current_time;
-//time+=delta_time-dt;
-}
+draw_set_colour(c_black);
+draw_set_alpha(alpha);
+draw_rectangle(view_xview[0], view_yview[0], view_xview[0]+view_wview[0], view_yview[0]+view_hview[0], true);
+draw_set_alpha(1);
 </string>
           </argument>
         </arguments>

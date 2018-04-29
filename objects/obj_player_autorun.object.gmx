@@ -28,10 +28,10 @@
             <string>///Define variables
 
 //Constant
-grav = 1;
-
-VSP_MAX = 8;       //maximum falling speed
-JUMP_SPD = 10;      //initial jumping vsp
+grav = 2;
+WALK_SPD = 6.54;
+VSP_MAX = 12;       //maximum falling speed
+JUMP_SPD = 14;      //initial jumping vsp
 JUMP_DECEL = 1;     //deceleration after jumping
 FEET_OFFSET = bbox_bottom - bbox_top;   //feet offset from center (should be 30) 
 dir = 1;        
@@ -43,7 +43,7 @@ JUMPING=2;
 FALLING=3;
 
 //variable
-hsp = 6.54;
+hsp = WALK_SPD;
 vsp = 0;
 state = STANDING;
 isattack = false;
@@ -218,14 +218,15 @@ key_jump = keyboard_check_pressed(vk_space);
             <string>///Movement, gravity, jump, state control
 
 //Horizontal movement control
-//hsp = 49.066666666666666666666666666667 * (delta_time/1000000);
-
+hsp = 196.26666666666666666666666666667 * (delta_time/1000000);
 //Gravity control
 vsp = min(vsp+grav,VSP_MAX);
 
 
 //Standing &amp; Jump Control
-if (collision_rectangle(bbox_left, bbox_bottom, bbox_right, bbox_bottom+1, obj_solid, false, true) or position_meeting(x,y+FEET_OFFSET+1,obj_slope)) //if standing on ground
+if (collision_rectangle(bbox_left, bbox_bottom, bbox_right, bbox_bottom+1, obj_solid, false, true)
+    or (!collision_rectangle(bbox_left, bbox_bottom, bbox_right, bbox_bottom, obj_solid_top, false, true) &amp;&amp; collision_rectangle(bbox_left, bbox_bottom, bbox_right, bbox_bottom+1, obj_solid_top, false, true))
+    or position_meeting(x,y+FEET_OFFSET+1,obj_slope)) //if standing on ground
 {
     state = STANDING;
     vsp = 0;
@@ -283,17 +284,11 @@ if(hsp != 0 and place_meeting(x+hsp,y,obj_solid)){      //if moving and collidin
 
 //vertical collision
 if(vsp != 0 and place_meeting(x,y+vsp,obj_solid)){      //if moving and colliding with solid in direction moving
-    if(vsp &lt; 0 and !place_meeting(x+2,y+vsp,obj_solid)){        //snap to wall when falling/rising very near to vertical walls
-        x += 2;
-    } else if(vsp &lt; 0 and !place_meeting(x-2,y+vsp,obj_solid)){
-        x -= 2;
-    } else {
-        while(!place_meeting(x,y+sign(vsp),obj_solid)){ //move in 1 pixel until contact
-            y += sign(vsp);
-        }
-        vsp = 0;
+
+    while(!place_meeting(x,y+sign(vsp),obj_solid)){ //move in 1 pixel until contact
+        y += sign(vsp);
     }
-          
+        vsp = 0;
 
 }
 
@@ -380,6 +375,36 @@ if (slope_up_inst != noone){    //if yes it will be that slope object id
 //update player to his next position
 x = x+hsp;
 y = floor(y+vsp);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Solid on top
+
+if(vsp &gt;= 0 and !place_meeting(x,y,obj_solid_top) and place_meeting(x,y+vsp,obj_solid_top)){      //if moving and colliding with solid in direction moving
+
+    while(!place_meeting(x,y+sign(vsp),obj_solid_top)){ //move in 1 pixel until contact
+        y += sign(vsp);
+    }
+    vsp = 0;
+
+}
 </string>
           </argument>
         </arguments>

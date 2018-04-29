@@ -104,9 +104,9 @@ y = view_yview[0]
             <kind>1</kind>
             <string>if(global.beatstep=0){
 global.togglebstate = !global.togglebstate;
-show_debug_message("toggle")
+//show_debug_message("toggle")
 }
-show_debug_message("beat count")
+//show_debug_message("beat count")
 </string>
           </argument>
         </arguments>
