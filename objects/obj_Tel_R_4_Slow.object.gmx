@@ -25,23 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(d == 0){
+            <string>
 
-d = 1;
-}
-else if (d == 1){
-x += 64;
-d= 2;
-}
-else if (d == 2){
 
-d= 3;
-}
-else {
-x -= 64;
-d = 0;
-}
+//event_user(2);
 
+
+//if(global.beatstep&gt;=5){
+//alarm[0]=1;
+//}
 
 </string>
           </argument>
@@ -74,6 +66,8 @@ scr_turnenemy();
 if(vspeed=0){
 hspeed = 0;
 }
+
+
 </string>
           </argument>
         </arguments>
@@ -167,6 +161,16 @@ hspeed = 0;
 hspeed = 2*dir;*/
 
 alarm[0]=1;
+
+
+if(global.beatstep=0){
+x += 64;
+d = 1;
+}
+if(global.beatstep=5){
+x -= 64;
+d= 0;
+}
 </string>
           </argument>
         </arguments>
@@ -189,7 +193,19 @@ alarm[0]=1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>if(global.beatstep=0){
+
+x += 64;
+d = 1;
+
+
+
+}
+if(global.beatstep=5){
+x -= 64;
+d= 0;
+}
+</string>
           </argument>
         </arguments>
       </action>

@@ -266,6 +266,7 @@
     <sprite>sprites\sprite22</sprite>
     <sprite>sprites\sprite4</sprite>
     <sprite>sprites\sprite31_Foreground1</sprite>
+    <sprite>sprites\sprite74_Plat_1_H</sprite>
     <sprites name="NIght stage">
       <sprite>sprites\sprite33_spr_testplt_Night</sprite>
       <sprite>sprites\sprite39_Disapper2</sprite>
@@ -275,10 +276,16 @@
       <sprite>sprites\sprite37_spr_testplt_Hor</sprite>
       <sprite>sprites\sprite32_Disapper</sprite>
       <sprite>sprites\sprite40_Disapper2</sprite>
+      <sprite>sprites\sprite72_Plat_1_V</sprite>
+      <sprite>sprites\sprite73_Plat_1</sprite>
     </sprites>
+    <sprite>sprites\sprite74_tile_invi</sprite>
   </sprites>
   <backgrounds name="background">
+    <background>background\tile_night</background>
+    <background>background\tile_might</background>
     <background>background\background0</background>
+    <background>background\tileNight</background>
     <background>background\background1</background>
     <backgrounds name="Menu">
       <background>background\bg_menu</background>
@@ -286,7 +293,9 @@
     <backgrounds name="Background">
       <background>background\bgr_cloudfg</background>
       <background>background\bgr_clouds</background>
+      <background>background\Synthwave_Neon_80s_Background_Marmoset</background>
     </backgrounds>
+    <background>background\Synthwave</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -590,6 +599,7 @@
     </objects>
     <objects name="room_night_unique">
       <object>objects\object_Extend_Hor</object>
+      <object>objects\object_move</object>
       <object>objects\object_blind</object>
       <object>objects\object_Still</object>
       <object>objects\object_move_hor1</object>
@@ -599,6 +609,7 @@
       <object>objects\object_move_squareDL1</object>
       <object>objects\object_move_hor2</object>
       <object>objects\object_move_hor2_V_R</object>
+      <object>objects\object_move_hor2_V</object>
       <object>objects\object_move_hor3</object>
       <object>objects\object_move_hor3_R</object>
       <object>objects\object_move_Ver1</object>
@@ -610,9 +621,13 @@
     </objects>
     <objects name="Night Stage">
       <object>objects\obj_parent_night</object>
+      <object>objects\obj_parent_Tel</object>
       <object>objects\obj_Inv</object>
+      <object>objects\obj_Inv_Still</object>
       <object>objects\object_Tel_parent</object>
       <object>objects\obj_Tel_R_3</object>
+      <object>objects\obj_Tel_R_4</object>
+      <object>objects\obj_Tel_S</object>
       <object>objects\obj_Tel_R_4_Slow</object>
       <object>objects\obj_Tel_R_4_Slow_R</object>
       <object>objects\obj_Tel_V_3</object>
@@ -623,10 +638,10 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\room1</room>
+    <room>rooms\room_night</room>
     <room>rooms\rm_menu</room>
     <room>rooms\rm_lvintro</room>
     <room>rooms\rm_tutorial</room>
-    <room>rooms\room_night</room>
     <room>rooms\rm_tutorial_actual</room>
     <room>rooms\rm_test</room>
     <room>rooms\rm_test_moving</room>
