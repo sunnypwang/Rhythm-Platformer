@@ -116,7 +116,7 @@ audio_play_sound(snd_metronome, 11, false);
             <string>/// hit player
 if(sprite_index = laser_red){
     global.playerHp = 0;
-    instance_create(x,y,obj_deadplayer);
+    instance_create(obj_player.x,obj_player.y,obj_deadplayer);
     instance_destroy(obj_player);
 }
 </string>

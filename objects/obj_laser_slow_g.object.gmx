@@ -125,7 +125,7 @@ event_user(2);
             <string>/// hit player
 if(sprite_index = laser_green){
     global.playerHp = 0;
-    instance_create(x,y,obj_deadplayer);
+    instance_create(obj_player.x,obj_player.y,obj_deadplayer);
     instance_destroy(obj_player);
 }
 </string>

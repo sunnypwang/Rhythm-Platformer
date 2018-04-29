@@ -296,6 +296,7 @@
     <backgrounds name="Background">
       <background>background\bgr_cloudfg</background>
       <background>background\bgr_clouds</background>
+      <background>background\background5</background>
     </backgrounds>
   </backgrounds>
   <paths name="paths"/>
