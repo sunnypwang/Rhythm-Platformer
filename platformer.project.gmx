@@ -194,6 +194,9 @@
           <sprite>sprites\spr_switch_s</sprite>
           <sprite>sprites\spr_switch_s_pressed</sprite>
         </sprites>
+        <sprites name="Rhythm">
+          <sprite>sprites\spr_rhythmarrow</sprite>
+        </sprites>
       </sprites>
       <sprite>sprites\spr_chest</sprite>
       <sprite>sprites\spr_chestarrow</sprite>
@@ -204,7 +207,11 @@
       </sprites>
       <sprite>sprites\spr_blob</sprite>
       <sprite>sprites\spr_blub</sprite>
-      <sprite>sprites\spr_giantblob</sprite>
+      <sprites name="Night stage ">
+        <sprite>sprites\sprite41_spr_blob_Inv_0</sprite>
+        <sprite>sprites\sprite42_spr_blob_Tel_0</sprite>
+        <sprite>sprites\sprite43_spr_blob_Inv2_0</sprite>
+      </sprites>
     </sprites>
     <sprites name="Level Progress">
       <sprite>sprites\spr_goal</sprite>
@@ -213,6 +220,16 @@
       <sprite>sprites\spr_checkpoint</sprite>
       <sprite>sprites\spr_signpost</sprite>
       <sprite>sprites\spr_dialog</sprite>
+    </sprites>
+    <sprites name="Level Elements">
+      <sprites name="General">
+        <sprite>sprites\spr_toggleb_r_empty</sprite>
+        <sprite>sprites\spr_toggleb_r</sprite>
+        <sprite>sprites\spr_toggleb_b_empty</sprite>
+        <sprite>sprites\spr_toggleb_b</sprite>
+        <sprite>sprites\spr_movingb</sprite>
+        <sprite>sprites\spr_movingb_arrow</sprite>
+      </sprites>
     </sprites>
     <sprites name="System">
       <sprites name="HUD">
@@ -224,6 +241,7 @@
         <sprite>sprites\spr_hud_number</sprite>
         <sprite>sprites\spr_hud_hp</sprite>
         <sprite>sprites\spr_hud_font</sprite>
+        <sprite>sprites\spr_pause</sprite>
       </sprites>
     </sprites>
     <sprites name="Collision">
@@ -234,18 +252,42 @@
       <sprite>sprites\spr_slope</sprite>
       <sprite>sprites\spr_slope_r</sprite>
     </sprites>
-    <sprite>sprites\spr_player</sprite>
+    <sprites name="Menu">
+      <sprite>sprites\spr_lvicon</sprite>
+      <sprite>sprites\spr_menuarrow</sprite>
+      <sprite>sprites\spr_lvpreview</sprite>
+      <sprite>sprites\spr_stageselecttext</sprite>
+      <sprite>sprites\spr_lvcursor</sprite>
+      <sprite>sprites\spr_menuback</sprite>
+    </sprites>
     <sprite>sprites\spr_testplt</sprite>
+    <sprite>sprites\spr_player</sprite>
     <sprite>sprites\spr_circle</sprite>
     <sprite>sprites\sprite22</sprite>
     <sprite>sprites\sprite4</sprite>
-    <sprite>sprites\spr_spring</sprite>
-    <sprite>sprites\spr_cloud</sprite>
-    <sprite>sprites\spr_bomb</sprite>
+    <sprite>sprites\sprite31_Foreground1</sprite>
+    <sprites name="NIght stage">
+      <sprite>sprites\sprite33_spr_testplt_Night</sprite>
+      <sprite>sprites\sprite39_Disapper2</sprite>
+      <sprite>sprites\sprite34_spr_testplt_Ver</sprite>
+      <sprite>sprites\sprite35_Disapper</sprite>
+      <sprite>sprites\sprite36_Foreground1</sprite>
+      <sprite>sprites\sprite37_spr_testplt_Hor</sprite>
+      <sprite>sprites\sprite32_Disapper</sprite>
+      <sprite>sprites\sprite40_Disapper2</sprite>
+    </sprites>
+    <sprites name="Village stage">
+      <sprite>sprites\spr_spring</sprite>
+      <sprite>sprites\spr_giantblob</sprite>
+      <sprite>sprites\spr_springToogle</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
     <background>background\background1</background>
+    <backgrounds name="Menu">
+      <background>background\bg_menu</background>
+    </backgrounds>
     <backgrounds name="Background">
       <background>background\bgr_cloudfg</background>
       <background>background\bgr_clouds</background>
@@ -424,6 +466,7 @@
     </scripts>
     <script>scripts\init_globals_music.gml</script>
     <script>scripts\init_globals.gml</script>
+    <script>scripts\init_rhythmhandler.gml</script>
     <scripts name="Enemy Behavior">
       <script>scripts\scr_turnwall.gml</script>
       <script>scripts\scr_turnenemy.gml</script>
@@ -464,6 +507,7 @@
         <object>objects\obj_levelcontrol</object>
         <object>objects\obj_rhythmicparent</object>
         <object>objects\obj_deactivateparent</object>
+        <object>objects\obj_rhythmcontrollerparent</object>
       </objects>
       <objects name="Test">
         <object>objects\obj_testmove</object>
@@ -478,6 +522,11 @@
           <object>objects\obj_levelintro</object>
           <object>objects\obj_levelresult</object>
           <object>objects\obj_menu</object>
+          <objects name="Menu Assets">
+            <object>objects\obj_menu_arrow_up</object>
+            <object>objects\obj_menu_arrow_down</object>
+            <object>objects\obj_lvcursor</object>
+          </objects>
         </objects>
         <objects name="Levels">
           <object>objects\obj_camera</object>
@@ -506,6 +555,9 @@
           <object>objects\obj_switch_s</object>
         </objects>
       </objects>
+      <objects name="Rhythm">
+        <object>objects\obj_rhythmarrow</object>
+      </objects>
       <object>objects\obj_chest</object>
     </objects>
     <objects name="Enemy">
@@ -518,13 +570,13 @@
       <objects name="Common">
         <object>objects\obj_blob</object>
         <object>objects\obj_blub</object>
-        <object>objects\obj_giantBlub</object>
       </objects>
     </objects>
     <objects name="Level Progress">
       <objects name="DO NOT USE">
         <object>objects\obj_goal_statue</object>
         <object>objects\obj_message</object>
+        <object>objects\obj_pause</object>
       </objects>
       <objects name="Event">
         <object>objects\obj_signpost</object>
@@ -533,21 +585,66 @@
       <object>objects\obj_goal</object>
     </objects>
     <objects name="Level Elements">
+      <objects name="DO NOT USE">
+        <object>objects\obj_toggleb_controller</object>
+      </objects>
       <objects name="Generals">
         <object>objects\obj_testcoll</object>
         <object>objects\obj_testplaymove</object>
+        <object>objects\obj_toggleb_r</object>
+        <object>objects\obj_toggleb_b</object>
+        <object>objects\obj_toggleb_r_fast</object>
+        <object>objects\obj_toggleb_b_fast</object>
+        <object>objects\obj_movingb</object>
       </objects>
     </objects>
-    <object>objects\obj_spring</object>
-    <object>objects\obj_bomb</object>
-    <object>objects\obj_cloud</object>
+    <objects name="room_night_unique">
+      <object>objects\object_Extend_Hor</object>
+      <object>objects\object_blind</object>
+      <object>objects\object_Still</object>
+      <object>objects\object_move_hor1</object>
+      <object>objects\object_move_squareUL1</object>
+      <object>objects\object_move_squareUR1</object>
+      <object>objects\object_move_squareDR1</object>
+      <object>objects\object_move_squareDL1</object>
+      <object>objects\object_move_hor2</object>
+      <object>objects\object_move_hor2_V_R</object>
+      <object>objects\object_move_hor3</object>
+      <object>objects\object_move_hor3_R</object>
+      <object>objects\object_move_Ver1</object>
+      <object>objects\object_move_Ver2</object>
+      <object>objects\object_move_Ver2_H</object>
+      <object>objects\object_move_Ver2_H_R</object>
+      <object>objects\object_move_Hor2_H_R</object>
+      <object>objects\object_move_Ver3</object>
+    </objects>
+    <objects name="Night Stage">
+      <object>objects\obj_parent_night</object>
+      <object>objects\obj_Inv</object>
+      <object>objects\object_Tel_parent</object>
+      <object>objects\obj_Tel_R_3</object>
+      <object>objects\obj_Tel_R_4_Slow</object>
+      <object>objects\obj_Tel_R_4_Slow_R</object>
+      <object>objects\obj_Tel_V_3</object>
+    </objects>
+    <objects name="ForeGround">
+      <object>objects\Fore_Ground</object>
+    </objects>
+    <objects name="village stage">
+      <object>objects\obj_springToogle</object>
+      <object>objects\obj_hurtToogle</object>
+      <object>objects\obj_giantBlub</object>
+      <object>objects\obj_spring</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\room1</room>
-    <room>rooms\rm_lvintro</room>
     <room>rooms\rm_yong</room>
     <room>rooms\rm_tutorial</room>
     <room>rooms\rm_menu</room>
+    <room>rooms\rm_lvintro</room>
+    <room>rooms\room_night</room>
+    <room>rooms\rm_tutorial_actual</room>
     <room>rooms\rm_test</room>
     <room>rooms\rm_test_moving</room>
     <room>rooms\rm_result</room>
