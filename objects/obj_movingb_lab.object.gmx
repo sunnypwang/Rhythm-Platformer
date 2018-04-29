@@ -31,7 +31,7 @@ mystate = -1;
 beatperstep = 1;
 d = 0;
 image_speed = 0;
-
+sp = 5;
 ang = 0;
 
 mysolid = instance_create(x,y,obj_solid);
@@ -96,17 +96,17 @@ vspeed = 0;
 
 switch(mystate){
 case 0: //left
-hspeed = -4;
+hspeed = -sp;
 
 break;
 case 1: //right
-hspeed = 4;
+hspeed = sp;
 break;
 case 2: //up
-vspeed = 4;
+vspeed = sp;
 break;
 case 3: //down
-vspeed = -4;
+vspeed = -sp;
 break;
 }
 alarm[2]=9;
@@ -158,7 +158,7 @@ audio_play_sound(snd_metronome, 11, false);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string> mysolid.x = x;
+            <string>mysolid.x = x;
 mysolid.y = y;
 t = bbox_top;
 b = bbox_bottom;
@@ -188,15 +188,11 @@ mid_y = (t+b)/2;
             obj_player.y=b+5;
     }
     if(instance_exists(obj_player)){
-    if(collision_rectangle(l,t-5,r,t,obj_player,false,true)){
+    if(collision_rectangle(l,t-1,r,t,obj_player,false,true)){
             obj_player.x+=hspeed;
-            obj_player.vsp = 0;
-            obj_player.state=0;
-            if(vspeed&lt;0)obj_player.y=t-32+vspeed;
-            else obj_player.y+=vspeed;
+            obj_player.y+=vspeed;
     }
     }
-    
     /*if(instance_exists(obj_player)){
     a = collision_rectangle(obj_player.bbox_left-1,obj_player.bbox_top+1,obj_player.bbox_right-1,obj_player.bbox_bottom-1,obj_solid,false,true);
     if( a != noone){
