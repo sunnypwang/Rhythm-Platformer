@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>event_inherited();
 
-mystate = global.togglebstate;
+mystate = 01;//global.togglebstate;
 
 if(!instance_exists(obj_toggleb_controller)){
 instance_create(x,y,obj_toggleb_controller);
