@@ -181,11 +181,11 @@ levelbpm="130";
 levelsongartist="Danny Baranowsky";
 break;
 case 1:
-levelname="FrostFire Peak";
+levelname="Jungle Facility";
 levelauthor="Kirbio";
-levelsong="Neon Paradise (ATS Version)";
-levelbpm="109";
-levelsongartist="Falk, DJ Max-E";
+levelsong="Ascent to Madness";
+levelbpm="155";
+levelsongartist="Aundy Tunstall";
 break;
 default:
 levelname="NOT_SET_YET";

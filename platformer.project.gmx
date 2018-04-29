@@ -3,8 +3,8 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="11" name="datafiles">
-    <datafiles number="11" name="music">
+  <datafiles number="12" name="datafiles">
+    <datafiles number="12" name="music">
       <datafile>
         <name>bgm_menu.ogg</name>
         <exists>-1</exists>
@@ -38,23 +38,6 @@
           </Config>
         </ConfigOptions>
         <filename>bgm_tutorial.ogg</filename>
-      </datafile>
-      <datafile>
-        <name>bgm_icemnt.ogg</name>
-        <exists>-1</exists>
-        <size>10531197</size>
-        <exportAction>2</exportAction>
-        <exportDir></exportDir>
-        <overwrite>0</overwrite>
-        <freeData>-1</freeData>
-        <removeEnd>0</removeEnd>
-        <store>0</store>
-        <ConfigOptions>
-          <Config name="Default">
-            <CopyToMask>9223372036854775807</CopyToMask>
-          </Config>
-        </ConfigOptions>
-        <filename>bgm_icemnt.ogg</filename>
       </datafile>
       <datafile>
         <name>bgm_lab.ogg</name>
@@ -106,6 +89,23 @@
           </Config>
         </ConfigOptions>
         <filename>bgm_village.ogg</filename>
+      </datafile>
+      <datafile>
+        <name>bgm_junglefac.ogg</name>
+        <exists>-1</exists>
+        <size>8130508</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>bgm_junglefac.ogg</filename>
       </datafile>
     </datafiles>
     <datafile>
@@ -250,6 +250,7 @@
     </sprites>
     <sprites name="Collision">
       <sprite>sprites\spr_solid</sprite>
+      <sprite>sprites\spr_solidtop</sprite>
       <sprite>sprites\spr_hurt</sprite>
       <sprite>sprites\spr_instakill</sprite>
       <sprite>sprites\spr_slope_end</sprite>
@@ -310,6 +311,32 @@
       <sprite>sprites\spr_shoe</sprite>
       <sprite>sprites\spr_warp</sprite>
     </sprites>
+    <sprites name="Jungle Facility">
+      <sprites name="Enemy">
+        <sprite>sprites\spr_inkblob</sprite>
+        <sprite>sprites\spr_inkblob_puddle</sprite>
+        <sprite>sprites\spr_ampball</sprite>
+        <sprite>sprites\spr_ampball_shock</sprite>
+        <sprite>sprites\spr_bombcopter</sprite>
+        <sprite>sprites\spr_bombcopter_explode</sprite>
+        <sprite>sprites\spr_bombcopter_count</sprite>
+        <sprite>sprites\spr_vinehead_head</sprite>
+        <sprite>sprites\spr_vinehead_vine</sprite>
+      </sprites>
+      <sprites name="Elements">
+        <sprite>sprites\spr_letterb_o</sprite>
+        <sprite>sprites\spr_statueswitch</sprite>
+        <sprite>sprites\spr_statueswitch_deact</sprite>
+        <sprite>sprites\spr_shutterdoor</sprite>
+        <sprite>sprites\spr_elecprobe</sprite>
+        <sprite>sprites\spr_electric</sprite>
+        <sprite>sprites\spr_crusher</sprite>
+      </sprites>
+    </sprites>
+    <sprites name="Effect">
+      <sprite>sprites\spr_eneexp</sprite>
+      <sprite>sprites\spr_explosion</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\tile_night</background>
@@ -336,6 +363,19 @@
       <background>background\bg_musical</background>
       <background>background\bg_musical2</background>
       <background>background\bgr_beat_align</background>
+    </backgrounds>
+    <backgrounds name="Jungle Facility">
+      <backgrounds name="Background">
+        <background>background\bg_factory</background>
+        <background>background\bg_forest</background>
+        <background>background\bg_forest2</background>
+        <background>background\bg_moon</background>
+      </backgrounds>
+      <backgrounds name="Tileset">
+        <background>background\bg_factoryruins</background>
+        <background>background\bg_vegetation</background>
+        <background>background\bg_hintmarking</background>
+      </backgrounds>
     </backgrounds>
   </backgrounds>
   <paths name="paths"/>
@@ -515,7 +555,10 @@
     <script>scripts\scr_cameramanage.gml</script>
     <script>scripts\scr_setbpm.gml</script>
     <script>scripts\scr_setstartposition.gml</script>
+    <script>scripts\scr_setpattern.gml</script>
   </scripts>
+  <shaders name="shaders"/>
+  <fonts name="fonts"/>
   <objects name="objects">
     <objects name="Player">
       <object>objects\obj_player</object>
@@ -528,6 +571,7 @@
     </objects>
     <objects name="Collision">
       <objects name="Solid">
+        <object>objects\obj_solidtop</object>
         <object>objects\obj_solid</object>
         <object>objects\obj_solid_top</object>
       </objects>
@@ -687,6 +731,24 @@
     <objects name="ForeGround">
       <object>objects\Fore_Ground</object>
     </objects>
+    <objects name="Jungle Facility">
+      <objects name="Enemy">
+        <objects name="DO NOT USE">
+          <object>objects\obj_inkblob_puddle</object>
+          <object>objects\obj_electric</object>
+        </objects>
+        <object>objects\ob_inkblob</object>
+        <object>objects\obj_ampball</object>
+        <object>objects\obj_bombcopter</object>
+        <object>objects\obj_vinehead</object>
+        <object>objects\obj_electricprobe</object>
+      </objects>
+      <objects name="Element">
+        <object>objects\obj_letterb</object>
+        <object>objects\obj_statueswitch</object>
+        <object>objects\obj_shutterdoor</object>
+        <object>objects\obj_crusher</object>
+      </objects>
     <objects name="village stage">
       <object>objects\obj_springToogle</object>
       <object>objects\obj_hurtToogle</object>
@@ -710,6 +772,10 @@
     <room>rooms\room1</room>
     <room>rooms\rm_menu</room>
     <room>rooms\rm_lvintro</room>
+    <room>rooms\rm_junglefac</room>
+    <room>rooms\rm_tutorial_actual</room>
+    <room>rooms\rm_jungleobjtest</room>
+    <room>rooms\rm_tutorial</room>
     <room>rooms\room_night</room>
     <room>rooms\rm_yong</room>
     <room>rooms\rm_lab</room>
@@ -717,8 +783,6 @@
       <room>rooms\rm_sunny</room>
       <room>rooms\rm_sunny2</room>
     </rooms>
-    <room>rooms\rm_tutorial</room>
-    <room>rooms\rm_tutorial_actual</room>
     <room>rooms\rm_test</room>
     <room>rooms\rm_test_moving</room>
     <room>rooms\rm_result</room>

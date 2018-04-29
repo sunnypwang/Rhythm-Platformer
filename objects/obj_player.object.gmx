@@ -234,8 +234,13 @@ vsp = min(vsp+grav,VSP_MAX);
 
 
 //Standing &amp; Jump Control
-if (collision_rectangle(bbox_left, bbox_bottom, bbox_right, bbox_bottom+1, obj_solid, false, true) or position_meeting(x,y+FEET_OFFSET+1,obj_slope)) //if standing on ground
+if(vsp &gt;= 0){
+var solidtop = collision_rectangle(bbox_left,bbox_bottom,bbox_right,bbox_bottom+vsp,obj_solidtop,0,0);
+if (solidtop or position_meeting(x,y+FEET_OFFSET+1,obj_slope)) //if standing on ground
 {
+    if(solidtop){
+    y = solidtop.y-31;
+    }
 if(state != JUMPING){
     state = STANDING;
     vsp = 0;
@@ -245,6 +250,8 @@ if(state != JUMPING){
         vsp = -JUMP_SPD;
     }}
 }
+}
+
 if(state==JUMPING and vsp &lt; 0 and not keyboard_check(vk_space)){
     vsp = round(vsp/JUMP_DECEL);
 }
