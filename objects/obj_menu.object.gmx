@@ -181,7 +181,7 @@ levelbpm="130";
 levelsongartist="Danny Baranowsky";
 break;
 case 1:
-levelname="Village";
+levelname="Sunshine Village";
 levelauthor="yong133";
 levelsong="Finale";
 levelbpm="95";
@@ -299,7 +299,7 @@ default:
 global.displevelname="NOT_SET_YET";
 global.destlevel = rm_menu;
 }
-
+global.level = selectIndex;
 
 alarm[0]=1;
 </string>

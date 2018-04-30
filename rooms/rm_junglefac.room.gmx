@@ -189,7 +189,6 @@
     <instance objName="obj_key" x="2960" y="304" name="inst_AE11AACB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_chest" x="1968" y="96" name="inst_4A947639" locked="0" code="myitem = obj_key&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ob_inkblob" x="2384" y="144" name="inst_7F8FE7B1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ob_inkblob" x="2848" y="304" name="inst_B432A176" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_bombcopter" x="2656" y="240" name="inst_131A47C0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ampball" x="2448" y="96" name="inst_F64ABC1C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ampball" x="2576" y="256" name="inst_95D795D5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -499,7 +498,6 @@
     <tile bgName="bg_factoryruins" x="2752" y="304" w="16" h="16" xo="240" yo="208" id="10002701" name="inst_E86C8B5A" depth="11" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bg_factoryruins" x="2752" y="288" w="16" h="16" xo="224" yo="208" id="10002702" name="inst_22C76FBD" depth="11" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bg_hintmarking" x="384" y="96" w="16" h="32" xo="0" yo="0" id="10002703" name="inst_A864F730" depth="11" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bg_hintmarking" x="1088" y="64" w="16" h="16" xo="16" yo="16" id="10002710" name="inst_3B184F15" depth="11" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bg_hintmarking" x="1904" y="208" w="32" h="32" xo="48" yo="0" id="10002718" name="inst_4515303B" depth="11" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bg_hintmarking" x="1152" y="128" w="32" h="32" xo="16" yo="0" id="10002721" name="inst_02574EA3" depth="11" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bg_factoryruins" x="0" y="160" w="112" h="48" xo="144" yo="144" id="10001518" name="inst_5C6816FE" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -999,6 +997,46 @@
     <tile bgName="bg_factoryruins" x="2512" y="288" w="32" h="32" xo="32" yo="192" id="10002377" name="inst_DB658B34" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bg_factoryruins" x="2336" y="288" w="32" h="32" xo="32" yo="192" id="10002380" name="inst_04ED34CA" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bg_factoryruins" x="3104" y="128" w="32" h="32" xo="32" yo="192" id="10002382" name="inst_D61D749F" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_factoryruins" x="928" y="0" w="96" h="16" xo="144" yo="144" id="10003446" name="inst_5EA07E81" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_factoryruins" x="1024" y="0" w="96" h="16" xo="144" yo="144" id="10003447" name="inst_F4676076" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_factoryruins" x="1120" y="0" w="96" h="16" xo="144" yo="144" id="10003448" name="inst_CBCF4CF2" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_factoryruins" x="1216" y="0" w="96" h="16" xo="144" yo="144" id="10003449" name="inst_5964E4AF" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_factoryruins" x="1312" y="0" w="96" h="16" xo="144" yo="144" id="10003450" name="inst_EA6B6146" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_factoryruins" x="1408" y="0" w="96" h="16" xo="144" yo="144" id="10003451" name="inst_5BBD2A73" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_factoryruins" x="1504" y="0" w="96" h="16" xo="144" yo="144" id="10003452" name="inst_89020508" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_factoryruins" x="1600" y="0" w="96" h="16" xo="144" yo="144" id="10003453" name="inst_7F266D34" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_factoryruins" x="1696" y="0" w="64" h="16" xo="144" yo="144" id="10003455" name="inst_47AE4998" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_factoryruins" x="1952" y="0" w="64" h="16" xo="144" yo="144" id="10003456" name="inst_81DB5096" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_factoryruins" x="2016" y="0" w="64" h="16" xo="144" yo="144" id="10003457" name="inst_7CC2D0F3" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_factoryruins" x="2080" y="0" w="64" h="16" xo="144" yo="144" id="10003458" name="inst_4F15116C" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_factoryruins" x="2144" y="0" w="64" h="16" xo="144" yo="144" id="10003459" name="inst_DEB62FC4" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_factoryruins" x="2208" y="0" w="112" h="16" xo="144" yo="144" id="10003460" name="inst_2D36278D" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_factoryruins" x="2320" y="0" w="112" h="16" xo="144" yo="144" id="10003461" name="inst_4C54D2CF" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_factoryruins" x="2432" y="0" w="112" h="16" xo="144" yo="144" id="10003463" name="inst_21A744E9" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_factoryruins" x="2544" y="0" w="112" h="16" xo="144" yo="144" id="10003464" name="inst_A040194E" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_factoryruins" x="2656" y="0" w="112" h="16" xo="144" yo="144" id="10003465" name="inst_41B11B7E" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_factoryruins" x="2768" y="0" w="112" h="16" xo="144" yo="144" id="10003466" name="inst_EDCEABE7" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_factoryruins" x="2880" y="0" w="112" h="16" xo="144" yo="144" id="10003467" name="inst_FAFD4A48" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_factoryruins" x="2992" y="0" w="112" h="16" xo="144" yo="144" id="10003468" name="inst_E169E2A5" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_factoryruins" x="3104" y="0" w="96" h="16" xo="144" yo="144" id="10003470" name="inst_1295571B" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_factoryruins" x="1952" y="320" w="112" h="16" xo="144" yo="144" id="10003471" name="inst_9B408897" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_factoryruins" x="2208" y="352" w="112" h="16" xo="144" yo="144" id="10003475" name="inst_8CFD02A5" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_factoryruins" x="2320" y="352" w="112" h="16" xo="144" yo="144" id="10003476" name="inst_BEFDC814" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_factoryruins" x="2432" y="352" w="112" h="16" xo="144" yo="144" id="10003477" name="inst_BCFF7972" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_factoryruins" x="2544" y="352" w="112" h="16" xo="144" yo="144" id="10003478" name="inst_2E4EE49B" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_factoryruins" x="2656" y="352" w="112" h="16" xo="144" yo="144" id="10003479" name="inst_A945EF33" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_factoryruins" x="2768" y="352" w="112" h="16" xo="144" yo="144" id="10003480" name="inst_763FF2F4" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_factoryruins" x="2880" y="352" w="112" h="16" xo="144" yo="144" id="10003481" name="inst_E51B959D" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_factoryruins" x="2992" y="352" w="112" h="16" xo="144" yo="144" id="10003482" name="inst_626A9840" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_factoryruins" x="3104" y="352" w="112" h="16" xo="144" yo="144" id="10003483" name="inst_568136ED" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_factoryruins" x="3216" y="352" w="112" h="16" xo="144" yo="144" id="10003484" name="inst_2260C5C5" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_factoryruins" x="3328" y="352" w="32" h="16" xo="208" yo="144" id="10003485" name="inst_9FA48073" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_factoryruins" x="2144" y="336" w="64" h="32" xo="144" yo="144" id="10003486" name="inst_1DAF721F" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_factoryruins" x="2064" y="320" w="80" h="48" xo="144" yo="144" id="10003488" name="inst_56A9CFBB" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_factoryruins" x="1936" y="336" w="96" h="32" xo="144" yo="144" id="10003489" name="inst_B9769E88" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_factoryruins" x="1920" y="288" w="16" h="16" xo="192" yo="144" id="10003490" name="inst_BBDECD5A" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_factoryruins" x="1952" y="304" w="80" h="16" xo="160" yo="144" id="10003491" name="inst_B353A025" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_factoryruins" x="2032" y="336" w="32" h="32" xo="176" yo="144" id="10003492" name="inst_386E904C" depth="9" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bg_factoryruins" x="768" y="208" w="96" h="128" xo="160" yo="0" id="10001859" name="inst_4CAD73B1" depth="-1" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bg_factoryruins" x="864" y="304" w="16" h="32" xo="144" yo="144" id="10001860" name="inst_4CE1A6BE" depth="-1" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bg_factoryruins" x="864" y="208" w="16" h="48" xo="160" yo="144" id="10001922" name="inst_B28B4582" depth="-1" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

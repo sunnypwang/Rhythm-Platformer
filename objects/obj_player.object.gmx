@@ -435,7 +435,7 @@ ishurt = true;
 hsp = -3*dir;
 vsp = -5;
 y=y-3;
-alarm[9]=15; //remove invincibility
+alarm[9]=30; //remove invincibility
 alarm[10]=10;//return to normal state
 
 }
@@ -462,7 +462,7 @@ alarm[10]=10;//return to normal state
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Insta-kill player
+            <string>///Insta-kill player
 
 instance_create(x,y,obj_deadplayer);
 instance_destroy()

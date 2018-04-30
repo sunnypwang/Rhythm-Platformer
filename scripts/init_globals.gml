@@ -42,6 +42,9 @@ for (var i = 0; i < 3; i++) {
 //Counts number of moons collected in the entire game
 global.mooncount = 0;
 
+//global variables for scoring
+global.plscore = 0;
+
 //global variables for color switch puzzle
 global.swcorrect=0;
 global.swopen = false;
@@ -51,3 +54,4 @@ global.midwaysw = 0;
 //global variables for menus
 global.destlevel = 0;
 global.displevelname = "NOT SET YET"
+global.lvtimer = 0;

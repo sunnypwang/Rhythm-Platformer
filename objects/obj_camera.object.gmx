@@ -27,6 +27,10 @@
             <kind>1</kind>
             <string>destx = 0;
 desty = 0;
+
+//Timer Stuff
+starttime = current_time;
+sec = 0;
 </string>
           </argument>
         </arguments>
@@ -94,6 +98,55 @@ instance_create(x,y,obj_pause);
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Kill Player if fall offscreen
+
+if(instance_exists(obj_player)&amp;&amp;obj_player.y&gt;room_height){
+with obj_player event_user(14);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Timer Handler
+
+sec = current_time-starttime;
+global.lvtimer = sec;
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="8" enumb="0">
       <action>
@@ -120,9 +173,14 @@ draw_text(x+42,y+14,string_format(global.note, 2, 0));
 
 //Timer
 draw_sprite_ext(spr_hud_time,0,x+319,y+15,1,1,0,c_white,1)
-draw_text(x+352,y+15,"00");
-draw_text(x+375,y+15,"00");
-draw_text(x+398,y+15,"00");
+draw_text(x+352,y+15,string_format(sec div 60000, 2, 0));
+draw_text(x+375,y+15,string_format((sec div 1000) mod 60, 2, 0));
+draw_text(x+398,y+15,string_format((sec%1000) div 10, 2, 0));
+
+//Score
+draw_set_halign(fa_right)
+draw_text(x+415,y+30,global.plscore);
+draw_set_halign(fa_left)
 
 //Collectible
 for(i=0;i&lt;3;i++){

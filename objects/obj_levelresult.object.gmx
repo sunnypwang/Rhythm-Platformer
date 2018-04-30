@@ -30,15 +30,26 @@ obj_persistent_rhythm.counting=false;
 FMODGroupSetPitch(2,1);
 global.switcheffect=false;
 
+collectedmoon  =0;
+
 //Save collected moon
 for (var i = 0; i &lt; 3; i++) { 
     if (ds_map_find_value(global.moon[i],global.level)&gt;0)
         ds_map_replace(global.moon[i],global.level,3);
+        collectedmoon +=1;
 }
 
 //Reset Color Switches
 global.midwaysw = 0;
 global.lastsw = 0;
+
+//Parse Information
+timeused = global.lvtimer;
+t_m = string_format(timeused/60000,2,0);
+t_s = string_format((timeused div 1000) mod 60,2,0);
+t_ms = string_format((timeused%1000) div 10,2,0);
+
+disp_score = string_replace_all(string_format(global.plscore,8,0),' ','0');
 
 alarm[0]=60;
 </string>
@@ -91,10 +102,12 @@ room_goto(rm_menu)
 draw_set_font(global.font);
 draw_set_halign(fa_center);
 
-draw_text(212,80,"Result");
-draw_text(212,120,"N/A");
-draw_text(212,150,"-Insert Text Here-");
-draw_text(212,180,"(WIP)");
+draw_text(212,30,"Result");
+draw_text(212,60,"Time Used: "+t_m+":"+t_s+":"+t_ms);
+draw_text(212,90,"Moon Collected: "+string_format(collectedmoon,1,0)+"/3");
+draw_text(212,120,"Base Score: "+disp_score);
+draw_text(212,150,"Final Rank");
+draw_text(212,180,"X");
 
 draw_set_halign(fa_left);
 </string>

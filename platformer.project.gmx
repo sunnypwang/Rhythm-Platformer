@@ -336,6 +336,7 @@
     <sprites name="Effect">
       <sprite>sprites\spr_eneexp</sprite>
       <sprite>sprites\spr_explosion</sprite>
+      <sprite>sprites\spr_judging</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -556,6 +557,7 @@
     <script>scripts\scr_setbpm.gml</script>
     <script>scripts\scr_setstartposition.gml</script>
     <script>scripts\scr_setpattern.gml</script>
+    <script>scripts\getbeattier.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="Player">
@@ -649,6 +651,8 @@
           <object>objects\obj_enemyparent</object>
           <object>objects\obj_deactenemyparent</object>
         </objects>
+        <object>objects\obj_enemydead</object>
+        <object>objects\obj_judging</object>
       </objects>
       <objects name="Common">
         <object>objects\obj_blob</object>
@@ -757,6 +761,7 @@
         <object>objects\obj_player_autorun</object>
         <object>objects\obj_arrow_d</object>
         <object>objects\obj_arrow_u</object>
+        <object>objects\obj_check</object>
         <object>objects\obj_cross</object>
         <object>objects\obj_drum</object>
         <object>objects\obj_pattern</object>
