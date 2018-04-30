@@ -183,6 +183,7 @@ dir = sign(hspeed);
 if(isactivate){
 d-=1;
 if(d&lt;=0){
+instance_create(x,y,obj_explosion);
 instance_destroy()
 }
 }
