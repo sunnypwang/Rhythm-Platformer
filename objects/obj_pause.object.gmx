@@ -201,6 +201,7 @@ global.metronome = !global.metronome;
 event_user(2);
 break;
 case 3:
+global.checkpoint=false;
 instance_activate_all();
 FMODInstanceStop(global._stream);
 room_goto(rm_menu)

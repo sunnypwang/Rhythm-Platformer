@@ -186,9 +186,6 @@
     <instance objName="obj_laser_r" x="340" y="144" name="inst_D5686EE1" locked="0" code="" scaleX="0.0599999986588955" scaleY="1.75" colour="4294967295" rotation="0"/>
     <instance objName="obj_laser_r" x="228" y="144" name="inst_7AD2D892" locked="0" code="" scaleX="0.0700000002980232" scaleY="1.75" colour="4294967295" rotation="0"/>
     <instance objName="obj_chest" x="64" y="336" name="inst_C6209593" locked="0" code="myitem = obj_key;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_hurt" x="288" y="362" name="inst_CEB5CE35" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_hurt" x="288" y="256" name="inst_29EA7C4C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_hurt" x="288" y="264" name="inst_4C22A47E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="64" y="224" name="inst_E9E7125D" locked="0" code="" scaleX="2" scaleY="6" colour="4294967295" rotation="0"/>
     <instance objName="obj_toggleb_r_s" x="144" y="224" name="inst_69DEB734" locked="0" code="" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="obj_toggleb_r_s" x="208" y="224" name="inst_F209F504" locked="0" code="" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
@@ -307,6 +304,9 @@
     <instance objName="obj_note" x="704" y="656" name="inst_C98CC00A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_note" x="912" y="656" name="inst_6E84A2B0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_note" x="912" y="672" name="inst_1E5A9927" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_solid" x="288" y="256" name="inst_3E377032" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_solid" x="288" y="264" name="inst_D248BD9C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_thorn" x="288" y="358" name="inst_64FB99C2" locked="0" code="" scaleX="1" scaleY="0.625" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="background0" x="0" y="0" w="32" h="32" xo="0" yo="0" id="10001480" name="inst_ACD869DB" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -891,6 +891,7 @@
     <tile bgName="background1" x="336" y="672" w="16" h="16" xo="0" yo="0" id="10002512" name="inst_D6E0CCD1" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="background1" x="336" y="656" w="16" h="16" xo="0" yo="0" id="10002513" name="inst_D43F0C39" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="background1" x="320" y="672" w="16" h="16" xo="0" yo="0" id="10002514" name="inst_83F7E941" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="background1" x="288" y="264" w="16" h="16" xo="0" yo="0" id="10003749" name="inst_E479925D" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
   </tiles>
   <PhysicsWorld>0</PhysicsWorld>
   <PhysicsWorldTop>0</PhysicsWorldTop>
