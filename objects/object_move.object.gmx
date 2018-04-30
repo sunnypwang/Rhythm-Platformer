@@ -175,12 +175,17 @@ audio_play_sound(snd_metronome, 11, false);
             <kind>1</kind>
             <string>mysolid.x = x;
 mysolid.y = y;
-if(place_meeting(x,y-5,obj_player)){
+/*if(place_meeting(x,y-5,obj_player)){
 obj_player.x+=hspeed;
 obj_player.y=y-31+vspeed;
 show_debug_message(vspeed);
 obj_player.vsp = 0;
 obj_player.state=0;
+}*/
+
+if(place_meeting(x,y-16,obj_player)){
+obj_player.x+=hspeed;
+obj_player.y+=vspeed;
 }
 if(place_meeting(x,y-5,obj_Tel_R_4_Slow)){
 obj_Tel_R_4_Slow.x+=hspeed;
@@ -197,6 +202,24 @@ show_debug_message(vspeed);
 obj_Inv_Still.vsp = 0;
 obj_Inv_Still.state=0;
 }
+
+if(collision_rectangle(bbox_left+1,bbox_top,bbox_right-3,bbox_top+sprite_height/10,obj_player,false,true)){
+        obj_player.y = bbox_top - (obj_player.bbox_bottom - obj_player.bbox_top )-0.01;
+        show_debug_message("ouch");
+        
+    } 
+ else if (!place_meeting(x,y+32,obj_solid) &amp;&amp; collision_rectangle(bbox_left+1,bbox_top+sprite_height/4,bbox_right-1,bbox_bottom,obj_player,false,true)){
+        obj_player.y = bbox_bottom + 1;
+        show_debug_message("ouch1");
+    }
+    else if(collision_rectangle(bbox_left,bbox_top+sprite_height/6,bbox_left+sprite_width/4,bbox_bottom,obj_player,false,true)){
+        obj_player.x = bbox_left - (obj_player.bbox_right - obj_player.x) - 2;
+    } else if (collision_rectangle(bbox_right-sprite_width/4,bbox_top+sprite_height/6,bbox_right,bbox_bottom,obj_player,false,true)) {
+        obj_player.x = bbox_right + (obj_player.x - obj_player.bbox_left) + 2;
+    } 
+
+
+
 </string>
           </argument>
         </arguments>
