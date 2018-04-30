@@ -376,7 +376,7 @@
     <instance objName="obj_note" x="2288" y="64" name="inst_21E1BEB1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_note" x="2288" y="96" name="inst_23A05797" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_note" x="2288" y="128" name="inst_543E99E1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_levelcontrol" x="0" y="0" name="inst_C587CCC0" locked="0" code="levelmusic = global._theme_tutorial;&#xA;scr_setbpm(130);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_levelcontrol" x="0" y="0" name="inst_C587CCC0" locked="0" code="levelmusic = global._theme_night;&#xA;scr_setbpm(96);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_goal" x="2448" y="80" name="inst_9407D121" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="2448" y="96" name="inst_1A0A86D4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="2464" y="96" name="inst_EF3CAE2C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

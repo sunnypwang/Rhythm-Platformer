@@ -3,8 +3,8 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="12" name="datafiles">
-    <datafiles number="12" name="music">
+  <datafiles number="13" name="datafiles">
+    <datafiles number="13" name="music">
       <datafile>
         <name>bgm_menu.ogg</name>
         <exists>-1</exists>
@@ -106,6 +106,23 @@
           </Config>
         </ConfigOptions>
         <filename>bgm_junglefac.ogg</filename>
+      </datafile>
+      <datafile>
+        <name>bgm_night.ogg</name>
+        <exists>-1</exists>
+        <size>5535155</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>bgm_night.ogg</filename>
       </datafile>
     </datafiles>
     <datafile>
@@ -290,6 +307,8 @@
       <sprite>sprites\spr_spring</sprite>
       <sprite>sprites\spr_giantblob</sprite>
       <sprite>sprites\spr_springToogle</sprite>
+      <sprite>sprites\spr_thorn</sprite>
+      <sprite>sprites\sprite118</sprite>
     </sprites>
     <sprites name="room_lab">
       <sprite>sprites\laser_red</sprite>
@@ -380,6 +399,7 @@
         <background>background\bg_hintmarking</background>
       </backgrounds>
     </backgrounds>
+    <background>background\bg_village</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -756,9 +776,10 @@
       </objects>
       <objects name="village stage">
         <object>objects\obj_springToogle</object>
-        <object>objects\obj_hurtToogle</object>
         <object>objects\obj_giantBlub</object>
         <object>objects\obj_spring</object>
+        <object>objects\obj_hurtToogle</object>
+        <object>objects\obj_thorn</object>
       </objects>
       <objects name="MusicLand">
         <object>objects\obj_player_autorun</object>
@@ -779,7 +800,6 @@
     <room>rooms\room1</room>
     <room>rooms\rm_menu</room>
     <room>rooms\rm_lvintro</room>
-    <room>rooms\rm_yong</room>
     <rooms name="Sunny">
       <room>rooms\rm_sunny</room>
       <room>rooms\rm_sunny2</room>
@@ -794,6 +814,7 @@
     <room>rooms\rm_test_moving</room>
     <room>rooms\rm_result</room>
     <room>rooms\TEMPLATE_ROOM</room>
+    <room>rooms\rm_yong</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

@@ -36,3 +36,7 @@ music_setup(global._theme_village, "Village", 2);
 global._theme_lab = music_add("Laboratory");
 music_setup(global._theme_lab, "Laboratory", 2);
 
+//Night
+global._theme_night = music_add("Night");
+music_setup(global._theme_night, "Night", 2);
+
