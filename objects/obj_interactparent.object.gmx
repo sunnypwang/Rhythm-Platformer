@@ -72,6 +72,24 @@ sound = 0;
           <argument>
             <kind>1</kind>
             <string>if(!hit){
+    var tier = getbeattier()
+var judging = instance_create(x+24,y+24,obj_judging);
+judging.image_index = tier
+///Scoring
+switch(tier){
+case 0:
+break;
+case 1:
+global.plscore +=10;
+break;
+case 2:
+global.plscore +=20;
+break;
+case 3:
+global.plscore +=50;
+break;
+}
+
     audio_play_sound(sound,11,false);
     hit = 1;
     alarm[0] = 20;

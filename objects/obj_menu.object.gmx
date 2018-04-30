@@ -190,9 +190,9 @@ break;
 case 2:
 levelname="Night Begins to Shine";
 levelauthor="Xblade Protector";
-levelsong="Night Begins to Shine";
-levelbpm="???";
-levelsongartist="???";
+levelsong="Cavern of Remembrance";
+levelbpm="96";
+levelsongartist="Yoko Shimomura";
 break;
 case 3:
 levelname="Sonata Scramble";
@@ -284,7 +284,7 @@ global.displevelname="Night Begins to Shine";
 global.destlevel = room_night;
 break;
 case 3:
-global.displevelname="Music Land";
+global.displevelname="Sonata Scramble";
 global.destlevel = rm_sunny;
 break;
 case 4:
