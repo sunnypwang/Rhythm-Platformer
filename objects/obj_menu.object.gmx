@@ -195,7 +195,7 @@ levelbpm="???";
 levelsongartist="???";
 break;
 case 3:
-levelname="Music Land";
+levelname="Sonata Scramble";
 levelauthor="Sunny";
 levelsong="Gourmet Race";
 levelbpm="184";
@@ -331,14 +331,14 @@ draw_sprite(spr_stageselecttext,0,13,8);
 
 //Draw Stage Icons
 for(i=0;i&lt;6;i+=1){
-draw_sprite(spr_lvicon,0,23,54+27*i);
+draw_sprite(spr_lvicon,i+1,23,54+27*i);
 }
 
 
 //Draw Stage Info Panel
 draw_sprite(spr_menuback,0,72,35);
 
-draw_sprite(spr_lvpreview,0,98,56);
+draw_sprite(spr_lvpreview,selectIndex+1,98,56);
 
 draw_text(206,57,levelname);
 draw_text(206,80,"Author: "+levelauthor);
@@ -348,7 +348,7 @@ draw_text(98,128,"Music: "+levelsong);
 draw_text(98,150,"BPM: "+levelbpm);
 draw_text(98,173,"Composer: "+levelsongartist);
 
-draw_text(347,80,"Rank");
+//draw_text(347,80,"Rank");
 </string>
           </argument>
         </arguments>

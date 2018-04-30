@@ -236,7 +236,7 @@ instance_destroy()
           <argument>
             <kind>1</kind>
             <string>draw_sprite_ext(sprite_index, image_index, x, y, -dir, 1, 0, color, 1 );
-draw_text(x,y-16,hp);
+//draw_text(x,y-16,hp);
 </string>
           </argument>
         </arguments>

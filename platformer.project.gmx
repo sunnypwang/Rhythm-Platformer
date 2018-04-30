@@ -652,6 +652,7 @@
           <object>objects\obj_deactenemyparent</object>
         </objects>
         <object>objects\obj_enemydead</object>
+        <object>objects\obj_explosion</object>
         <object>objects\obj_judging</object>
       </objects>
       <objects name="Common">
