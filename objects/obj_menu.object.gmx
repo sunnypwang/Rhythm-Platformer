@@ -342,7 +342,7 @@ draw_sprite(spr_lvpreview,selectIndex+1,98,56);
 
 draw_text(206,57,levelname);
 draw_text(206,80,"Author: "+levelauthor);
-draw_text(206,103,"Difficulty: 5");
+//draw_text(206,103,"Difficulty: 5");
 
 draw_text(98,128,"Music: "+levelsong);
 draw_text(98,150,"BPM: "+levelbpm);

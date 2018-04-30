@@ -30,6 +30,7 @@
 //Constant
 grav = 1;
 MOVE_SPD = 2;       //walking speed
+RUN_SPD = 4;
 VSP_MAX = 8;       //maximum falling speed
 JUMP_SPD = 10;      //initial jumping vsp
 JUMP_DECEL = 1;     //deceleration after jumping
@@ -196,7 +197,7 @@ alpha = 1;
 key_right = keyboard_check(vk_right);   //1 if pressing right, 0 otherwise
 key_left = -keyboard_check(vk_left);    //-1 if pressing left, 0 otherwise
 key_jump = keyboard_check_pressed(vk_space);
-
+key_run = keyboard_check(ord('Z'));
 //key_left=-1;
 //Horizontal movement control
 if(!isattack){
@@ -226,7 +227,10 @@ move = key_left+key_right;  //if pressing both right and left, movement cancels 
 
 //Horizontal movement control
 if(!isattack&amp;&amp;!ishurt){
-hsp = move*MOVE_SPD;
+    hsp = move*MOVE_SPD;
+    if(key_run){
+        hsp = move*RUN_SPD;
+    }
 }
 
 //Gravity control

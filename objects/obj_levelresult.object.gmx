@@ -34,9 +34,10 @@ collectedmoon  =0;
 
 //Save collected moon
 for (var i = 0; i &lt; 3; i++) { 
-    if (ds_map_find_value(global.moon[i],global.level)&gt;0)
+    if (ds_map_find_value(global.moon[i],global.level)&gt;0){
         ds_map_replace(global.moon[i],global.level,3);
         collectedmoon +=1;
+        }
 }
 
 //Reset Color Switches
