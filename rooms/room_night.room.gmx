@@ -38,7 +38,7 @@
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
-    <background visible="-1" foreground="0" name="Synthwave" x="0" y="-500" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
+    <background visible="-1" foreground="0" name="Synthwave" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
   </backgrounds>
   <views>
     <view visible="-1" objName="&lt;undefined&gt;" xview="0" yview="0" wview="424" hview="240" xport="0" yport="0" wport="848" hport="480" hborder="48" vborder="48" hspeed="-1" vspeed="-1"/>
@@ -690,6 +690,7 @@
     <instance objName="obj_instakill" x="2912" y="304" name="inst_92142F61" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_instakill" x="2928" y="304" name="inst_A861075F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_instakill" x="2944" y="304" name="inst_30CF975C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_parallax" x="16" y="16" name="inst_2F16B82B" locked="0" code="parallax[7]=0;&#xA;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="background1" x="0" y="0" w="16" h="16" xo="0" yo="0" id="10000766" name="inst_D15CCB22" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
