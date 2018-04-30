@@ -32,11 +32,20 @@ obj_persistent_rhythm.counting=false;
 obj_persistent_rhythm.time=0;
 FMODGroupSetPitch(2,1);
 global.switcheffect=false;
+
 //Reset Unsaved Moon
 for (var i = 0; i &lt; 3; i++) { 
         if (ds_map_find_value(global.moon[i],global.level) == 1)
             ds_map_replace(global.moon[i],global.level,0);
 }
+
+//Reset Color Switches
+global.lastsw = global.midwaysw;
+global.swcorrect = 0;
+
+//Reset Score
+global.plscore = 0;
+global.lvtimer = 0;
 
 alarm[0]=60;
 </string>
@@ -62,7 +71,7 @@ alarm[0]=60;
           <argument>
             <kind>1</kind>
             <string>/// Sent from Into to Appropiate Room
-room_goto_next()
+room_goto(global.destlevel);
 </string>
           </argument>
         </arguments>
@@ -89,7 +98,7 @@ room_goto_next()
 draw_set_font(global.font);
 draw_set_halign(fa_center);
 
-draw_text(212,80,"Tutorial Room");
+draw_text(212,80,global.displevelname);
 draw_text(212,120,"READY!!");
 
 draw_set_halign(fa_left);

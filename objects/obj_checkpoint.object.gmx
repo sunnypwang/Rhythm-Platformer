@@ -87,6 +87,8 @@ sprite_index = spr_checkpoint
         if (ds_map_find_value(global.moon[i],global.level) == 1)
             ds_map_replace(global.moon[i],global.level,2);
     }
+
+    global.midwaysw = global.lastsw;
 }
 </string>
           </argument>

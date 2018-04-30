@@ -158,15 +158,68 @@ audio_play_sound(snd_metronome, 11, false);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>mysolid.x = x;
+            <string> mysolid.x = x;
 mysolid.y = y;
-if(place_meeting(x,y-5,obj_player)){
-obj_player.x+=hspeed;
-obj_player.y=y-31+vspeed;
-show_debug_message(vspeed);
-obj_player.vsp = 0;
-obj_player.state=0;
+t = bbox_top;
+b = bbox_bottom;
+l = bbox_left;
+r = bbox_right;
+mid_x = (l+r)/2;
+mid_y = (t+b)/2;
+
+    if(collision_rectangle(l+3,t+4,l+sprite_width/4,b-2,obj_player,true,true)){
+            show_debug_message("left");
+            obj_player.x+=hspeed*2-1;
+            obj_player.y+=vspeed;
+    }
+    else if(collision_rectangle(r-sprite_width/4,t+4,r-3,b-2,obj_player,true,true)){
+            show_debug_message("right");
+            obj_player.x+=hspeed*2+1;
+            obj_player.y+=vspeed;
+    }
+    else if(collision_rectangle(l+4,t+5,r-4,t+sprite_height/4,obj_player,true,true)){
+            show_debug_message("top");
+            obj_player.x+=hspeed;
+            obj_player.y=y-31+vspeed;
+    }
+    else if(collision_rectangle(l+2,t+sprite_height/4+1,r-2,b-2,obj_player,true,true)){
+            show_debug_message("bottom");
+            obj_player.x+=hspeed;
+            obj_player.y=b+5;
+    }
+    if(instance_exists(obj_player)){
+    if(collision_rectangle(l,t-5,r,t,obj_player,false,true)){
+            obj_player.x+=hspeed;
+            obj_player.vsp = 0;
+            obj_player.state=0;
+            if(vspeed&lt;0)obj_player.y=t-32+vspeed;
+            else obj_player.y+=vspeed;
+    }
+    }
+    
+    /*if(instance_exists(obj_player)){
+    a = collision_rectangle(obj_player.bbox_left-1,obj_player.bbox_top+1,obj_player.bbox_right-1,obj_player.bbox_bottom-1,obj_solid,false,true);
+    if( a != noone){
+        show_debug_message(a);
+        global.playerHp = 0;
+        instance_create(x,y,obj_deadplayer);
+        instance_destroy(obj_player);
+    }
 }
+
+/*
+if(place_meeting(x,y-5,obj_player)){
+    obj_player.x+=hspeed;
+    obj_player.y=y-31+vspeed;
+    //show_debug_message(vspeed);
+    obj_player.vsp = 0;
+    obj_player.state=0;
+    if(!place_free(obj_player.x,obj_player.y)){
+        global.playerHp = 0;
+        instance_create(x,y,obj_deadplayer);
+        instance_destroy(obj_player);
+    }
+}*/
 </string>
           </argument>
         </arguments>

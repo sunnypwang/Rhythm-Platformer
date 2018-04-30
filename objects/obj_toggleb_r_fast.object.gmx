@@ -83,7 +83,7 @@ audio_play_sound(snd_metronome, 11, false);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(sprite_index = spr_toggleb_r){
+            <string>if(sprite_index == spr_toggleb_r){
     if(collision_rectangle(bbox_left,bbox_top+sprite_height/4,bbox_left+sprite_width/4,bbox_bottom,obj_player,false,true)){
         obj_player.x = bbox_left - (obj_player.bbox_right - obj_player.x) - 2;
     } else if (collision_rectangle(bbox_right-sprite_width/4,bbox_top+sprite_height/4,bbox_right,bbox_bottom,obj_player,false,true)) {
@@ -94,6 +94,7 @@ audio_play_sound(snd_metronome, 11, false);
         obj_player.y = bbox_top - (obj_player.bbox_bottom - obj_player.bbox_top);
     } 
 }
+
 </string>
           </argument>
         </arguments>

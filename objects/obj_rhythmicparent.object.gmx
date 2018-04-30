@@ -27,6 +27,8 @@
             <kind>1</kind>
             <string>beatperstep = 1;
 elapsebeat = 0;
+
+ready = 0;
 //event_user(15);
 </string>
           </argument>

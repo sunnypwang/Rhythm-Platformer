@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>global.note +=1
+global.plscore+=50;
 instance_destroy(other)
 </string>
           </argument>

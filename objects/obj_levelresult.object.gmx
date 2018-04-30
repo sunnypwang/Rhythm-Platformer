@@ -30,13 +30,143 @@ obj_persistent_rhythm.counting=false;
 FMODGroupSetPitch(2,1);
 global.switcheffect=false;
 
+collectedmoon  =0;
+
 //Save collected moon
 for (var i = 0; i &lt; 3; i++) { 
     if (ds_map_find_value(global.moon[i],global.level)&gt;0)
         ds_map_replace(global.moon[i],global.level,3);
+        collectedmoon +=1;
 }
 
-alarm[0]=60;
+//Reset Color Switches
+global.midwaysw = 0;
+global.lastsw = 0;
+
+//Parse Information
+timeused = global.lvtimer;
+t_m = string_format(timeused/60000,2,0);
+t_s = string_format((timeused div 1000) mod 60,2,0);
+t_ms = string_format((timeused%1000) div 10,2,0);
+
+disp_score = string_replace_all(string_format(global.plscore,8,0),' ','0');
+
+phase = 0;
+
+//Placeholder Grade just for show
+grade = "X"
+switch(collectedmoon){
+case 0:
+grade = "D"
+break;
+case 1:
+grade = "C"
+break;
+case 2:
+grade = "B"
+break;
+case 3:
+grade = "A"
+break;
+}
+
+alarm[0]=20;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Sent from Into to Appropiate Room
+room_goto(rm_menu)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>phase = 4;
+alarm[5]=90;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>phase = 3;
+alarm[3]=60;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>phase = 2;
+alarm[2]=30;
 </string>
           </argument>
         </arguments>
@@ -59,8 +189,8 @@ alarm[0]=60;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Sent from Into to Appropiate Room
-room_goto(rm_menu)
+            <string>phase = 1;
+alarm[1]=30;
 </string>
           </argument>
         </arguments>
@@ -87,10 +217,20 @@ room_goto(rm_menu)
 draw_set_font(global.font);
 draw_set_halign(fa_center);
 
-draw_text(212,80,"Result");
-draw_text(212,120,"N/A");
-draw_text(212,150,"-Insert Text Here-");
-draw_text(212,180,"(WIP)");
+if(phase&gt;0){
+draw_text(212,30,"Result");
+}
+if(phase&gt;1){
+draw_text(212,60,"Time Used: "+t_m+":"+t_s+":"+t_ms);
+draw_text(212,90,"Moon Collected: "+string_format(collectedmoon,1,0)+"/3");
+draw_text(212,120,"Base Score: "+disp_score);
+}
+if(phase&gt;2){
+draw_text(212,150,"Final Rank");
+}
+if(phase&gt;3){
+draw_text(212,180,grade);
+}
 
 draw_set_halign(fa_left);
 </string>
